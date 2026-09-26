@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {validateEvent,resolveReviews,githubSaveURL} from '../../docs/review-core.mjs';
+import {validateEvent,resolveReviews,githubSaveURL,reusePendingSave} from '../../docs/review-core.mjs';
 const candidates=JSON.parse(readFileSync(new URL('../../docs/data/pilot-ledger.json',import.meta.url)));
 const manifest=JSON.parse(readFileSync(new URL('../../docs/data/site-manifest.json',import.meta.url)));
 const units=JSON.parse(readFileSync(new URL('../../docs/data/source-units.json',import.meta.url)));
@@ -68,4 +68,17 @@ test('GitHub handoff preserves Unicode and punctuation without executable conten
  assert.deepEqual(JSON.parse(url.searchParams.get('value')),e);
  assert.throws(()=>githubSaveURL({...e,event_id:'../../other'}));
  assert.throws(()=>githubSaveURL({...e,rationale:'界'.repeat(3000)}));
+});
+test('a retry after reload keeps the same file while a changed review gets a new event',()=>{
+ const prepared=event(1,{scope_note:'',rationale:''});
+ const restored=JSON.parse(JSON.stringify(prepared));
+ const retry=event(2,{created_at:'2026-09-27T12:00:00.000Z',scope_note:'',rationale:''});
+ const resumed=reusePendingSave(retry,restored);
+ assert.equal(githubSaveURL(resumed),githubSaveURL(prepared));
+ assert.equal(resolved([resumed]).states.get(c.candidate_id).history.length,1);
+ for(const change of [{rationale:'Revised notes'},{status:'rejected'},{supersedes:[id(3)]},{source_sha256:'changed'}]){
+  const updated={...retry,...change};
+  assert.equal(reusePendingSave(updated,restored),updated);
+ }
+ assert.equal(reusePendingSave(retry,null),retry);
 });

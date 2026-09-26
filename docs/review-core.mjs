@@ -68,6 +68,16 @@ export function githubSaveURL(event) {
   return url.href;
 }
 
+// Retrying a prepared save must use the same file and timestamp. A changed
+// decision gets a new identity, preserving the append-only review history.
+export function reusePendingSave(next, pending) {
+  if (!pending) return next;
+  const content = e => Object.fromEntries(Object.entries(e)
+    .filter(([key]) => key !== 'event_id' && key !== 'created_at')
+    .sort(([a],[b]) => a.localeCompare(b)));
+  return JSON.stringify(content(next)) === JSON.stringify(content(pending)) ? pending : next;
+}
+
 export function eventPath(id) {
   if(!uuid.test(id)) throw Error('Invalid event ID.');
   return `${EVENT_DIR}/${id}.json`;

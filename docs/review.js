@@ -1,11 +1,22 @@
-import {REPO,BRANCH,EVENT_DIR,STATUSES,validateEvent,resolveReviews,githubSaveURL,eventPath} from './review-core.mjs';
+import {REPO,BRANCH,EVENT_DIR,STATUSES,validateEvent,resolveReviews,githubSaveURL,reusePendingSave,eventPath} from './review-core.mjs';
 const $ = id => document.getElementById(id);
 const esc = value => String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const labels={pending:'Awaiting review',accepted:'Accepted assertion',rejected:'Rejected candidate',needs_revision:'Needs revision',deferred:'Deferred',conflict:'Conflicting reviews',unverified:'Unverified reviews'};
 const key='dod-bco-review-drafts-v1';
+const saveKey='dod-bco-prepared-save-v1';
 let candidates=[],units={},manifest={},events=[],resolution=null,remoteReady=false,commit='',active=null,baseHeads=[],drafts={},storageOK=true;
+let preparedSave=null;
 try { drafts=JSON.parse(localStorage.getItem(key)||'{}'); if(!drafts || Array.isArray(drafts) || typeof drafts!=='object') drafts={}; } catch {storageOK=false;}
+try { preparedSave=JSON.parse(localStorage.getItem(saveKey)||'null'); } catch { /* Existing drafts remain available. */ }
 function storeDrafts(){try{localStorage.setItem(key,JSON.stringify(drafts));return true;}catch{storageOK=false;return false;}}
+function storePrepared(){try{if(preparedSave)localStorage.setItem(saveKey,JSON.stringify(preparedSave));else localStorage.removeItem(saveKey);return true;}catch{return false;}}
+function clearPrepared(){preparedSave=null;storePrepared();$('resume-save').hidden=true;}
+function showSyncSummary(confirmed=false){
+  $('resume-save').hidden=!preparedSave;
+  $('sync-title').textContent=confirmed?'Saved to GitHub':preparedSave?'A prepared save is waiting for your GitHub commit':'Connected to your GitHub repository';
+  $('sync-dot').className=preparedSave?'sync-dot':'sync-dot ready';
+  $('sync-detail').textContent=`${events.filter(e=>e.record_type==='definition_review').length} review events saved · version ${commit.slice(0,7)} · ${REPO}. ${preparedSave?'Choose Continue GitHub save to finish in your browser.':'Drafts stay on this device until committed.'}`;
+}
 function statusFor(id){return resolution?.states.get(id)||{status:'pending',history:[],heads:[],latest:null};}
 function blobLink(e){return `https://github.com/${REPO}/blob/${commit}/${eventPath(e.event_id)}`;}
 function sourceLink(c){try{const u=new URL(c.source.source_url);return u.protocol==='https:'&&u.hostname==='digital.wbdg.org'?u.href:'#';}catch{return '#';}}
@@ -37,7 +48,7 @@ async function jsonFetch(url){
 }
 async function sync(){
   if(!candidates.length)return;
-  remoteReady=false; $('refresh').disabled=true; $('sync-title').textContent='Checking GitHub…'; $('sync-dot').className='sync-dot';
+  remoteReady=false; $('refresh').disabled=true; $('check-commit').disabled=true; $('sync-title').textContent='Checking GitHub…'; $('sync-dot').className='sync-dot';
   try{
     const ref=await jsonFetch(`https://api.github.com/repos/${REPO}/git/ref/heads/${BRANCH}`);
     const nextCommit=ref.object?.sha;
@@ -63,19 +74,29 @@ async function sync(){
     remoteReady=true;
     for(const c of candidates){const d=drafts[c.candidate_id];if(d?.pending_event_id && loaded.some(e=>e.event_id===d.pending_event_id))delete drafts[c.candidate_id];}
     storeDrafts();
-    $('sync-title').textContent='Connected to your GitHub repository'; $('sync-dot').className='sync-dot ready';
-    $('sync-detail').textContent=`${loaded.filter(e=>e.record_type==='definition_review').length} review events saved · version ${commit.slice(0,7)} · ${REPO}. Drafts stay on this device until committed.`;
+    const confirmed=!!preparedSave && loaded.some(e=>e.event_id===preparedSave.event_id);
+    if(confirmed){clearPrepared();if($('save-dialog').open)$('save-dialog').close();}
+    showSyncSummary(confirmed);
     const checks=next.checks.slice().sort((a,b)=>a.created_at.localeCompare(b.created_at));
     if(checks.length){$('check-result').innerHTML=`Save verified: <a href="${blobLink(checks.at(-1))}" target="_blank" rel="noopener noreferrer">view repository receipt ↗</a>`;}
   }catch(error){
     $('sync-title').textContent='Saved reviews could not be refreshed'; $('sync-dot').className='sync-dot error';
     $('sync-detail').textContent=`${error.message} ${commit?'The display retains the last loaded snapshot.':'Saved review status is not yet known.'}`;
-  }finally{ $('refresh').disabled=false; render(); }
+  }finally{ $('refresh').disabled=false; $('check-commit').disabled=false; render(); }
 }
 const form=$('review-form');
 const fields=['status','reviewer','scope_note','rationale','proposed_label','proposed_definition'];
 function formValues(){return Object.fromEntries(fields.map(name=>[name,form.elements.namedItem(name).value]));}
-function updateDraft(){if(!active)return; drafts[active.candidate_id]={...formValues(),supersedes:baseHeads};const saved=storeDrafts();$('draft-state').textContent=saved?'Draft saved on this device. It is not in GitHub yet.':'Browser draft storage is unavailable. Keep this window open until you save to GitHub.';}
+function updateDraft(){
+  if(!active)return;
+  const values=formValues();
+  const previous=drafts[active.candidate_id];
+  const unchanged=previous && fields.every(name=>previous[name]===values[name]);
+  if(preparedSave?.candidate_id===active.candidate_id && fields.some(name=>preparedSave[name]!==values[name])){clearPrepared();if(remoteReady)showSyncSummary();}
+  drafts[active.candidate_id]={...values,supersedes:baseHeads};
+  if(unchanged && previous.pending_event_id)drafts[active.candidate_id].pending_event_id=previous.pending_event_id;
+  const saved=storeDrafts();$('draft-state').textContent=saved?'Draft saved on this device. It is not in GitHub yet.':'Browser draft storage is unavailable. Keep this window open until you save to GitHub.';
+}
 function openReview(id){
   active=candidates.find(c=>c.candidate_id===id); if(!active)return;
   const state=statusFor(id), draft=drafts[id];
@@ -86,12 +107,23 @@ function openReview(id){
   $('form-error').textContent='';$('draft-state').textContent=draft?'Draft restored from this device.':'No new decision has been saved.';
   $('review-dialog').showModal();
 }
+function showSavePanel(){
+  if(!preparedSave)return;
+  const url=githubSaveURL(preparedSave);
+  $('browser-save-link').value=url;
+  $('open-editor').href=url;
+  $('save-summary').textContent=preparedSave.record_type==='persistence_check'?'Technical save check. No vocabulary decision.':`${candidates.find(c=>c.candidate_id===preparedSave.candidate_id).label_proposed} · ${labels[preparedSave.status]} · ${preparedSave.reviewer}`;
+  $('copy-status').textContent='The file is prepared. It is not saved to GitHub yet.';
+  $('manual-copy').open=false;
+  if(!$('save-dialog').open)$('save-dialog').showModal();
+}
 function handoff(event){
-  const url=githubSaveURL(event);
-  window.open(url,'_blank','noopener,noreferrer');
-  $('sync-title').textContent='Finish saving on GitHub';
-  $('sync-detail').innerHTML=`Click “Commit changes” on GitHub and commit directly to dod-bco, then return and refresh. <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Reopen the prepared file ↗</a>`;
-  $('sync-dot').className='sync-dot';
+  githubSaveURL(event);
+  preparedSave=event;
+  const retained=storePrepared();
+  showSyncSummary();
+  showSavePanel();
+  if(!retained)$('copy-status').textContent='Keep this page open until you commit. This browser could not retain the prepared link.';
 }
 form.addEventListener('input',updateDraft);
 form.addEventListener('change',updateDraft);
@@ -99,21 +131,38 @@ form.addEventListener('submit',event=>{
   event.preventDefault(); $('form-error').textContent='';
   try{
     if(!remoteReady)throw Error('Refresh saved reviews successfully before saving a decision. Your local draft is retained.');
-    const e={schema_version:1,record_type:'definition_review',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),candidate_id:active.candidate_id,dataset_sha256:manifest.dataset_sha256,source_sha256:active.source.source_sha256,source_version_id:active.source.version_id,supersedes:baseHeads,...formValues()};
+    const e=reusePendingSave({schema_version:1,record_type:'definition_review',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),candidate_id:active.candidate_id,dataset_sha256:manifest.dataset_sha256,source_sha256:active.source.source_sha256,source_version_id:active.source.version_id,supersedes:baseHeads,...formValues()},preparedSave);
     validateEvent(e,candidates,manifest.dataset_sha256); githubSaveURL(e);
     drafts[active.candidate_id]={...formValues(),supersedes:baseHeads,pending_event_id:e.event_id};storeDrafts();
-    handoff(e);$('review-dialog').close();render();
+    $('review-dialog').close();handoff(e);render();
   }catch(error){$('form-error').textContent=error.message;}
 });
 $('close-dialog').addEventListener('click',()=>{$('review-dialog').close();render();});
 $('review-dialog').addEventListener('close',()=>{active=null;render();});
-$('discard-draft').addEventListener('click',()=>{delete drafts[active.candidate_id];storeDrafts();$('review-dialog').close();});
+$('discard-draft').addEventListener('click',()=>{if(preparedSave?.candidate_id===active.candidate_id){clearPrepared();if(remoteReady)showSyncSummary();}delete drafts[active.candidate_id];storeDrafts();$('review-dialog').close();});
 $('cards').addEventListener('click',event=>{const button=event.target.closest('[data-review]');if(button)openReview(button.dataset.review);});
 for(const id of ['search','source','kind','status'])$(id).addEventListener(id==='search'?'input':'change',render);
 $('refresh').addEventListener('click',sync);
+$('resume-save').addEventListener('click',showSavePanel);
+$('close-save').addEventListener('click',()=>$('save-dialog').close());
+$('copy-browser-link').addEventListener('click',async()=>{
+  try{
+    await navigator.clipboard.writeText($('browser-save-link').value);
+    $('copy-status').textContent='Link copied. Paste it into Safari or Chrome’s address bar, then finish the GitHub commit.';
+  }catch{
+    $('manual-copy').open=true;
+    $('browser-save-link').focus();$('browser-save-link').select();
+    $('copy-status').textContent='Automatic copying is unavailable. Copy the selected link below, then paste it into your browser’s address bar.';
+  }
+});
+$('check-commit').addEventListener('click',async()=>{
+  await sync();
+  if(preparedSave)$('copy-status').textContent=remoteReady?'This file is not in GitHub yet. Finish Commit changes on the dod-bco branch, then check again.':'GitHub could not be checked. Your prepared link is retained; try again later.';
+});
 $('check-save').addEventListener('click',()=>{
   try{
     if(!remoteReady)throw Error('Refresh the repository successfully before testing saving.');
+    if(preparedSave){showSavePanel();return;}
     handoff({schema_version:1,record_type:'persistence_check',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),dataset_sha256:manifest.dataset_sha256,purpose:'Technical save verification; no vocabulary decision'});
     $('check-result').textContent='Commit the test receipt on GitHub, then refresh here. No assertion is accepted by this test.';
   }catch(error){$('check-result').textContent=error.message;}
@@ -131,6 +180,8 @@ async function start(){
     const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
     if(hash!==m.dataset_sha256)throw Error('The evidence ledger does not match the published snapshot.');
     candidates=JSON.parse(new TextDecoder().decode(bytes));units=u;manifest=m;
+    if(preparedSave){try{validateEvent(preparedSave,candidates,manifest.dataset_sha256);githubSaveURL(preparedSave);}catch{clearPrepared();}}
+    $('resume-save').hidden=!preparedSave;
     for(const c of candidates){for(const e of c.evidence){if(Array.from(units[e.unit_id]?.text_exact||'').slice(e.start,e.end).join('')!==e.source_text_exact)throw Error('A source quotation failed its exact-text check.');}}
     for(const [id,values] of [['source',[...new Set(candidates.map(c=>c.source.designation))]],['kind',[...new Set(candidates.map(c=>c.record_type))]]]){
       for(const value of values){const option=document.createElement('option');option.value=value;option.textContent=value.replaceAll('_',' ');$(id).append(option);}
