@@ -5,6 +5,21 @@ from app.models.annotation import SPOTriple, SentencePOS
 
 
 class TestDependencyParser:
+    @pytest.mark.parametrize("text", [
+        "UFC 1-200-01 requires a Government-owned facility.",
+        'The judge considered Acme, Inc.\'s (revised) motion.',
+        "The court  granted the motion.",
+        "The café’s owner signed a five-year lease.",
+    ])
+    def test_component_span_text_is_a_verbatim_quote(self, text):
+        triples, _, _ = DependencyParser().extract_triples_and_pos(text)
+        assert triples
+        for triple in triples:
+            for field in ("subject_span", "predicate_span", "object_span"):
+                span = getattr(triple, field)
+                if span is not None:
+                    assert span.text == text[span.start:span.end]
+
     def test_extract_triples_basic(self):
         parser = DependencyParser()
         text = "The court granted the motion."

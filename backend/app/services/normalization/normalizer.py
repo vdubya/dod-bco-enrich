@@ -97,58 +97,40 @@ def chunk_text(
 
     sentences = split_sentences(text)
     chunks: list[TextChunk] = []
-    current_sentences: list[str] = []
-    current_len = 0
-    chunk_start = 0
+    current_spans: list[tuple[int, int]] = []
     position = 0
 
+    def emit_chunk() -> None:
+        start, end = current_spans[0][0], current_spans[-1][1]
+        chunks.append(TextChunk(
+            text=text[start:end], start_offset=start, end_offset=end,
+            chunk_index=len(chunks),
+        ))
+
     for sentence in sentences:
-        # Find where this sentence starts in the original text
+        # Offsets refer to this exact input, including inter-sentence whitespace.
         sent_start = text.find(sentence, position)
         if sent_start == -1:
-            sent_start = position
+            raise ValueError("Sentence tokenizer returned text not present in the source")
         sent_end = sent_start + len(sentence)
 
-        if current_len + len(sentence) > max_chars and current_sentences:
-            chunk_text_str = " ".join(current_sentences)
-            chunk_end = chunk_start + len(chunk_text_str)
-            chunks.append(
-                TextChunk(
-                    text=chunk_text_str,
-                    start_offset=chunk_start,
-                    end_offset=chunk_end,
-                    chunk_index=len(chunks),
-                )
-            )
-            # Overlap: keep last sentences within overlap budget
-            overlap_sentences: list[str] = []
-            overlap_len = 0
-            for s in reversed(current_sentences):
-                if overlap_len + len(s) > overlap:
+        if current_spans and sent_end - current_spans[0][0] > max_chars:
+            emit_chunk()
+            # Retain a suffix of whole sentences only when its actual source
+            # length fits the overlap budget and leaves room for the new sentence.
+            # An oversized sentence is still emitted intact, on its own.
+            retained: list[tuple[int, int]] = []
+            for start, end in reversed(current_spans):
+                if current_spans[-1][1] - start > overlap or sent_end - start > max_chars:
                     break
-                overlap_sentences.insert(0, s)
-                overlap_len += len(s) + 1  # +1 for space
+                retained.insert(0, (start, end))
+            current_spans = retained
 
-            current_sentences = overlap_sentences
-            current_len = sum(len(s) for s in current_sentences) + max(
-                0, len(current_sentences) - 1
-            )
-            chunk_start = chunk_end - overlap_len if overlap_len > 0 else chunk_end
-
-        current_sentences.append(sentence)
-        current_len += len(sentence) + (1 if len(current_sentences) > 1 else 0)
+        current_spans.append((sent_start, sent_end))
         position = sent_end
 
-    if current_sentences:
-        chunk_text_str = " ".join(current_sentences)
-        chunks.append(
-            TextChunk(
-                text=chunk_text_str,
-                start_offset=chunk_start,
-                end_offset=chunk_start + len(chunk_text_str),
-                chunk_index=len(chunks),
-            )
-        )
+    if current_spans:
+        emit_chunk()
 
     return chunks
 

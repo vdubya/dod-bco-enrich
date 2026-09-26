@@ -269,7 +269,7 @@ class DependencyParser:
 
     @staticmethod
     def _subtree_span(token) -> Span:
-        """Get character span covering the token's full subtree."""
+        """Get a verbatim source span covering the token's full subtree."""
         subtree = sorted(token.subtree, key=lambda t: t.i)
         start = subtree[0].idx
         last = subtree[-1]
@@ -277,7 +277,7 @@ class DependencyParser:
         return Span(
             start=start,
             end=end,
-            text=" ".join(t.text for t in subtree),
+            text=token.doc.text[start:end],
         )
 
     @staticmethod

@@ -1,3 +1,5 @@
+import pytest
+
 from app.models.document import DocumentFormat
 from app.services.normalization.normalizer import (
     chunk_text,
@@ -58,6 +60,41 @@ class TestSplitSentences:
 
 
 class TestChunkText:
+    @pytest.mark.parametrize("separator", [" ", "\n", "\n\n", "\r\n", "\t", "\u00a0"])
+    @pytest.mark.parametrize("overlap", [0, 25, 1000])
+    def test_offsets_round_trip_to_source(self, separator, overlap):
+        # Repeated sentences catch alignment against an earlier occurrence.
+        text = separator.join([
+            "First sentence is here.", "Second sentence is here.",
+            "First sentence is here.", "Fourth sentence is here.",
+        ])
+        chunks = chunk_text(text, max_chars=50, overlap=overlap)
+        assert len(chunks) > 1
+        covered = set()
+        for chunk in chunks:
+            assert 0 <= chunk.start_offset < chunk.end_offset <= len(text)
+            assert chunk.text == text[chunk.start_offset:chunk.end_offset]
+            assert len(chunk.text) <= 50
+            covered.update(range(chunk.start_offset, chunk.end_offset))
+        assert all(i in covered for i, char in enumerate(text) if not char.isspace())
+        assert all(a.start_offset < b.start_offset for a, b in zip(chunks, chunks[1:]))
+
+    def test_chunk_local_match_maps_to_canonical_text(self):
+        text = "First sentence is here.\n\nSecond sentence is here.\n\nThird sentence is here."
+        chunks = chunk_text(text, max_chars=50, overlap=25)
+        for chunk in chunks:
+            for term in ("First", "Second", "Third"):
+                if term in chunk.text:
+                    start = chunk.start_offset + chunk.text.index(term)
+                    assert text[start:start + len(term)] == term
+
+    def test_oversized_sentence_keeps_real_offsets(self):
+        sentence = "A single extraordinarily long sentence has many words and must stay intact."
+        text = "Short start.\n\n" + sentence + "\n\nShort end."
+        chunks = chunk_text(text, max_chars=40, overlap=20)
+        assert any(chunk.text == sentence for chunk in chunks)
+        assert all(chunk.text == text[chunk.start_offset:chunk.end_offset] for chunk in chunks)
+
     def test_short_text_single_chunk(self):
         text = "Short text."
         chunks = chunk_text(text, max_chars=1000)
@@ -86,6 +123,17 @@ class TestChunkText:
 
 
 class TestNormalizeAndChunk:
+    def test_multichunk_offsets_use_normalized_coordinate_system(self, monkeypatch):
+        from app.config import settings
+        monkeypatch.setattr(settings, "max_chunk_chars", 50)
+        monkeypatch.setattr(settings, "chunk_overlap_chars", 25)
+        raw = "  First  sentence is here.\n\nSecond\tsentence is here.\n\nThird sentence is here.  "
+        canonical = normalize_and_chunk(raw)
+        assert canonical.full_text == normalize_whitespace(raw)
+        assert len(canonical.chunks) > 1
+        for chunk in canonical.chunks:
+            assert chunk.text == canonical.full_text[chunk.start_offset:chunk.end_offset]
+
     def test_returns_canonical_text(self):
         result = normalize_and_chunk("Hello   world.  This is  a test.", DocumentFormat.PLAIN_TEXT)
         assert result.full_text == "Hello world. This is a test."
