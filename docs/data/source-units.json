@@ -1,0 +1,4079 @@
+{
+  "ufc-unit-04cb95d3e33ded0c97519a21": {
+    "unit_id": "ufc-unit-04cb95d3e33ded0c97519a21",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "f629be95-d88b-4a96-814f-f8e6b168c8e1",
+    "sentence_id": "6be56e36-503a-4fc8-b3b1-fd08a77f06e2",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/1/text",
+    "text_exact": "This is the minimum non-permanent construction level that applies to commercially available structures and other items that do not meet the requirements of 2.1 of this UFC.",
+    "section_path": [
+      "CHAPTER 3 TEMPORARY FACILITY CONSTRUCTION LEVEL",
+      "3-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1183,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1183,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-050d74b0f7be8106e7bbf3e1": {
+    "unit_id": "ufc-unit-050d74b0f7be8106e7bbf3e1",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "260ba480-3f70-4bca-ac5e-daa0c4cd3bbf",
+    "sentence_id": "d544446f-d1fd-49dd-9d5b-1f2b1d0aaf22",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/1/children/0/sentences/0/text",
+    "text_exact": "The terms “Building Official” (BO), “Code Official” and “Authority Having Jurisdiction” (AHJ) used in the UFC or FC criteria, reference codes, and standards are synonymous.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.2 Building Official / Authority Having Jurisdiction (BO/AHJ)."
+    ],
+    "paragraph_id": 99,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 99,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-062bc0972df9ee3af4653bd9": {
+    "unit_id": "ufc-unit-062bc0972df9ee3af4653bd9",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "bc030b45-f5fd-457b-9750-dc4d6e5fb576",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/0/text",
+    "text_exact": "CHAPTER 2 modifies IBC and is organized by the chapter of IBC that each section modifies.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 199,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 199,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-06b805df707e90c454ac30fb": {
+    "unit_id": "ufc-unit-06b805df707e90c454ac30fb",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "82e403c5-00b3-4a3e-aa20-40f66e0f0283",
+    "sentence_id": "4e04722f-42f5-4686-aecc-ca98e2e61955",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/1/children/0/sentences/1/text",
+    "text_exact": "The office is overseen by the Director, OCPO, ensuring defense assets maintain readiness and life expectancy through lifecycle management, and requiring annual reports to Congress on funding and return on investment.  ",
+    "section_path": [
+      "CHAPTER 4 CORROSION PREVENTION AND CONTROL",
+      "4-2 DEFINITION OF CORROSION."
+    ],
+    "paragraph_id": 599,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 599,
+      "paragraphType": "Default"
+    }
+  },
+  "ufc-unit-0719ccb967bd74c9018b69e5": {
+    "unit_id": "ufc-unit-0719ccb967bd74c9018b69e5",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "cfad49b3-42ef-4aec-a137-fa98ab2c0fb1",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/16/text",
+    "text_exact": "The contractor accomplishing the project.",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 359,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 359,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0781677892d86a5a117e09eb": {
+    "unit_id": "ufc-unit-0781677892d86a5a117e09eb",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "22c4b8d7-32d5-44bd-82a9-bba43b6fa9dc",
+    "sentence_id": "6f7c8a7e-ed91-41c4-9941-ae4a0e0edd26",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/6/children/0/sentences/0/text",
+    "text_exact": "A living unit or living quarters created by modifying a shipping container to house personnel. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.6 Container or Containerized Housing Unit (CHU)"
+    ],
+    "paragraph_id": 123,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 123,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-089d800ec1ee733f31768177": {
+    "unit_id": "ufc-unit-089d800ec1ee733f31768177",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "24501390-ba6d-4fa1-9592-da7a8873857d",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/14/heading",
+    "text_exact": "Occupancy Type.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.14 Occupancy Type."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-0b64306b69b01724435f1581": {
+    "unit_id": "ufc-unit-0b64306b69b01724435f1581",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b8fb36b6-4940-45b4-b2cc-01ab9259a6b7",
+    "sentence_id": "b933df45-6ce2-47b8-89f1-0148ee39a5a2",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/0/children/0/sentences/0/text",
+    "text_exact": "Buildings and facilities designed and constructed to serve a life expectancy of less than 10 years (120 months).",
+    "section_path": [
+      "CHAPTER 4 SEMI-PERMANENT FACILITY CONSTRUCTION LEVEL",
+      "4-1 APPLICABILITY."
+    ],
+    "paragraph_id": 721,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 721,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0b692675cf3ab52fc42f7e2a": {
+    "unit_id": "ufc-unit-0b692675cf3ab52fc42f7e2a",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "6280b21e-5abe-40fc-9b5b-a479dd240b74",
+    "sentence_id": "e80e7c73-3664-4a8a-b973-651477a6d7c1",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/17/children/0/sentences/0/text",
+    "text_exact": "The military instrument of national power can be used in a wide variety of ways that vary in purpose, scale, risk, and combat intensity. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.17 Range of Military Operations."
+    ],
+    "paragraph_id": 152,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 152,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0bc138051c2c32ccc6670929": {
+    "unit_id": "ufc-unit-0bc138051c2c32ccc6670929",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7ec30ccc-4173-467d-bf85-3a9dfa0bddca",
+    "sentence_id": "b9dbbb1c-0c99-43da-bcf7-632e78d13ac4",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/5/children/0/sentences/0/text",
+    "text_exact": "Automated metal forming system that manufactures metal members without heat from steel coil. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.5 Cold Formed Metal Framing System"
+    ],
+    "paragraph_id": 121,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 121,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0cf23f5fb950d892ec00ef48": {
+    "unit_id": "ufc-unit-0cf23f5fb950d892ec00ef48",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "54b81aff-6edc-4608-9743-635312c55558",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/0/text",
+    "text_exact": "Section 202 – General Definitions [Replacement]",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 351,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 351,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0e5c8fc77654221b4d98c6d1": {
+    "unit_id": "ufc-unit-0e5c8fc77654221b4d98c6d1",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "866b8218-7529-479b-a09b-5d2e66597527",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/18/text",
+    "text_exact": "The real property owner is the organization that accepts the property after construction by signing the DD Form 1354 Transfer and Accepance of DoD Real Property.",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 360,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 360,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-0e9d73cedb35366df46cd088": {
+    "unit_id": "ufc-unit-0e9d73cedb35366df46cd088",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "cc374d49-483a-4b50-9072-e9285759a22e",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/5/text",
+    "text_exact": "Deputy Director of Civil Engineers DCS/Logistics, Engineering & Force Protection (HAF/A4C), HQ United States Air Force",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 13,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 13,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-10500c9229e3dcd328f077be": {
+    "unit_id": "ufc-unit-10500c9229e3dcd328f077be",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "6f7a44df-453e-4894-85ea-8138b0cbc311",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/6/text",
+    "text_exact": "CODE OFFICIAL.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 51,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 51,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-10b37b48bfbb01e12046e404": {
+    "unit_id": "ufc-unit-10b37b48bfbb01e12046e404",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "2f59817a-4846-4bd6-84b7-a5737ed704e8",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/10/text",
+    "text_exact": "OR",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 172,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 172,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-129289db1f20d30b029463be": {
+    "unit_id": "ufc-unit-129289db1f20d30b029463be",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "c34756b6-3a85-4ea4-b84e-fd32aefffaf9",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/2/text",
+    "text_exact": "For facility uniformity, it is recommended that all buildings constructed on federal installations conform to UFC requirements.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 16,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 16,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-130e1efff27848b41d56665e": {
+    "unit_id": "ufc-unit-130e1efff27848b41d56665e",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "ef37f3d0-323e-49d7-a6e7-cc6a3296730a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/4/text",
+    "text_exact": "[Deletion] – Delete referenced IBC or IEBC section.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 201,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 201,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-14473526ffbefa889c2ad3c9": {
+    "unit_id": "ufc-unit-14473526ffbefa889c2ad3c9",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "037e09ed-2d72-4f3c-9e73-70b15c7ed3d5",
+    "sentence_id": "8fad264d-d1bb-45ee-9cf1-cbeed0f82b6a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/7/children/0/sentences/0/text",
+    "text_exact": "A living unit or living quarters created by modifying a shipping container to house personnel. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.7 Container or Containerized Living Unit (CLU)"
+    ],
+    "paragraph_id": 125,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 125,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-152bf2f6ae11d9610a776616": {
+    "unit_id": "ufc-unit-152bf2f6ae11d9610a776616",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7d21e88d-3219-4cba-99df-4f23433c1607",
+    "sentence_id": "6a30204b-82b8-4fc9-b7c1-e516167f147f",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/15/children/0/sentences/1/text",
+    "text_exact": "Includes: bunkers, air raid shelters, armored CHUs, and armored containers (enclosed or semi-enclosed).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.15 Protective Structure."
+    ],
+    "paragraph_id": 148,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 148,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-16669f8cea64a894ac421d7a": {
+    "unit_id": "ufc-unit-16669f8cea64a894ac421d7a",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "7d63ebac-050e-432c-a6e3-e91bd8f5c326",
+    "sentence_id": "6194d115-133b-45ae-8c0a-3acd5bf8b3a9",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/3/text",
+    "text_exact": "See paragraph 1-6 of this UFC for additional information on these terms.",
+    "section_path": [
+      "CHAPTER 3 MODIFICATIONS TO IEBC",
+      "3-1 [IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION."
+    ],
+    "paragraph_id": 400,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 400,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-192bc1a82e90b71141d2ce93": {
+    "unit_id": "ufc-unit-192bc1a82e90b71141d2ce93",
+    "designation": "UFC 3-301-01",
+    "version_id": "2a853bc9-50ee-4414-9ffc-f592c9b7ad3e",
+    "node_id": "c63b764d-7079-4d5e-918c-d554278e50b5",
+    "sentence_id": "42cfb36b-f374-4d40-af1f-c50246ef2dd5",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/children/0/children/0/sentences/0/text",
+    "text_exact": "The Structural Engineer of Record (SER) is a registered design professional who performs, supervises, or approves the analysis, design, and document preparation for the building structural system. ",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 IBC CHAPTER 2 – DEFINITIONS.",
+      "1-2.1 Section 202 – DEFINITIONS.",
+      "1-2.1.1 STRUCTURAL ENGINEER OF RECORD (SER) [Addition]"
+    ],
+    "paragraph_id": 25,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 25,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-19341f69e33ca417c57ba4d3": {
+    "unit_id": "ufc-unit-19341f69e33ca417c57ba4d3",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "6280b21e-5abe-40fc-9b5b-a479dd240b74",
+    "sentence_id": "94596fa4-d7c1-459a-adc3-eacd4bfcd7b7",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/17/children/0/sentences/2/text",
+    "text_exact": "(JP 1).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.17 Range of Military Operations."
+    ],
+    "paragraph_id": 152,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 152,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-1989eec54dd56445823ac2e5": {
+    "unit_id": "ufc-unit-1989eec54dd56445823ac2e5",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "74fbbd68-412f-41ed-bd8e-c776c4839e29",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/15/text",
+    "text_exact": "PERMIT HOLDER.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 359,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 359,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-1c6d45e8b74b544024ba63b5": {
+    "unit_id": "ufc-unit-1c6d45e8b74b544024ba63b5",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "590b4f9d-7802-4de0-9b18-e6b8fa643d6e",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/2/heading",
+    "text_exact": "Billeting.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.2 Billeting."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-1c6f238e3503ce4ec10ef2eb": {
+    "unit_id": "ufc-unit-1c6f238e3503ce4ec10ef2eb",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "63fab455-fd51-4f21-9f67-e0f232273c23",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/7/text",
+    "text_exact": "The Code Official is the authority having jurisdiction as described in UFC 1-200-01.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 51,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 51,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2277ad0d85eb062c80b6f7a4": {
+    "unit_id": "ufc-unit-2277ad0d85eb062c80b6f7a4",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "dc402ab3-8e98-4ace-8a47-18cd4dce4aae",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/3/text",
+    "text_exact": "For leased facilities, the lessor of the facility.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 54,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 54,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2287d617a95798081e180324": {
+    "unit_id": "ufc-unit-2287d617a95798081e180324",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "10e8b5b6-0857-4258-a307-996f067b86cb",
+    "sentence_id": "23e37bab-d227-47d3-a14c-5a5a030b0459",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/0/children/0/sentences/0/text",
+    "text_exact": "This UFC provides guidance in the design of plumbing systems, together with the criteria for selecting plumbing materials, fixtures, and equipment and is applicable to all elements of the Department of Defense (DoD) charged with planning military construction.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-1 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 7,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 7,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2342d3758c822327ecd59a2f": {
+    "unit_id": "ufc-unit-2342d3758c822327ecd59a2f",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "879c7d52-c63e-4f87-a26f-4b581f515508",
+    "sentence_id": "54b07e82-37b4-4895-96d1-50ee07cff0a0",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/11/children/3/children/0/sentences/0/text",
+    "text_exact": "Buildings and facilities designed for less than 10 years life expectancy, extendable to 25 years with maintenance of critical building systems (JP 3-34).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.4 Semi-permanent construction level."
+    ],
+    "paragraph_id": 140,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 140,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-253e85fe7a08d5e93aa68b8b": {
+    "unit_id": "ufc-unit-253e85fe7a08d5e93aa68b8b",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "394772d8-a7f9-4c1a-8837-35ac1b01dd5e",
+    "sentence_id": "44dff21d-648a-4b20-902a-4d310cdf9e6a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/1/text",
+    "text_exact": "Additions, alterations, renovations, or repairs, except for one-for-one equipment replacements, to a HVAC system must conform to that required for a new HVAC system without requiring the entire existing HVAC system to comply with all the requirements of this UFC. ",
+    "section_path": [
+      "CHAPTER 1 GENERAL DESIGN REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 23,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 23,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-253ea8cc9d7dafb1c7cc6dcb": {
+    "unit_id": "ufc-unit-253ea8cc9d7dafb1c7cc6dcb",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "bc05d07a-49a7-4e14-a1ab-bc0b5f4ec70a",
+    "sentence_id": "69c33171-f7bd-4d74-8539-f3978df56ac2",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/children/0/sentences/1/text",
+    "text_exact": "Temporary structures must conform to the structural strength, fire safety, means of egress, accessibility, light, ventilation, and sanitary requirements of the IBC Section 3103, as modified in Chapter 2 of this UFC.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": 29,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 29,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2949c569e1db4ff04305938d": {
+    "unit_id": "ufc-unit-2949c569e1db4ff04305938d",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a70ddaae-cd6b-4826-a1b0-b6180cabd7ab",
+    "sentence_id": "596c328d-1fc2-400c-b14c-617f7a16f84d",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/0/children/0/sentences/0/text",
+    "text_exact": "The ESEP represents the senior technical facilities engineering leadership within each Military Department as identified in paragraph 1-3 and exercises exclusive authority to issue documents within the UFC program, and to approve waivers and exemptions thereof.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.1 Engineering Senior Executive Panel (ESEP)"
+    ],
+    "paragraph_id": 97,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 97,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-29e36f4cd6178addad64e39e": {
+    "unit_id": "ufc-unit-29e36f4cd6178addad64e39e",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "fff31f0d-f53d-44a3-8382-f9c3352c18f7",
+    "sentence_id": "6bb9a8c7-8f4f-4c63-ae98-39964925f2aa",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/2/text",
+    "text_exact": "This UFC establishes minimum requirements for initial, temporary, and semi-permanent construction levels. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 APPLICABILITY."
+    ],
+    "paragraph_id": 42,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 42,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2addf29c69ac1aa6376ab76d": {
+    "unit_id": "ufc-unit-2addf29c69ac1aa6376ab76d",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b8fb36b6-4940-45b4-b2cc-01ab9259a6b7",
+    "sentence_id": "49ed5270-d764-44a5-9d75-025aa1c3bb3c",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/0/children/0/sentences/1/text",
+    "text_exact": "With maintenance and upkeep of critical building systems, the life expectancy of a facility can be extended to 25 years (300 months).",
+    "section_path": [
+      "CHAPTER 4 SEMI-PERMANENT FACILITY CONSTRUCTION LEVEL",
+      "4-1 APPLICABILITY."
+    ],
+    "paragraph_id": 721,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 721,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2be470fbc46550fb67298684": {
+    "unit_id": "ufc-unit-2be470fbc46550fb67298684",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "bb4f0955-0fa4-463d-b382-fa73d3ec308a",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/2/text",
+    "text_exact": "APPROVED.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 353,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 353,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-2c88a0c53f774c05f1060d32": {
+    "unit_id": "ufc-unit-2c88a0c53f774c05f1060d32",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "787904ee-902f-472a-b315-de01fd0bcba9",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/2/text",
+    "text_exact": "When the BO/AHJ has identified more than one option satisfies criteria and allows user preference, such as for different system choices that offer varying levels of performance, durability, compatibility, compatibility with other systems, esthetics, or the like.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 102,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 102,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-2ecb4854bd8d2c2d74109057": {
+    "unit_id": "ufc-unit-2ecb4854bd8d2c2d74109057",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "47baa635-b10a-4bdf-8b93-23af016562a9",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/3/text",
+    "text_exact": "“Approved” materials must be materials allowed by the applicable Unified Facilities Guide Specifications (UFGS).",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 49,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 49,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-302474b00dcdc4add8c6e346": {
+    "unit_id": "ufc-unit-302474b00dcdc4add8c6e346",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "e1c91c18-f61b-4c56-b8fe-f1e765c456aa",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/1/text",
+    "text_exact": "Organic – intended for use up to 3 months (90 days) which can be extended to a maximum of 6 months (180 days).",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 164,
+    "formatting": {
+      "isBullet": true,
+      "listType": "bullet",
+      "alignment": "left",
+      "paragraphId": 164,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-306bc507847d6b879fecae13": {
+    "unit_id": "ufc-unit-306bc507847d6b879fecae13",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "8714153f-1d60-47fc-abc9-ce57506e1987",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/4/text",
+    "text_exact": "Have National Stock Numbers (NSNs)",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 167,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 167,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-3085f004acf59cfd26b0bbed": {
+    "unit_id": "ufc-unit-3085f004acf59cfd26b0bbed",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "2bfe32ca-d527-4654-b3a2-de440c8b01b3",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/8/text",
+    "text_exact": "Limited commentary has been added in the chapters.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 204,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 204,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-31333681dfc3a51e1e8c1267": {
+    "unit_id": "ufc-unit-31333681dfc3a51e1e8c1267",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "f438bb62-438a-48ca-9ade-e0e2e59735aa",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/2/text",
+    "text_exact": "Deputy Assistant Secretary of Defense (Infrastructure, Modernization, and Resilience) Office of the Secretary of Defense ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-31d1f6a12c98f322cf04234a": {
+    "unit_id": "ufc-unit-31d1f6a12c98f322cf04234a",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7d21e88d-3219-4cba-99df-4f23433c1607",
+    "sentence_id": "a244489b-31ce-41e4-b50c-cf84b2dcc341",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/15/children/0/sentences/0/text",
+    "text_exact": "Structure or space (excluding vehicles) designed to protect personnel from detonations, fragmentation, projectiles, CBRNE (Chemical, Biological, Radiological, Nuclear, and Explosive) materials, or other enemy attack threats. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.15 Protective Structure."
+    ],
+    "paragraph_id": 148,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 148,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-31feaf4107f662837cd497df": {
+    "unit_id": "ufc-unit-31feaf4107f662837cd497df",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "fb6ec179-9a43-4bfe-8a27-1d0616400bb5",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/4/text",
+    "text_exact": "Plumbing and mechanical systems",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 20,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 20,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-32e21fc74d9605445cd4cb50": {
+    "unit_id": "ufc-unit-32e21fc74d9605445cd4cb50",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "6280b21e-5abe-40fc-9b5b-a479dd240b74",
+    "sentence_id": "54430c40-049f-425e-a0c8-716943ce2101",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/17/children/0/sentences/1/text",
+    "text_exact": "These various ways can be understood to occur across a continuum of conflict ranging from peace to war. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.17 Range of Military Operations."
+    ],
+    "paragraph_id": 152,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 152,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-35614d26d58b771adcccb439": {
+    "unit_id": "ufc-unit-35614d26d58b771adcccb439",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "260a5989-3144-4edf-aaee-3537a95c51aa",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/5/text",
+    "text_exact": "When the BO/AHJ has identified a design option is not specifically addressed in criteria.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 104,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 104,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-35b1073c1770e068f42046e2": {
+    "unit_id": "ufc-unit-35b1073c1770e068f42046e2",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "394772d8-a7f9-4c1a-8837-35ac1b01dd5e",
+    "sentence_id": "04778e77-2313-4a91-be90-d0eb17c3a168",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/2/text",
+    "text_exact": "One-for-one equipment replacements must meet the product requirements in paragraph Energy Efficient Products and the equipment efficiency requirements in the currently adopted version of ASHRAE 90.1 or IECC, whichever is applicable, referenced in paragraph Energy Standards in UFC 1-200-02. ",
+    "section_path": [
+      "CHAPTER 1 GENERAL DESIGN REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 23,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 23,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-374382b4d3db6f67f8b5917b": {
+    "unit_id": "ufc-unit-374382b4d3db6f67f8b5917b",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "bc05d07a-49a7-4e14-a1ab-bc0b5f4ec70a",
+    "sentence_id": "6d1fb5cf-f86d-40da-8896-34222e20d298",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/children/0/sentences/2/text",
+    "text_exact": "Extension of temporary construction occupancy or usage 180 days or beyond requires a written justification request and approval from the BO/AHJ.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": 29,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 29,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-37c31931a1b8bca5248e8089": {
+    "unit_id": "ufc-unit-37c31931a1b8bca5248e8089",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "1e7f0b10-3340-4cc9-af7b-d9b211ecbe21",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/4/text",
+    "text_exact": "PERMIT HOLDER.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 55,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 55,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-38feebcabee1dc4b0b093d73": {
+    "unit_id": "ufc-unit-38feebcabee1dc4b0b093d73",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "394772d8-a7f9-4c1a-8837-35ac1b01dd5e",
+    "sentence_id": "8c159044-d302-4ceb-8e0b-4e8b98077f05",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/0/text",
+    "text_exact": "This UFC follows the same applicability as UFC 1-200-01, paragraph 1-4, with no exceptions.",
+    "section_path": [
+      "CHAPTER 1 GENERAL DESIGN REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 22,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 22,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-3cdf200d6713fa28a478fe26": {
+    "unit_id": "ufc-unit-3cdf200d6713fa28a478fe26",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "8485d37c-71c4-4cbb-b0ac-75f8c37db8c4",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/3/text",
+    "text_exact": "Electrical systems",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 19,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 19,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-3e09ba569c9ed64f22493b7a": {
+    "unit_id": "ufc-unit-3e09ba569c9ed64f22493b7a",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "9f1983e0-e086-4b6f-af2e-84525a561725",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/7/text",
+    "text_exact": "Telecommunications networks",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 23,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 23,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-3f9b91b42d360bab0172a48c": {
+    "unit_id": "ufc-unit-3f9b91b42d360bab0172a48c",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "876f7c0a-a4b8-4ebe-b664-e3ce5612ae5c",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/1/text",
+    "text_exact": "APPROVED.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 49,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 49,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-40778a2bb45c51bad28f9fe9": {
+    "unit_id": "ufc-unit-40778a2bb45c51bad28f9fe9",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "bc05d07a-49a7-4e14-a1ab-bc0b5f4ec70a",
+    "sentence_id": "cc22aab5-eca3-434e-afa9-fa4425174cd1",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/children/0/sentences/0/text",
+    "text_exact": "Temporary construction includes structures erected for a period less than 180 days both inside and outside the United States its territories and possessions.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": 29,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 29,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4169f6ff9de795d9de1ae5e8": {
+    "unit_id": "ufc-unit-4169f6ff9de795d9de1ae5e8",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "9ddf881c-abbe-44ed-8c7f-200ef40854a2",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/2/text",
+    "text_exact": "For Government-owned facilities, the Contracting Officer assigned by the Government to administer the construction contract.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 54,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 54,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-43efb98a96b08b2792c3df36": {
+    "unit_id": "ufc-unit-43efb98a96b08b2792c3df36",
+    "designation": "UFC 3-220-01",
+    "version_id": "2352ff43-093e-47ba-a7ce-f5a07c47c7e1",
+    "node_id": "e258e781-7c9a-42da-a08c-d5534ca87796",
+    "sentence_id": "48a39358-109d-4307-8699-7e2206684f4a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/children/0/sentences/0/text",
+    "text_exact": "Replace \"Registered Design Professional\" with: A licensed engineer in the project area, knowledgeable in soil mechanics and experienced with local geotechnical conditions and construction practices. ",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 [IBC] CHAPTER 2 DEFINITIONS.",
+      "1-2.1 [IBC] Section 202 DEFINITIONS. [Replacement]"
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4455acf7367cbda884155fd8": {
+    "unit_id": "ufc-unit-4455acf7367cbda884155fd8",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "93784a18-67ac-435f-96cb-276913eccadc",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/12/text",
+    "text_exact": "OWNER OR OWNER’S REPRESENTATIVE.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 358,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 358,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-45226ebfeb308c60f2a6a3c1": {
+    "unit_id": "ufc-unit-45226ebfeb308c60f2a6a3c1",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "9596160f-f72c-49c4-a0d7-97922ad1ecdf",
+    "sentence_id": "9a1ad94f-66f1-4583-986f-1bf9bfea2b6e",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/3/text",
+    "text_exact": "Excludes sleeping spaces in 24-hour operations facilities (HQ, TOCs, JOCs, Air Terminals).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.2 Billeting."
+    ],
+    "paragraph_id": 115,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 115,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-462b44c359a952aa083e4b65": {
+    "unit_id": "ufc-unit-462b44c359a952aa083e4b65",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "90bf571b-77b6-4e50-938c-1cf4d7c6b3f7",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/2/text",
+    "text_exact": "The modifications are one of four actions, according to the following legend:",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 199,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 199,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-46d33c698f1c00458a23c7cd": {
+    "unit_id": "ufc-unit-46d33c698f1c00458a23c7cd",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "67b2adac-fcf5-4e7c-9977-8ffc91c4f58a",
+    "sentence_id": "35819105-a9c5-4d86-ae5f-ac99d5604e14",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/4/children/0/sentences/2/text",
+    "text_exact": "(UFC 4-010-01).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.4 Building."
+    ],
+    "paragraph_id": 119,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 119,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-473ad5562d1b6f88f1b96f38": {
+    "unit_id": "ufc-unit-473ad5562d1b6f88f1b96f38",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fb3c4148-9159-4a6c-9a52-a3bb917b1f82",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/heading",
+    "text_exact": "Temporary Construction.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-4a1404ac689f8ad2a2c53428": {
+    "unit_id": "ufc-unit-4a1404ac689f8ad2a2c53428",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "2d6136af-3420-4de5-84ba-5069c7750830",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/0/text",
+    "text_exact": "Consistent with the requirements of Public Law 111-84 Section 807 this UFC establishes the minimum design criteria for the following areas:",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 16,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 16,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4accaaadc81b24eedda27efb": {
+    "unit_id": "ufc-unit-4accaaadc81b24eedda27efb",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "c17f8fae-ac83-4f01-9bdc-531b8f3485ae",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/0/text",
+    "text_exact": "Initial construction level includes two subsets per Joint Publication (JP) 3-34 Joint Engineer Operations:",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 163,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 163,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4b221039d6d84e2a837608eb": {
+    "unit_id": "ufc-unit-4b221039d6d84e2a837608eb",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "a43a35ec-cfa6-4ff5-9629-5ab4f474d27d",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/13/heading",
+    "text_exact": "Living Unit",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.13 Living Unit"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-4b4f2ac78a633773d4ae36eb": {
+    "unit_id": "ufc-unit-4b4f2ac78a633773d4ae36eb",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "cc1ec6aa-deb6-4baf-a0ed-c51433254a5d",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/5/text",
+    "text_exact": "The IPC, revision year approved by UFC 1-200-01 and subsequent errata and amendments thereto, as modified by this UFC.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 50,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 50,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4bb375295084cb647ca911de": {
+    "unit_id": "ufc-unit-4bb375295084cb647ca911de",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "a87dd9e4-6cfb-4ffb-990a-c2ec25f8a26d",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/7/heading",
+    "text_exact": "Container or Containerized Living Unit (CLU)",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.7 Container or Containerized Living Unit (CLU)"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-4c32300a3897aaa1efc39fdf": {
+    "unit_id": "ufc-unit-4c32300a3897aaa1efc39fdf",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "3a61aae6-cae1-4efc-81b6-f1dd502dfde9",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/9/text",
+    "text_exact": "https://www.dla.mil/Troop-Support/Clothing-and-Textiles/Tents/",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1176,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1176,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4e4a42019182b1e48f35a092": {
+    "unit_id": "ufc-unit-4e4a42019182b1e48f35a092",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "b3d53bb8-5fbf-4d4e-93ad-14c99778ad72",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/1/text",
+    "text_exact": "Replace the following definitions published in Chapter 2 with the following definitions:",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 352,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 352,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4eaa1753eaf75559870178c4": {
+    "unit_id": "ufc-unit-4eaa1753eaf75559870178c4",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "7d63ebac-050e-432c-a6e3-e91bd8f5c326",
+    "sentence_id": "97854040-3e21-4bca-9080-9667ae5bb2d7",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/2/text",
+    "text_exact": "The terms “Owner” and “Owner’s Authorized Agent” are synonymous with “Component Technical Representative” for the DoD.  ",
+    "section_path": [
+      "CHAPTER 3 MODIFICATIONS TO IEBC",
+      "3-1 [IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION."
+    ],
+    "paragraph_id": 400,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 400,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-4f2a8db64a6abda03f4ca27c": {
+    "unit_id": "ufc-unit-4f2a8db64a6abda03f4ca27c",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "ee20279b-5cc2-4953-808a-e5186df005e5",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/19/heading",
+    "text_exact": "Waiver.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.19 Waiver."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-4f6e5dfc71617e41c8da087b": {
+    "unit_id": "ufc-unit-4f6e5dfc71617e41c8da087b",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "e1272c8a-27b5-4259-867e-ec29d13dd45a",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/6/text",
+    "text_exact": "Are contained within the Joint Standardization Board – Expeditionary Shelters & Basing Equipment (JSB-ESBE) Catalog",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 169,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 169,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-51fadf5c957df7280a8d004a": {
+    "unit_id": "ufc-unit-51fadf5c957df7280a8d004a",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "6d033ef3-bf5c-4726-afc8-17ba2621cbf7",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/3/children/2/children/0/heading",
+    "text_exact": "Permanent Construction.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.1 Permanent Construction."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-55c411cb38cb6c63d0711066": {
+    "unit_id": "ufc-unit-55c411cb38cb6c63d0711066",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "780cafa6-ffba-429c-b701-9352f33a43bb",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/3/text",
+    "text_exact": "The following construction activities must apply UFC 1-200-01 to the maximum extent practicable:",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 17,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 17,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-5674fad86f87e82a8f791c0f": {
+    "unit_id": "ufc-unit-5674fad86f87e82a8f791c0f",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "82e403c5-00b3-4a3e-aa20-40f66e0f0283",
+    "sentence_id": "0cbe7e8f-2ae7-409d-9c43-dade780dd098",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/1/children/0/sentences/2/text",
+    "text_exact": "Corrosion is defined in 10 USC §2228(f) (1) as, “The deterioration of a material or its properties due to a reaction of that material with its chemical environment.” ",
+    "section_path": [
+      "CHAPTER 4 CORROSION PREVENTION AND CONTROL",
+      "4-2 DEFINITION OF CORROSION."
+    ],
+    "paragraph_id": 599,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 599,
+      "paragraphType": "Default"
+    }
+  },
+  "ufc-unit-56ca1f942dc16a1a080d8caa": {
+    "unit_id": "ufc-unit-56ca1f942dc16a1a080d8caa",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7ec30ccc-4173-467d-bf85-3a9dfa0bddca",
+    "sentence_id": "cba20c6e-d076-467a-8693-b782c0556ab4",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/5/children/0/sentences/1/text",
+    "text_exact": "Forms multiple profiles of various lengths for loadbearing and non-loadbearing vertical elements, roof trusses, and floor joists. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.5 Cold Formed Metal Framing System"
+    ],
+    "paragraph_id": 121,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 121,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-57b6882d3c4cc67a4864a301": {
+    "unit_id": "ufc-unit-57b6882d3c4cc67a4864a301",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "595c9779-f112-41e5-bd01-3f1436f60eff",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/5/text",
+    "text_exact": "OR",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 168,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 168,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-57f61b6a61139a693b191127": {
+    "unit_id": "ufc-unit-57f61b6a61139a693b191127",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b081e008-4ae8-4486-a4c5-8111236d8c67",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/18/heading",
+    "text_exact": "Structure Group",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.18 Structure Group"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-5916b7d4724d986ae94718c7": {
+    "unit_id": "ufc-unit-5916b7d4724d986ae94718c7",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "4e87e95a-2ca5-4054-837c-0dad03fe4943",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/6/heading",
+    "text_exact": "Container or Containerized Housing Unit (CHU)",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.6 Container or Containerized Housing Unit (CHU)"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-5b06f8042ef67b1cfd7a918b": {
+    "unit_id": "ufc-unit-5b06f8042ef67b1cfd7a918b",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "acefeaf1-29a4-4a26-87bf-34e372dea458",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/4/text",
+    "text_exact": "When the BO/AHJ has identified an approved equivalent standard that satisfies the intent of criteria (see CHAPTER 2, paragraph 2-1.4 Section 104.11), such as a material or component meeting a host-nation standard in a foreign location.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 103,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 103,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-5c11385578bad90ca49e1c97": {
+    "unit_id": "ufc-unit-5c11385578bad90ca49e1c97",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "fff31f0d-f53d-44a3-8382-f9c3352c18f7",
+    "sentence_id": "bcf54f39-1436-42ca-9d36-b51c099c92ed",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/1/text",
+    "text_exact": "See JP 3-0 and JP 3-34 for complete definitions. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 APPLICABILITY."
+    ],
+    "paragraph_id": 42,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 42,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-5e36ab01feea7c8552964e58": {
+    "unit_id": "ufc-unit-5e36ab01feea7c8552964e58",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "270b2464-d1a1-4c07-936f-326f1df3948d",
+    "sentence_id": "ccd88486-fe71-426b-adac-9e8f175ee0c2",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/1/children/0/sentences/0/text",
+    "text_exact": "These terms refer to entities defined in UFC 1-200-01.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.1 Authority Having Jurisdiction/Building Official/Code Official."
+    ],
+    "paragraph_id": 112,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 112,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-5f6a530dcf857aa98f2e3970": {
+    "unit_id": "ufc-unit-5f6a530dcf857aa98f2e3970",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "58ddd8c8-bec5-4974-8d99-6a8e3747e358",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/6/text",
+    "text_exact": "[Supplement] – Add narrative shown as a supplement to the narrative shown in the referenced section of IBC or IEBC.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 203,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 203,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-611dfc896865ad2e712e3996": {
+    "unit_id": "ufc-unit-611dfc896865ad2e712e3996",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "ae0dd5f0-1b4d-48e6-8067-0b771fa13c25",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/3/heading",
+    "text_exact": "Base Operating Support - Integrator (BOS-I).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.3 Base Operating Support - Integrator (BOS-I)."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-6163ce95eafaefcfb331edd3": {
+    "unit_id": "ufc-unit-6163ce95eafaefcfb331edd3",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "eaadb8d3-52fb-4c96-905b-f045ebaf8599",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/5/text",
+    "text_exact": "Military Operations in Urban Terrain (MOUT) facilities and similar training structures, such as mock villages and shoot houses",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 19,
+    "formatting": {
+      "isBullet": true,
+      "listType": "bullet",
+      "alignment": "left",
+      "paragraphId": 19,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-62ea6277bd1848dd31e2b4bf": {
+    "unit_id": "ufc-unit-62ea6277bd1848dd31e2b4bf",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b506c4d2-5216-4a87-a4a9-2752958f42a7",
+    "sentence_id": "99eb5a8f-000f-4962-98cc-b2a3f11aa77a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/11/children/2/children/0/sentences/0/text",
+    "text_exact": "Buildings and facilities designed for five years or less life expectancy (JP 3-34).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.3 Temporary construction level."
+    ],
+    "paragraph_id": 138,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 138,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-6442b7690081dc5962359f0e": {
+    "unit_id": "ufc-unit-6442b7690081dc5962359f0e",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "7d63ebac-050e-432c-a6e3-e91bd8f5c326",
+    "sentence_id": "dff0b385-87bd-4102-bd01-3e900fe65d77",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/1/text",
+    "text_exact": "The terms “Code Official”, “Building Official” (BO), and “Authority Having Jurisdiction” (AHJ) used in the UFC or FC criteria, reference codes, and standards are synonymous.  ",
+    "section_path": [
+      "CHAPTER 3 MODIFICATIONS TO IEBC",
+      "3-1 [IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION."
+    ],
+    "paragraph_id": 400,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 400,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-64a9a8f94ebe39f18c4009ab": {
+    "unit_id": "ufc-unit-64a9a8f94ebe39f18c4009ab",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "f0c53077-ce59-4724-86cd-d7c3c8419d8d",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/7/text",
+    "text_exact": "Section 202 – General Definitions [Additions]",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 355,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 355,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-659cdd414c81293cdadf1037": {
+    "unit_id": "ufc-unit-659cdd414c81293cdadf1037",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "c49c5e89-5cb3-4360-9804-0ab75cc2b4bf",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/3/text",
+    "text_exact": "This authority would not apply where in conflict with requirements for installation-wide networks, architectural standards, or similar standards established by the installation or Component with jurisdiction of the installation.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 102,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 102,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-65c4bd9b7df69586c08f44a8": {
+    "unit_id": "ufc-unit-65c4bd9b7df69586c08f44a8",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "67b2adac-fcf5-4e7c-9977-8ffc91c4f58a",
+    "sentence_id": "d3008707-01b4-447c-a1be-7220609fcb09",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/4/children/0/sentences/0/text",
+    "text_exact": "A structure enclosed by walls and a roof, constructed to provide support or shelter for an intended occupancy. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.4 Building."
+    ],
+    "paragraph_id": 119,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 119,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-66a435d8caf7c68ffa538332": {
+    "unit_id": "ufc-unit-66a435d8caf7c68ffa538332",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "aa06a607-f4fd-4412-a324-534178f5ef85",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/10/text",
+    "text_exact": "Dedicated equipment used to condition all the outdoor air brought into a building (or area) for ventilation, separate from HVAC systems that handle space heating and cooling loads.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 357,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 357,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-6c3daf67b3fd971e61a07ad0": {
+    "unit_id": "ufc-unit-6c3daf67b3fd971e61a07ad0",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b8fb36b6-4940-45b4-b2cc-01ab9259a6b7",
+    "sentence_id": "372e1912-5570-4216-bdbd-e302bea58092",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/0/children/0/sentences/2/text",
+    "text_exact": "See JP 3-34.",
+    "section_path": [
+      "CHAPTER 4 SEMI-PERMANENT FACILITY CONSTRUCTION LEVEL",
+      "4-1 APPLICABILITY."
+    ],
+    "paragraph_id": 721,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 721,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-6d34a9b30f88b0fdab50599b": {
+    "unit_id": "ufc-unit-6d34a9b30f88b0fdab50599b",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "0d6ca3f5-bd8f-4370-a41a-25c25f80cae7",
+    "sentence_id": "91805e3e-c42d-4ec2-b1e8-1a3fdb56f9a2",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/9/children/0/sentences/0/text",
+    "text_exact": "Authority to deviate from a UFC requirement indefinitely.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.9 Exemption."
+    ],
+    "paragraph_id": 129,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 129,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-72253f5021451bde0a4a3dd7": {
+    "unit_id": "ufc-unit-72253f5021451bde0a4a3dd7",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "9fd58352-5e1e-4b36-8030-d1dd4d0ce60d",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/1/text",
+    "text_exact": "OWNER OR OWNER’S REPRESENTATIVE.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 54,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 54,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-72ae0f5088e03e74b8bd496e": {
+    "unit_id": "ufc-unit-72ae0f5088e03e74b8bd496e",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "20b8949d-08c9-4704-bec8-a62b53bab5a5",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/0/text",
+    "text_exact": "Add the following definitions to Chapter 2:",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 53,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 53,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-751b8d61a5808a63c70a25d4": {
+    "unit_id": "ufc-unit-751b8d61a5808a63c70a25d4",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "a65fb8ef-ebef-4b93-803e-53c7a32ec7bb",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/11/children/0/heading",
+    "text_exact": "Organic construction level.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.1 Organic construction level."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-7521b4acd8a6015554f8c347": {
+    "unit_id": "ufc-unit-7521b4acd8a6015554f8c347",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "fff31f0d-f53d-44a3-8382-f9c3352c18f7",
+    "sentence_id": "5d8057d7-5449-49d4-bb1e-40163c42842a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/0/text",
+    "text_exact": "This UFC applies to all DoD components planning, designing, constructing, or renovating non-permanent facilities used by US military and DoD civilian personnel supporting military operations with written Operation Orders (OPORDS), including kinetic operations, disaster recovery, humanitarian assistance, and defense support to civil authorities. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 APPLICABILITY."
+    ],
+    "paragraph_id": 42,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 42,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-761361019dbb585d10182319": {
+    "unit_id": "ufc-unit-761361019dbb585d10182319",
+    "designation": "UFC 3-301-01",
+    "version_id": "2a853bc9-50ee-4414-9ffc-f592c9b7ad3e",
+    "node_id": "c63b764d-7079-4d5e-918c-d554278e50b5",
+    "sentence_id": "0376cec5-9e7d-485e-af37-91001d8e8dcf",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/children/0/children/0/sentences/1/text",
+    "text_exact": "The SER is responsible for the design of the structural system , including final approval of delegated designs.",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 IBC CHAPTER 2 – DEFINITIONS.",
+      "1-2.1 Section 202 – DEFINITIONS.",
+      "1-2.1.1 STRUCTURAL ENGINEER OF RECORD (SER) [Addition]"
+    ],
+    "paragraph_id": 25,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 25,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-79c08b163e05024927dfcb0d": {
+    "unit_id": "ufc-unit-79c08b163e05024927dfcb0d",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "260ba480-3f70-4bca-ac5e-daa0c4cd3bbf",
+    "sentence_id": "4edf1f4b-8261-45d5-abab-3cf870cb8e59",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/1/children/0/sentences/3/text",
+    "text_exact": "This authority does not include approval of waivers or exemptions to criteria.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.2 Building Official / Authority Having Jurisdiction (BO/AHJ)."
+    ],
+    "paragraph_id": 99,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 99,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-7c3e5d6c2f909170eec155cf": {
+    "unit_id": "ufc-unit-7c3e5d6c2f909170eec155cf",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "7790a78b-3d1b-483d-9673-da2410f61072",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/4/text",
+    "text_exact": "Chief Engineer and Assistant Commander, Planning, Design and Construction, Naval Facilities Engineering Systems Command",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 12,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 12,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-7f0316683f72039b991a77ba": {
+    "unit_id": "ufc-unit-7f0316683f72039b991a77ba",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "f629be95-d88b-4a96-814f-f8e6b168c8e1",
+    "sentence_id": "7bf80cc3-d0c3-4536-8069-9ef28dcbacb0",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/0/text",
+    "text_exact": "The temporary facility construction level applies to structures with an expected use not to exceed 60 months (5 years) and a design life up to 60 months (5 years).",
+    "section_path": [
+      "CHAPTER 3 TEMPORARY FACILITY CONSTRUCTION LEVEL",
+      "3-1 APPLICABILITY."
+    ],
+    "paragraph_id": 250,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 250,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-7f77105d89c36785465aaefe": {
+    "unit_id": "ufc-unit-7f77105d89c36785465aaefe",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "82e403c5-00b3-4a3e-aa20-40f66e0f0283",
+    "sentence_id": "8dad769b-b059-48ac-af22-50a8ad9c2b88",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/1/children/0/sentences/0/text",
+    "text_exact": "10 U.S. Code § 2228 establishes the Office of Corrosion Policy and Oversight (OCPO) within the DoD, mandating a comprehensive strategy for preventing and mitigating corrosion on all military equipment and infrastructure.  ",
+    "section_path": [
+      "CHAPTER 4 CORROSION PREVENTION AND CONTROL",
+      "4-2 DEFINITION OF CORROSION."
+    ],
+    "paragraph_id": 599,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 599,
+      "paragraphType": "Default"
+    }
+  },
+  "ufc-unit-82ca6af08fee7227ddc6a034": {
+    "unit_id": "ufc-unit-82ca6af08fee7227ddc6a034",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "28997fd0-2815-470b-9759-067baafa1561",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/14/text",
+    "text_exact": "For leased facilities, the lessor of the facility.",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 358,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 358,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-82df9642972b8c0969e18433": {
+    "unit_id": "ufc-unit-82df9642972b8c0969e18433",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "5321bb51-2b9d-4d36-971e-d9defc5f950c",
+    "sentence_id": "07de86e1-e3ec-4a7c-9d9d-8b5d9d4379cb",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/12/children/0/sentences/0/text",
+    "text_exact": "A facility with spaces where personnel sleep.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.12 Living Quarters"
+    ],
+    "paragraph_id": 142,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 142,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-83e2395529a612537d23dab8": {
+    "unit_id": "ufc-unit-83e2395529a612537d23dab8",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "394772d8-a7f9-4c1a-8837-35ac1b01dd5e",
+    "sentence_id": "f15e3301-c97c-48ab-99d8-9daed6003117",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/3/text",
+    "text_exact": "Do not execute additions, alterations, or repairs that cause an existing HVAC system to become unsafe, hazardous, or overloaded or result in new maintenance or control deficiencies in the existing systems.",
+    "section_path": [
+      "CHAPTER 1 GENERAL DESIGN REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 23,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 23,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-83fb6f78a9ae19fd2b8e8419": {
+    "unit_id": "ufc-unit-83fb6f78a9ae19fd2b8e8419",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "7d63ebac-050e-432c-a6e3-e91bd8f5c326",
+    "sentence_id": "09b603aa-b56b-4f95-bb98-4cb77972da47",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/0/text",
+    "text_exact": "Use IEBC Chapter 1 except as modified below.  ",
+    "section_path": [
+      "CHAPTER 3 MODIFICATIONS TO IEBC",
+      "3-1 [IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION."
+    ],
+    "paragraph_id": 400,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 400,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-8519e8400612b8e94e4abd37": {
+    "unit_id": "ufc-unit-8519e8400612b8e94e4abd37",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "b9d1fe96-50ec-446e-be4a-4fd74510e816",
+    "sentence_id": "c0d6645e-002a-4a33-a399-9ab41413daf1",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/0/children/0/sentences/1/text",
+    "text_exact": "Buildings and facilities are considered permanent construction unless they meet other definitions herein.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.1 Permanent Construction."
+    ],
+    "paragraph_id": 27,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 27,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-85f8c642b7f09e645284b873": {
+    "unit_id": "ufc-unit-85f8c642b7f09e645284b873",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "260ba480-3f70-4bca-ac5e-daa0c4cd3bbf",
+    "sentence_id": "87b68bea-e523-45e5-a4df-0f160a154995",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/1/children/0/sentences/1/text",
+    "text_exact": "The BO/AHJ represents the DoD design and construction agent responsible for accomplishing the project, and exercises authority to interpret and apply criteria to work in progress, evaluate compliance with criteria, and accept finished work that is in compliance.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.2 Building Official / Authority Having Jurisdiction (BO/AHJ)."
+    ],
+    "paragraph_id": 99,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 99,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-862a9fd24aa9adaf3c4303f2": {
+    "unit_id": "ufc-unit-862a9fd24aa9adaf3c4303f2",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "25f89e91-73d5-476b-8277-ae12f17fe0de",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/5/text",
+    "text_exact": "Water treatment, storage and distribution",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 21,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 21,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-862cd0556e579c5b72b18bbc": {
+    "unit_id": "ufc-unit-862cd0556e579c5b72b18bbc",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "361b28e4-0df3-451d-b1a6-fa465dda2c91",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/2/heading",
+    "text_exact": "Component Technical Representative (CTR).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-872564ca91ca7fd32ae6b9d2": {
+    "unit_id": "ufc-unit-872564ca91ca7fd32ae6b9d2",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "192896dd-2e03-42c1-9c54-f0bd99fbdf47",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/1/text",
+    "text_exact": "In accordance with the authority in MIL-STD-3007, UFC, UFS, and UFM are prepared by DoD committees called Discipline Working Group (DWG), and are published by the Military Services under the authority of the Engineering Senior Executive Panel (ESEP), comprised of the following:",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 9,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 9,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-876e8b22c06bbdb08a1cf6c6": {
+    "unit_id": "ufc-unit-876e8b22c06bbdb08a1cf6c6",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "9596160f-f72c-49c4-a0d7-97922ad1ecdf",
+    "sentence_id": "91fa27ce-f693-48be-868a-4f0aa0f2e566",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/0/text",
+    "text_exact": "Any building or portion of a building, regardless of population density, in which 11 or more unaccompanied DoD personnel are routinely housed, including temporary lodging facilities and military family housing permanently converted to unaccompanied housing. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.2 Billeting."
+    ],
+    "paragraph_id": 114,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 114,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-89734b64f18bbf8ce96bca87": {
+    "unit_id": "ufc-unit-89734b64f18bbf8ce96bca87",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "b9d1fe96-50ec-446e-be4a-4fd74510e816",
+    "sentence_id": "86a685db-81d0-4c89-846c-642ed931c8c3",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/0/children/0/sentences/2/text",
+    "text_exact": "Permanent construction is intended to address a level of quality and durability to achieve a life expectancy of more than 25 years.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.1 Permanent Construction."
+    ],
+    "paragraph_id": 27,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 27,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-8a51b18f026c904605e95f80": {
+    "unit_id": "ufc-unit-8a51b18f026c904605e95f80",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "b9d1fe96-50ec-446e-be4a-4fd74510e816",
+    "sentence_id": "ef0e5890-cb9f-41b1-b904-433236c82cbc",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/0/children/0/sentences/0/text",
+    "text_exact": "Permanent facilities must follow Chapter 2 of this UFC, which contains modifications to the International Building Code® (IBC).  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.1 Permanent Construction."
+    ],
+    "paragraph_id": 27,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 27,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-8a634f3b6ef02926141b0891": {
+    "unit_id": "ufc-unit-8a634f3b6ef02926141b0891",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "339b62d3-cdbc-404c-95ed-5b50bdde48cd",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/11/text",
+    "text_exact": "The air provided from a DOAS is 100% outdoor air.",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 357,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 357,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-8ab30e3f3a92620079c4b48f": {
+    "unit_id": "ufc-unit-8ab30e3f3a92620079c4b48f",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7391949c-6828-447f-b40e-0694b919eb92",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/16/heading",
+    "text_exact": "Qualified Personnel.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.16 Qualified Personnel."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-8e4f9dc1194906ddfeedebfa": {
+    "unit_id": "ufc-unit-8e4f9dc1194906ddfeedebfa",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "82705f65-7573-4e15-bb09-ad92e14a23fc",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/0/text",
+    "text_exact": "This UFC must be used by all the DoD Components for planning, design, and construction (restoration and modernization) of DoD owned and occupied facilities, regardless of funding source. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 15,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 15,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-912b9bc73562f9f52f7121de": {
+    "unit_id": "ufc-unit-912b9bc73562f9f52f7121de",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "1d3b0f41-2d56-48e8-826e-8453f234ea9b",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/15/heading",
+    "text_exact": "Protective Structure.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.15 Protective Structure."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-914aaa7c1f99cdf2b51b7a51": {
+    "unit_id": "ufc-unit-914aaa7c1f99cdf2b51b7a51",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "bb255014-d49f-40cf-8f9e-de97f425f135",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/13/text",
+    "text_exact": "This chapter addresses life safety and health requirements when establishing base operations.",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 174,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 174,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-92a7856209760de85ac65718": {
+    "unit_id": "ufc-unit-92a7856209760de85ac65718",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "85d3f598-4c53-4632-a907-c52f0a65968a",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/17/heading",
+    "text_exact": "Range of Military Operations.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.17 Range of Military Operations."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-95c21b6b4802fcb7d8a7a309": {
+    "unit_id": "ufc-unit-95c21b6b4802fcb7d8a7a309",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "6f1a5238-464f-4741-a1ce-fdcc24df9b0f",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/2/text",
+    "text_exact": "Initial – Structures with an expected use not to exceed 24 months (2 years)",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 165,
+    "formatting": {
+      "isBullet": true,
+      "listType": "bullet",
+      "alignment": "left",
+      "paragraphId": 165,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-965c57062d0e1b778eb9d73d": {
+    "unit_id": "ufc-unit-965c57062d0e1b778eb9d73d",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "16d8bc1e-6d86-45e3-a3b9-560fe3f73430",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/2/text",
+    "text_exact": "Acceptable to the code official or other authority having jurisdiction.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 49,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 49,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-9669af2c207a85bb036b1117": {
+    "unit_id": "ufc-unit-9669af2c207a85bb036b1117",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "9596160f-f72c-49c4-a0d7-97922ad1ecdf",
+    "sentence_id": "f13298e3-9724-418a-a31f-4b2bd9e3577d",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/2/text",
+    "text_exact": "(UFC 4-010-01).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.2 Billeting."
+    ],
+    "paragraph_id": 114,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 114,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-96aaa2deeb18381f3f83ba09": {
+    "unit_id": "ufc-unit-96aaa2deeb18381f3f83ba09",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "eb109e7b-5d41-44a3-8fd4-81d164066754",
+    "sentence_id": "5b37d9d9-64ae-4742-b886-fd1aafd5c43c",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/14/children/0/sentences/0/text",
+    "text_exact": "Facility category based on usage.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.14 Occupancy Type."
+    ],
+    "paragraph_id": 146,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 146,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-98c88bc16ee4bfcecf7e8a8f": {
+    "unit_id": "ufc-unit-98c88bc16ee4bfcecf7e8a8f",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "122532e3-42c0-405c-ac7e-55259f362378",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/10/heading",
+    "text_exact": "Facility.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.10 Facility."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-992550f8fe1d0fb59ad7a3f1": {
+    "unit_id": "ufc-unit-992550f8fe1d0fb59ad7a3f1",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "e80b9634-4683-4457-8ecb-2e6e7f43e5e7",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/0/heading",
+    "text_exact": "Engineering Senior Executive Panel (ESEP)",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.1 Engineering Senior Executive Panel (ESEP)"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-9c4d7688d1328de71d4691b8": {
+    "unit_id": "ufc-unit-9c4d7688d1328de71d4691b8",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "4659675a-7c1c-4cc1-85fe-01bfa6e4d251",
+    "sentence_id": "a2a6425b-3057-4b84-bca7-965883607f96",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/4/children/0/sentences/0/text",
+    "text_exact": "A waiver provides authority to deviate from a criteria requirement for a specific period, typically 12 months.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.4 Waivers and Exemptions."
+    ],
+    "paragraph_id": 51,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 51,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-9eb68ab5db59732fb4c75ee0": {
+    "unit_id": "ufc-unit-9eb68ab5db59732fb4c75ee0",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "037e09ed-2d72-4f3c-9e73-70b15c7ed3d5",
+    "sentence_id": "819e3038-bd64-4cc9-8261-9b3424c319b0",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/7/children/0/sentences/1/text",
+    "text_exact": "Do not use or configure beyond the construction level for which specifically designed (for example, do not stack more than two high without progressive collapse analysis).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.7 Container or Containerized Living Unit (CLU)"
+    ],
+    "paragraph_id": 125,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 125,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-9f5ad4dd84668c261f5f663d": {
+    "unit_id": "ufc-unit-9f5ad4dd84668c261f5f663d",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "355c6d0a-4512-4d46-83af-e8c782b6ec5f",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/5/text",
+    "text_exact": "The contractor accomplishing the project.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 55,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 55,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a14110d16d08bf47a662e49a": {
+    "unit_id": "ufc-unit-a14110d16d08bf47a662e49a",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "1a10527c-ab02-4f25-85e2-75b55645df8a",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/4/text",
+    "text_exact": "CODE.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 50,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 50,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a1664de64bd99c20d977247e": {
+    "unit_id": "ufc-unit-a1664de64bd99c20d977247e",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "ed6c882c-1452-4c2c-86e7-f5dbddcbe531",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/6/text",
+    "text_exact": "The Code Official is the authority having jurisdiction as described in UFC 1-200-01.",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 354,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 354,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a1efa5c43d5eb2e9b02f8b52": {
+    "unit_id": "ufc-unit-a1efa5c43d5eb2e9b02f8b52",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "16e79b59-5f46-4814-a253-f7eb0cf18635",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/1/text",
+    "text_exact": "CTR are established by each service to handle technical reviews by subject area to provide service input to projects in the following cases:",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 101,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 101,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a8940641da3bc6aff3c7e29e": {
+    "unit_id": "ufc-unit-a8940641da3bc6aff3c7e29e",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "a195b6f0-1aa3-43e4-96dc-70c73a21e2ab",
+    "sentence_id": "aa69e272-f101-42a5-9279-5978a20b0474",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/0/text",
+    "text_exact": "The CTR represents the project sponsor, customer or stake holder and exercises authority to establish project requirements on behalf of the user or facility owner.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.3 Component Technical Representative (CTR)."
+    ],
+    "paragraph_id": 101,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 101,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a9dac70afbfad8136a7b425d": {
+    "unit_id": "ufc-unit-a9dac70afbfad8136a7b425d",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "bda16c68-533c-430b-865f-49917785e164",
+    "sentence_id": "09d62194-e43b-4bea-a103-2164930be13b",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/16/children/0/sentences/0/text",
+    "text_exact": "A professionally registered technical expert.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.16 Qualified Personnel."
+    ],
+    "paragraph_id": 150,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 150,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-a9f2e98a464b92366c4e63b9": {
+    "unit_id": "ufc-unit-a9f2e98a464b92366c4e63b9",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "d14c95df-7228-4411-b5f1-c2c13e6a01c0",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/2/text",
+    "text_exact": "Structural integrity",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 18,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 18,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-aa7ee6db8cca2e47b34b3f29": {
+    "unit_id": "ufc-unit-aa7ee6db8cca2e47b34b3f29",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "3e05a725-ee8c-4274-a765-e4a9b3929f37",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/12/heading",
+    "text_exact": "Living Quarters",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.12 Living Quarters"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-ad4d4e4a4f6facddb0318aaa": {
+    "unit_id": "ufc-unit-ad4d4e4a4f6facddb0318aaa",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b5e12937-11c1-4634-a97a-604ae5e317c9",
+    "sentence_id": "9dbbeba1-7284-4903-b456-cb7922431414",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/13/children/0/sentences/0/text",
+    "text_exact": "A space within a facility where personnel sleep.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.13 Living Unit"
+    ],
+    "paragraph_id": 144,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 144,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ae36c28af86ca189b597782e": {
+    "unit_id": "ufc-unit-ae36c28af86ca189b597782e",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "4659675a-7c1c-4cc1-85fe-01bfa6e4d251",
+    "sentence_id": "87e99f3d-d46d-4608-add5-0bbcc5529988",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/4/children/0/sentences/2/text",
+    "text_exact": "Refer to MIL-STD-3007 for the waiver and exemption request and approval process.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.4 Waivers and Exemptions."
+    ],
+    "paragraph_id": 51,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 51,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ae497f0310ed6e8b4a12f1a7": {
+    "unit_id": "ufc-unit-ae497f0310ed6e8b4a12f1a7",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7ec30ccc-4173-467d-bf85-3a9dfa0bddca",
+    "sentence_id": "e77500af-084b-407f-a209-136937bace50",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/5/children/0/sentences/3/text",
+    "text_exact": "Also known as Cold Formed Steel Mobile Factory (CFSMF).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.5 Cold Formed Metal Framing System"
+    ],
+    "paragraph_id": 121,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 121,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b0310470df07ece8acfa5e77": {
+    "unit_id": "ufc-unit-b0310470df07ece8acfa5e77",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "fce8a6ba-40a5-4105-b610-e950992ae034",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/17/text",
+    "text_exact": "REAL PROPERTY OWNER. ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 360,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 360,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b127177ed5f19d909f4c4234": {
+    "unit_id": "ufc-unit-b127177ed5f19d909f4c4234",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "1b0457d7-d676-4636-a1c3-79b0f09ab8cc",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/1/text",
+    "text_exact": "Fire protection",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 17,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 17,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b19b5e998706a75703a0b3ae": {
+    "unit_id": "ufc-unit-b19b5e998706a75703a0b3ae",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "99cfdf79-b61e-4749-b2f2-ddf11f2b441f",
+    "sentence_id": "d5d0873a-f382-4098-85dd-2772e3789f28",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/3/children/0/sentences/0/text",
+    "text_exact": "Responsible for planning and synchronizing resources and contracting to facilitate unity of effort and coordinate sustainment functions at contingency locations (JP 4-0).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.3 Base Operating Support - Integrator (BOS-I)."
+    ],
+    "paragraph_id": 117,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 117,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b3f21477931e3dc18218131a": {
+    "unit_id": "ufc-unit-b3f21477931e3dc18218131a",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "c6061c36-8940-4168-a644-b2ecc15fb6c0",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/4/heading",
+    "text_exact": "Building.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.4 Building."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-b6325b6da130628254c4094d": {
+    "unit_id": "ufc-unit-b6325b6da130628254c4094d",
+    "designation": "UFC 3-301-01",
+    "version_id": "2a853bc9-50ee-4414-9ffc-f592c9b7ad3e",
+    "node_id": "551b1761-d51e-4d78-88e7-c641aef1d241",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/2/children/0/children/0/heading",
+    "text_exact": "STRUCTURAL ENGINEER OF RECORD (SER) [Addition]",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 IBC CHAPTER 2 – DEFINITIONS.",
+      "1-2.1 Section 202 – DEFINITIONS.",
+      "1-2.1.1 STRUCTURAL ENGINEER OF RECORD (SER) [Addition]"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-b6633fd25dfcdf328280eb4d": {
+    "unit_id": "ufc-unit-b6633fd25dfcdf328280eb4d",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "1498689e-c42f-4cb9-af25-9a132ddc194f",
+    "sentence_id": "31ec527c-fb19-4ba3-8152-059e4c437880",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/0/children/0/sentences/0/text",
+    "text_exact": "Replace the following definitions published in Chapter 2 with the following definitions:",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.1 Section 202 – General Definitions [Replacement]."
+    ],
+    "paragraph_id": 48,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 48,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b677ea8d686a6eed7cbc04dc": {
+    "unit_id": "ufc-unit-b677ea8d686a6eed7cbc04dc",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "108afea9-a580-4c64-8613-c333eb88df87",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/13/text",
+    "text_exact": "For Government-owned facilities, the Contracting Officer assigned by the Government to administer the construction contract.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 358,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 358,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-b786b66bf527a162189e0a7a": {
+    "unit_id": "ufc-unit-b786b66bf527a162189e0a7a",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "a4bf5e52-9775-4f37-a725-3bf799b7944c",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/7/text",
+    "text_exact": "The section modifiers are identified at the end of the paragraph title.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 204,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 204,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ba2ca7323ea3d832d7e23af1": {
+    "unit_id": "ufc-unit-ba2ca7323ea3d832d7e23af1",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "8227e0e5-8d4c-48c3-bd92-c41176e29ac5",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/7/text",
+    "text_exact": "The real property owner is the organization that accepts the property after construction by signing the DD Form 1354 Transfer and Acceptance of DoD Real Property.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 56,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 56,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-bbb8c6e9a278a58381a645d2": {
+    "unit_id": "ufc-unit-bbb8c6e9a278a58381a645d2",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "c9542e4e-8311-4cfd-b3b3-42983021d215",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/9/heading",
+    "text_exact": "Exemption.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.9 Exemption."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-c0f8076ad1ec520e1f08cd30": {
+    "unit_id": "ufc-unit-c0f8076ad1ec520e1f08cd30",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "2edd7f24-27fd-4c50-a0d5-47e1f39d9a17",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/5/text",
+    "text_exact": "CODE OFFICIAL.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 354,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 354,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c4ed74e146ce62534faa8aab": {
+    "unit_id": "ufc-unit-c4ed74e146ce62534faa8aab",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "ae8e7a2f-c273-439c-8a57-d7d96d4fd28e",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/11/text",
+    "text_exact": "Have been approved for use by the JOINT COMMITTEE ON TACTICAL SHELTERS (JOCOTAS)",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 173,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 173,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c56c810bad354bd9bae4e7cd": {
+    "unit_id": "ufc-unit-c56c810bad354bd9bae4e7cd",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "d9104925-11fb-4d3f-9542-c24171421d0a",
+    "sentence_id": "ce2d16f5-717f-4a49-bd3b-7584d6ddc44a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/0/children/0/sentences/0/text",
+    "text_exact": "This UFC provides requirements and guidance in the design of heating, ventilating, and air-conditioning (HVAC) systems, together with the criteria for selecting HVAC materials and equipment.",
+    "section_path": [
+      "CHAPTER 1 GENERAL DESIGN REQUIREMENTS",
+      "1-1 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 20,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 20,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c73a433642b03dab87e3eeac": {
+    "unit_id": "ufc-unit-c73a433642b03dab87e3eeac",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "22c4b8d7-32d5-44bd-82a9-bba43b6fa9dc",
+    "sentence_id": "a146fd11-0192-45b6-ae1a-3d516b86e491",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/6/children/0/sentences/1/text",
+    "text_exact": "Do not use or configure beyond the construction level for which specifically designed (for example, do not stack more than two high without progressive collapse analysis).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.6 Container or Containerized Housing Unit (CHU)"
+    ],
+    "paragraph_id": 123,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 123,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c7ff00d7c4bf30b6416d6d53": {
+    "unit_id": "ufc-unit-c7ff00d7c4bf30b6416d6d53",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "59c96bf9-63b6-4110-8bdd-8a61c89ed46c",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/3/text",
+    "text_exact": "Chief, Engineering and Construction U.S. Army Corps of Engineers",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 11,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 11,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-c877ed693d4bfad028058d77": {
+    "unit_id": "ufc-unit-c877ed693d4bfad028058d77",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b8fb36b6-4940-45b4-b2cc-01ab9259a6b7",
+    "sentence_id": "f4626616-73e8-4118-92fe-455ea1fb9bfd",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/0/children/0/sentences/4/text",
+    "text_exact": "These structures MUST comply with ALL of of Chapters 1 and 4 of this UFC.",
+    "section_path": [
+      "CHAPTER 4 SEMI-PERMANENT FACILITY CONSTRUCTION LEVEL",
+      "4-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1182,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1182,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c89da4189eda70e7b868884b": {
+    "unit_id": "ufc-unit-c89da4189eda70e7b868884b",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "65749e8d-5372-4da2-a3a5-623666015762",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/7/text",
+    "text_exact": "OR",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 170,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 170,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c8fc2630da6e5b2ed96678ed": {
+    "unit_id": "ufc-unit-c8fc2630da6e5b2ed96678ed",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "f276ecbd-775a-4f3f-b59c-90367c1826b4",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/1/text",
+    "text_exact": "CHAPTER 3 modifies IEBC and is organized by the chapter of IEBC that each section modifies.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 199,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 199,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-c95c322f68a4850ae40d81cb": {
+    "unit_id": "ufc-unit-c95c322f68a4850ae40d81cb",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "30327efd-031f-4d6d-b893-8e3d1e55d77e",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/4/text",
+    "text_exact": "Projects with a DD1391 designated as “austere”",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 18,
+    "formatting": {
+      "isBullet": true,
+      "listType": "bullet",
+      "alignment": "left",
+      "paragraphId": 18,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-cc3d0f598e1aa6f4ddfeff3c": {
+    "unit_id": "ufc-unit-cc3d0f598e1aa6f4ddfeff3c",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "fd9b1c75-9ef1-4f52-a60e-eff1cbf3710f",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/3/text",
+    "text_exact": "This construction level applies ONLY to structures that:",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 166,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 166,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ccc7ad2f2c148922536f42e1": {
+    "unit_id": "ufc-unit-ccc7ad2f2c148922536f42e1",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "67b2adac-fcf5-4e7c-9977-8ffc91c4f58a",
+    "sentence_id": "7eef8f35-54d5-469c-87e8-3be26e49e219",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/4/children/0/sentences/1/text",
+    "text_exact": "Note that other structures, such as canopies, are not considered buildings for the purposes of these standards. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.4 Building."
+    ],
+    "paragraph_id": 119,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 119,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-d13bdbe705ba1de5fca3572e": {
+    "unit_id": "ufc-unit-d13bdbe705ba1de5fca3572e",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "f629be95-d88b-4a96-814f-f8e6b168c8e1",
+    "sentence_id": "f0e5c778-225c-45fd-a3de-5a9d356762a5",
+    "kind": "sentence",
+    "json_pointer": "/sections/2/children/0/children/0/sentences/2/text",
+    "text_exact": "These structures MUST comply with ALL of the requirements of Chapters 1 and 3 of this UFC.",
+    "section_path": [
+      "CHAPTER 3 TEMPORARY FACILITY CONSTRUCTION LEVEL",
+      "3-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1183,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1183,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-d74e601eac85692e267abf32": {
+    "unit_id": "ufc-unit-d74e601eac85692e267abf32",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "b2facffe-52e2-4d3d-a0a8-471c82dfd447",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/1/text",
+    "text_exact": "It is applicable to all methods of project delivery and levels of construction as defined below.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 15,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 15,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-d86f17dfda482279145feb15": {
+    "unit_id": "ufc-unit-d86f17dfda482279145feb15",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "260ba480-3f70-4bca-ac5e-daa0c4cd3bbf",
+    "sentence_id": "8d23dbf6-8118-4472-a4ad-f3d2adceb690",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/1/children/0/sentences/2/text",
+    "text_exact": "CHAPTER 2, paragraph 2-1.4 Section 104, Duties and Powers of the Building Official, defines the authorities of the BO/AHJ.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.2 Building Official / Authority Having Jurisdiction (BO/AHJ)."
+    ],
+    "paragraph_id": 99,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 99,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-d8b6e340a541ea5b957eb5e7": {
+    "unit_id": "ufc-unit-d8b6e340a541ea5b957eb5e7",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "922f092d-b823-464a-9192-5ee1a75a6273",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/8/text",
+    "text_exact": "Are on the Defense Logistics Agency (DLA) Tents, Shelters, and Base Camp Components website",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1176,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1176,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-d9d7eeb10bc1bd34e3feaab5": {
+    "unit_id": "ufc-unit-d9d7eeb10bc1bd34e3feaab5",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "9596160f-f72c-49c4-a0d7-97922ad1ecdf",
+    "sentence_id": "c9d384cf-2582-4920-bd43-bc75c26d8b89",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/2/children/0/sentences/1/text",
+    "text_exact": "Billeting also applies to expeditionary structures with similar populations and functions. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.2 Billeting."
+    ],
+    "paragraph_id": 114,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 114,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-dc8ebc79efd1f6a7162a0425": {
+    "unit_id": "ufc-unit-dc8ebc79efd1f6a7162a0425",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "46b6d8a5-04d3-49e7-a3ed-c783f3b47fe6",
+    "sentence_id": "96f165db-15a1-4658-b3ab-58c95475efcd",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/6/text",
+    "text_exact": "Wastewater collection and treatment",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-2 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 22,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 22,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-de76f97c85b27b0668110829": {
+    "unit_id": "ufc-unit-de76f97c85b27b0668110829",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "cf5fce5f-ed7e-43a4-bbbc-078f5e33c628",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/3/text",
+    "text_exact": "Acceptable to the code official or other authority having jurisdiction.  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 353,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 353,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e0866cbb21690a31c2cbd209": {
+    "unit_id": "ufc-unit-e0866cbb21690a31c2cbd209",
+    "designation": "UFC 3-220-01",
+    "version_id": "2352ff43-093e-47ba-a7ce-f5a07c47c7e1",
+    "node_id": "e258e781-7c9a-42da-a08c-d5534ca87796",
+    "sentence_id": "069a9c81-ad7f-482a-a038-652d3017c345",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/children/0/sentences/1/text",
+    "text_exact": "Referred to as Engineer of Record (EoR) or Designer of Record (DoR) for geotechnical design in DoD documents. ",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 [IBC] CHAPTER 2 DEFINITIONS.",
+      "1-2.1 [IBC] Section 202 DEFINITIONS. [Replacement]"
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e0f883d5568b4bcf124ffeb1": {
+    "unit_id": "ufc-unit-e0f883d5568b4bcf124ffeb1",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "3b61c380-2cd6-47cd-b44e-2a72f6b4cdeb",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/12/text",
+    "text_exact": "Construction requirements for initial facility construction level rely primarily on manufacturers’ instructions provided with Government-approved systems, Service-specific Field Manuals, and Handbooks developed for pre-packaged assemblies and equipment.",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 174,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 174,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e26ef318f057b1f0eaf075c2": {
+    "unit_id": "ufc-unit-e26ef318f057b1f0eaf075c2",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "d250c68c-1b27-45f4-80eb-744361272aaf",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/4/text",
+    "text_exact": "“Approved” materials must be materials allowed by the applicable Unified Facilities Guide Specification (UFGS).",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 353,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 353,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e68dec7c9a4ba14ae287eba4": {
+    "unit_id": "ufc-unit-e68dec7c9a4ba14ae287eba4",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "168bb55f-56ed-450c-b64d-a2dd4e32c4b4",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/2/children/0/heading",
+    "text_exact": "[IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION.",
+    "section_path": [
+      "CHAPTER 3 MODIFICATIONS TO IEBC",
+      "3-1 [IEBC] CHAPTER 1 – SCOPE AND ADMINISTRATION."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-e73ec45d4446aa8fed2b4a13": {
+    "unit_id": "ufc-unit-e73ec45d4446aa8fed2b4a13",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "bc05d07a-49a7-4e14-a1ab-bc0b5f4ec70a",
+    "sentence_id": "aaf58e5e-09ba-4c91-ad7e-a76223ec439f",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/children/0/sentences/3/text",
+    "text_exact": "Extension approvals may be renewed at the discretion of the Building Official / Authority Having Jurisdiction (BO/AHJ); however, occupancy or facility usage cannot occur beyond 5 years from date of initial occupancy.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": 29,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 29,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e803ebbccf4b036b3de16dbe": {
+    "unit_id": "ufc-unit-e803ebbccf4b036b3de16dbe",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "6950a5ac-18ec-4fa1-8277-de475bc13242",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/9/text",
+    "text_exact": "DEDICATED OUTDOOR AIR SYSTEM (DOAS).  ",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 357,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 357,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e835adf245cec99d34e3bbb5": {
+    "unit_id": "ufc-unit-e835adf245cec99d34e3bbb5",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "2e70ae43-de71-42b7-ae87-0224b5552f2d",
+    "sentence_id": "26be2d36-bf86-4f18-9fd6-998f1534088d",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/18/children/0/sentences/0/text",
+    "text_exact": "Cluster of independent structures (tents, trailers, containerized housing units, or similar) typically occupied by 200 or fewer personnel, except DEPMEDS (Deployable Medical Systems).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.18 Structure Group"
+    ],
+    "paragraph_id": 154,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 154,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-e8560063569915498007a79f": {
+    "unit_id": "ufc-unit-e8560063569915498007a79f",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "7c7b79f6-77a0-49f3-983d-065a03ae8ae9",
+    "sentence_id": "438bb639-3a80-477d-bc76-3b9d57c91725",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/0/text",
+    "text_exact": "Th is UFC follows the same applicability as UFC 1-200-01, paragraph 1-4, with no exceptions.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 9,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 9,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-eac88e58b433840c1003c323": {
+    "unit_id": "ufc-unit-eac88e58b433840c1003c323",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7cc9772f-43db-43a5-b966-691e0e70076a",
+    "sentence_id": "4d7f66d7-89f1-4278-abc1-2fc32982d59c",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/10/children/0/sentences/0/text",
+    "text_exact": "A real property entity consisting of one or more of the following: a building, a structure, a utility system, pavement, and underlying land (Department of Defense Dictionary of Military and Associated Terms).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.10 Facility."
+    ],
+    "paragraph_id": 131,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 131,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-eb837df396f226de9cf30519": {
+    "unit_id": "ufc-unit-eb837df396f226de9cf30519",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "928280d8-5beb-4d08-8df7-96a8643d2172",
+    "sentence_id": "587d4c1b-ddcf-4b75-8bfa-9a6b6ab05b55",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/19/children/0/sentences/0/text",
+    "text_exact": "Authority to deviate from a UFC requirement for no more than twelve months or as designated by the approval authority.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.19 Waiver."
+    ],
+    "paragraph_id": 156,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 156,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ec0630283cb85719a3067ac7": {
+    "unit_id": "ufc-unit-ec0630283cb85719a3067ac7",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "4d87edc6-6cc8-45f0-b0c4-64e9f01e8480",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/9/text",
+    "text_exact": "Section designations for such commentary are preceded by a “[C]”, and the commentary narrative is shaded.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 204,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 204,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ece39f448097d5edac781e1e": {
+    "unit_id": "ufc-unit-ece39f448097d5edac781e1e",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "7c7b79f6-77a0-49f3-983d-065a03ae8ae9",
+    "sentence_id": "66094e84-caa4-420c-a7dd-75478213a8e9",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/4/text",
+    "text_exact": "Do not execute additions, alterations, or repairs that cause an existing plumbing system to become unsafe, hazardous, or overloaded or result in new maintenance or control deficiencies in the existing systems.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ed0a1f5907adad288a97bda7": {
+    "unit_id": "ufc-unit-ed0a1f5907adad288a97bda7",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b7e00919-1451-4953-85be-3f22945670d0",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/11/children/2/heading",
+    "text_exact": "Temporary construction level.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.3 Temporary construction level."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-ed2f9db31d928e7402f5318d": {
+    "unit_id": "ufc-unit-ed2f9db31d928e7402f5318d",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "1799473b-5a3a-47e0-846e-0c670e12fb1e",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/5/heading",
+    "text_exact": "Cold Formed Metal Framing System",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.5 Cold Formed Metal Framing System"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-ed5ba49b96cfd6cea198b463": {
+    "unit_id": "ufc-unit-ed5ba49b96cfd6cea198b463",
+    "designation": "UFC 3-220-01",
+    "version_id": "2352ff43-093e-47ba-a7ce-f5a07c47c7e1",
+    "node_id": "e258e781-7c9a-42da-a08c-d5534ca87796",
+    "sentence_id": "464e0d0b-d8a4-4c74-8191-a8613cc0b5ef",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/children/0/sentences/2/text",
+    "text_exact": "Under special circumstances, technical experts not licensed in the jurisdiction may conduct studies unrelated to design if credentials are pre-approved by the building official.",
+    "section_path": [
+      "CHAPTER 1 MODIFICATIONS TO IBC",
+      "1-2 [IBC] CHAPTER 2 DEFINITIONS.",
+      "1-2.1 [IBC] Section 202 DEFINITIONS. [Replacement]"
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ed9a13edc441ca663e6bbf74": {
+    "unit_id": "ufc-unit-ed9a13edc441ca663e6bbf74",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "bc05d07a-49a7-4e14-a1ab-bc0b5f4ec70a",
+    "sentence_id": "6ca7e9a3-2b15-4ade-b25b-f6aeb2da292d",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/2/children/1/children/0/sentences/4/text",
+    "text_exact": "Further extension may be granted where a longer construction plan is justified, and an AHJ-approved end-of-use date has been established for the temporary facility.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.2 Levels of Construction.",
+      "1-4.2.2 Temporary Construction."
+    ],
+    "paragraph_id": 29,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 29,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ee88125c77fbe0911a3a93e8": {
+    "unit_id": "ufc-unit-ee88125c77fbe0911a3a93e8",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "fdc5f261-9e1e-426d-94b1-a78384ac509b",
+    "sentence_id": "3005a9c9-56b5-442e-bc03-a957b69fa45b",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/2/children/0/sentences/0/text",
+    "text_exact": "UFC 1-200-01 represents the foundational document of the UFC program in providing general building requirements and overarching criteria, establishing the use of consensus building codes and standards, establishing criteria implementation rules and protocols (including core UFC), and identifying unique military criteria.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-3 PURPOSE AND SCOPE."
+    ],
+    "paragraph_id": 9,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 9,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-eec6b3a4389e89978c47ba4b": {
+    "unit_id": "ufc-unit-eec6b3a4389e89978c47ba4b",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "9dd62abd-435b-4332-850d-18f7a66faed6",
+    "sentence_id": "ab75cc83-9a56-421c-8331-c1ee8ed656f9",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/0/sentences/6/text",
+    "text_exact": "For permanent facilities for DoD personnel outside the United States and its territories and possessions see paragraph 1-4.2.1, for temporary construction see paragraph 1-4.2.2, for non-permanent DoD facilities in support of military operations see paragraph 1-4.2.3 and, for Host Nation Facilities see paragraph 1-4.2.4. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability."
+    ],
+    "paragraph_id": 20,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 20,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ef2c4169f8368122a44046d9": {
+    "unit_id": "ufc-unit-ef2c4169f8368122a44046d9",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "761b8aa1-b510-4d77-9e3f-619796770320",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/1/heading",
+    "text_exact": "Building Official / Authority Having Jurisdiction (BO/AHJ).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 UFC PROGRAM AUTHORITIES.",
+      "1-6.2 Building Official / Authority Having Jurisdiction (BO/AHJ)."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-ef3fb1c436dbc166038a2dab": {
+    "unit_id": "ufc-unit-ef3fb1c436dbc166038a2dab",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "7c7b79f6-77a0-49f3-983d-065a03ae8ae9",
+    "sentence_id": "fe1e4ff8-24e4-4a5d-974e-768e41e660f1",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/3/text",
+    "text_exact": "Additions, alterations, renovations, or repairs to a plumbing system must conform to requirements for a new plumbing system without requiring the existing plumbing system to comply with all the requirements of this manual.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-efead2f76a4aa45f100fb29b": {
+    "unit_id": "ufc-unit-efead2f76a4aa45f100fb29b",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "ec2cc09c-a6a9-44e0-8cea-6d445a5671c7",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/8/heading",
+    "text_exact": "Designer of Record",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.8 Designer of Record"
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-f022db49f8c1d5e2c11d7f30": {
+    "unit_id": "ufc-unit-f022db49f8c1d5e2c11d7f30",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "7c7b79f6-77a0-49f3-983d-065a03ae8ae9",
+    "sentence_id": "26de6e3d-0e6b-4009-9324-6fd53680b981",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/2/text",
+    "text_exact": "The plumbing system extends from connections within a structure to 5 feet (1.5 m) outside.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-f06ce932bd8c8f7faaa3d478": {
+    "unit_id": "ufc-unit-f06ce932bd8c8f7faaa3d478",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "878bd95b-3b6a-4121-9065-25c292b172f9",
+    "sentence_id": "0fd3a7f5-5189-40a5-a03a-46d634333f9e",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/3/children/1/children/0/sentences/6/text",
+    "text_exact": "REAL PROPERTY OWNER.",
+    "section_path": [
+      "CHAPTER 2 IPC MODIFICATIONS",
+      "2-3 [IPC] CHAPTER 2 DEFINITIONS.",
+      "2-3.2 Section 202 – General Definitions [Addition]."
+    ],
+    "paragraph_id": 56,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 56,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-f2ce403f12926f8c34281a14": {
+    "unit_id": "ufc-unit-f2ce403f12926f8c34281a14",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "b8fb36b6-4940-45b4-b2cc-01ab9259a6b7",
+    "sentence_id": "0cc94222-f726-4121-b878-d0ba4a7b5df5",
+    "kind": "sentence",
+    "json_pointer": "/sections/3/children/0/children/0/sentences/3/text",
+    "text_exact": "This is the maximum non-permanent construction level that applies to commercially available structures and other items that do not meet the requirements of 2.1 of this UFC.",
+    "section_path": [
+      "CHAPTER 4 SEMI-PERMANENT FACILITY CONSTRUCTION LEVEL",
+      "4-1 APPLICABILITY."
+    ],
+    "paragraph_id": 1182,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 1182,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-f6ff0542f4d0b9ce11db8dca": {
+    "unit_id": "ufc-unit-f6ff0542f4d0b9ce11db8dca",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "1ed96c0b-c072-47c3-bb1d-6a3be7d43137",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/1/heading",
+    "text_exact": "Authority Having Jurisdiction/Building Official/Code Official.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.1 Authority Having Jurisdiction/Building Official/Code Official."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-f7bdd80948c937742b3e2be9": {
+    "unit_id": "ufc-unit-f7bdd80948c937742b3e2be9",
+    "designation": "UFC 3-420-01",
+    "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+    "node_id": "7c7b79f6-77a0-49f3-983d-065a03ae8ae9",
+    "sentence_id": "1e786928-7c15-424d-8bcd-adbd45605c77",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/1/children/0/sentences/1/text",
+    "text_exact": "A plumbing system consists of the water supply distribution system; fixtures, and fixture traps; soil, waste, and vent piping; storm water drainage; acid and industrial waste disposal systems; special gases (medical and oxygen) systems; and water heating systems.",
+    "section_path": [
+      "CHAPTER 1 TECHNICAL REQUIREMENTS",
+      "1-2 APPLICABILITY."
+    ],
+    "paragraph_id": 10,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 10,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-f98d8dae7c3af03cf262e149": {
+    "unit_id": "ufc-unit-f98d8dae7c3af03cf262e149",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "7ec30ccc-4173-467d-bf85-3a9dfa0bddca",
+    "sentence_id": "8b5796c0-6b6c-4ea4-9eff-911539578761",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/5/children/0/sentences/2/text",
+    "text_exact": "Indicates fastener locations and labels each part. ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.5 Cold Formed Metal Framing System"
+    ],
+    "paragraph_id": 121,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 121,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-f9a23443db03facf816a25bb": {
+    "unit_id": "ufc-unit-f9a23443db03facf816a25bb",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "e8a14992-70cd-4cec-9ca7-11880fbbc92d",
+    "sentence_id": "72225ce2-5e9b-4a72-b805-023283b733b6",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/11/children/0/children/0/sentences/0/text",
+    "text_exact": "A subset of Initial construction level intended for use up to 90 days, extendable to six months (JP 3-34).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.1 Organic construction level."
+    ],
+    "paragraph_id": 134,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 134,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-fa01230367c1e4131799e681": {
+    "unit_id": "ufc-unit-fa01230367c1e4131799e681",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "3aa64b76-c9f8-4165-b9b6-846333145502",
+    "sentence_id": "c4139dde-a7d7-49f9-b3f4-a8b4fe31b24a",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/8/children/0/sentences/0/text",
+    "text_exact": "The entity that performed the original design and maintains design ownership, noted in the drawing title block.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.8 Designer of Record"
+    ],
+    "paragraph_id": 127,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 127,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-faf07beb4a16b02f7edcccd4": {
+    "unit_id": "ufc-unit-faf07beb4a16b02f7edcccd4",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "a0f5281e-a83c-4264-9275-6a1708fa3ca6",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/11/children/1/heading",
+    "text_exact": "Initial construction level.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.2 Initial construction level."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-fccd31aa08f449f267baee9f": {
+    "unit_id": "ufc-unit-fccd31aa08f449f267baee9f",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "c6c1c2a5-0825-470e-a802-4bd200f16492",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/5/text",
+    "text_exact": "[Replacement] – Delete referenced IBC or IEBC section or noted portion and replace it with the narrative shown.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 202,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 202,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-fd3c708c5f7999b413613052": {
+    "unit_id": "ufc-unit-fd3c708c5f7999b413613052",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "1549f841-75a6-4026-a99b-9bd3d3f96521",
+    "sentence_id": "85739a3f-6714-4020-98ff-9f65ee627bfe",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/8/children/0/sentences/3/text",
+    "text_exact": "[Addition] – Add new section, including new section number, not shown in IBC or IEBC.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-9 NON-GOVERNMENT STANDARD MODIFICATIONS."
+    ],
+    "paragraph_id": 200,
+    "formatting": {
+      "isBullet": true,
+      "alignment": "left",
+      "paragraphId": 200,
+      "paragraphType": "List Bullet"
+    }
+  },
+  "ufc-unit-fd972fca11105f6711671096": {
+    "unit_id": "ufc-unit-fd972fca11105f6711671096",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "ac990625-4856-429f-a4a5-f20dbf6bf759",
+    "sentence_id": "3ae6b699-80d8-47fe-a017-b84c3d01cff1",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/5/children/11/children/1/children/0/sentences/0/text",
+    "text_exact": "Intended for immediate use by units upon theater arrival for up to 24 months (JP 3-34).",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.2 Initial construction level."
+    ],
+    "paragraph_id": 136,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 136,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-fe0aaaf48e80cbff556f90bb": {
+    "unit_id": "ufc-unit-fe0aaaf48e80cbff556f90bb",
+    "designation": "UFC 3-410-01",
+    "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+    "node_id": "a53bc494-20d6-45fd-92da-a6e0dc47e1f9",
+    "sentence_id": "bcf9a8a2-640f-45b7-8cd1-6426fa8a76ae",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/2/children/1/children/0/sentences/8/text",
+    "text_exact": "Add the following definitions to Chapter 2:",
+    "section_path": [
+      "CHAPTER 2 IMC MODIFICATIONS",
+      "2-2 IMC MODIFICATION PARAGRAPHS.",
+      "2-2.2 [IMC] CHAPTER 2 DEFINITIONS."
+    ],
+    "paragraph_id": 356,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 356,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-fe3bed703542c639212c380a": {
+    "unit_id": "ufc-unit-fe3bed703542c639212c380a",
+    "designation": "UFC 1-200-01",
+    "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+    "node_id": "4659675a-7c1c-4cc1-85fe-01bfa6e4d251",
+    "sentence_id": "1df80b1c-0240-42d8-a4fb-b9ed1e2b2476",
+    "kind": "sentence",
+    "json_pointer": "/sections/0/children/3/children/4/children/0/sentences/1/text",
+    "text_exact": "An exemption provides authority to deviate from a requirement indefinitely.  ",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-4 Applicability.",
+      "1-4.4 Waivers and Exemptions."
+    ],
+    "paragraph_id": 51,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 51,
+      "paragraphType": "Normal"
+    }
+  },
+  "ufc-unit-ffd202dc82f6e0041d3efba0": {
+    "unit_id": "ufc-unit-ffd202dc82f6e0041d3efba0",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "a8aec5b3-786b-42bb-b127-1bedb3755fb9",
+    "sentence_id": null,
+    "kind": "heading",
+    "json_pointer": "/sections/0/children/5/children/11/children/3/heading",
+    "text_exact": "Semi-permanent construction level.",
+    "section_path": [
+      "CHAPTER 1 INTRODUCTION",
+      "1-6 GLOSSARY.",
+      "1-6.11 Facility Construction Levels.",
+      "1-6.11.4 Semi-permanent construction level."
+    ],
+    "paragraph_id": null,
+    "formatting": {}
+  },
+  "ufc-unit-ffde748bb055f806b43d96f0": {
+    "unit_id": "ufc-unit-ffde748bb055f806b43d96f0",
+    "designation": "UFC 1-201-01",
+    "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+    "node_id": "369445eb-a6a7-4910-a172-064872872f43",
+    "sentence_id": "ae741b8f-02f3-4877-a92c-4f7e913c95b3",
+    "kind": "sentence",
+    "json_pointer": "/sections/1/children/0/children/0/sentences/14/text",
+    "text_exact": "System upgrades or replacement by more durable facilities may occur during operations.",
+    "section_path": [
+      "CHAPTER 2 INITIAL FACILITY CONSTRUCTION LEVEL",
+      "2-1 APPLICABILITY."
+    ],
+    "paragraph_id": 174,
+    "formatting": {
+      "alignment": "left",
+      "paragraphId": 174,
+      "paragraphType": "Normal"
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "policy_id": "ufc-ufgs-vocabulary-corpus",
+  "policy_version": "0.3.0",
+  "established_on": "2026-09-26",
+  "status": "established_primary_source_selection",
+  "purpose": "Mine a source-grounded DoD facilities vocabulary and support scoped agency, jurisdiction, organizational, and Community of Practice extensions.",
+  "primary_corpus": [
+    {
+      "family": "UFC",
+      "source_format": "WBDG published JSON export",
+      "local_source": "data/source/ufc/UFC_*.json",
+      "scope": "Published UFC documents available in the digital library; track broader program coverage separately.",
+      "authority": "DoD criteria subject to the document's authority, applicability, edition, implementation rules, and exceptions."
+    },
+    {
+      "family": "UFGS",
+      "source_format": "SpecsIntact SEC XML, preserved as original archive member bytes",
+      "local_source": "data/source/umrl/UFGS_M_2026-05-28.zip",
+      "scope": "Every SEC member in the identified UFGS master snapshot, including malformed members retained for remediation.",
+      "authority": "Published guide specification text; retain designer notes, tailoring choices, agency scope, and project incorporation separately."
+    }
+  ],
+  "supporting_sources": {
+    "authority_context": [
+      "UFC 1-200-01",
+      "Applicable DoD policies and project instruments"
+    ],
+    "reference_resolution": [
+      "UFGS master reference list (UMRL)",
+      "Published source catalogs"
+    ],
+    "referenced_sources_not_automatically_imported": [
+      "UFS",
+      "UFM",
+      "FC",
+      "Statutes and regulations",
+      "Consensus codes and standards"
+    ],
+    "crosswalks_not_primary_mining_corpus": [
+      "FOLIO",
+      "Uniclass",
+      "MasterFormat",
+      "UniFormat",
+      "OmniClass",
+      "IFC",
+      "bSDD",
+      "OSCRE",
+      "RESO"
+    ]
+  },
+  "authority_statement": "MIL-STD-3007G supplies the documented program-governance, development, approval, and issuance framework for UFC, FC, and UFGS under the authorities it identifies. UFC and UFGS are the primary authoritative technical corpus from which this project derives DoD facilities terminology. Each vocabulary assertion retains its source, edition, scope, and review status; the derived vocabulary is not itself a DoD-issued instrument.",
+  "rights_policy": {
+    "basis": "U.S. Government-authored material where 17 U.S.C. 105 applies",
+    "scope": "United States copyright treatment; no blanket global or whole-corpus clearance assertion",
+    "retain_attribution_and_notices": true,
+    "third_party_material": "Preserve notices and attribution; referenced or reproduced third-party text does not automatically inherit the government-work reuse basis.",
+    "automated_notice_scan_is_clearance": false,
+    "rights_status_default": "government_source_with_third_party_rights_to_classify"
+  },
+  "evidence_categories": [
+    "explicit_definition",
+    "explicit_synonym_statement",
+    "scoped_normative_requirement",
+    "guide_specification_clause",
+    "designer_note",
+    "commentary",
+    "optional_or_tailored_text",
+    "section_or_topic_heading",
+    "reference_identifier_or_title",
+    "observed_term_usage"
+  ],
+  "semantic_rules": [
+    "Preserve immutable raw bytes and source hashes before normalization.",
+    "Preserve exact source text alongside separately normalized labels and search text.",
+    "Treat explicit definitions and synonym statements as scoped source assertions, never as universal equivalence by default.",
+    "Keep term occurrence, definition, preferred label, relationship, and requirement as separate records.",
+    "Do not promote recurring headings or frequent phrases directly to accepted ontology classes.",
+    "Do not treat every phrase in an authoritative document as a legally defined term.",
+    "Preserve modality, conditions, exceptions, applicability, source edition, and project applicability for requirements.",
+    "Keep designer notes and commentary distinct from operative text.",
+    "Keep UFGS bracketed choices, tailoring tags, unit alternatives, agency variants, and project selections explicit.",
+    "Retain conflicting definitions as separate scoped senses until reviewed; frequency does not resolve authority.",
+    "Record mappings as exact, close, broader, narrower, or related with evidence and review status.",
+    "Preserve syntax failures and missing sources in the corpus inventory; do not silently repair or discard evidence.",
+    "Keep vocabulary release versions independent of source publication versions.",
+    "Keep source authority, organizational context, semantic specialization, and community presentation separate.",
+    "USACE ER and EM are parallel source families; do not impose a universal rank relative to UFC or UFGS.",
+    "Keep local explanations separate from source definitions and review fidelity before presenting them as faithful summaries.",
+    "Separate senses when an agency or community uses an identical label with a different meaning.",
+    "Require evidence for local amendments and precedence, including jurisdiction, subject matter, editions, and exceptions.",
+    "Pin derivative profiles to adopted source editions; a newer corpus snapshot does not silently update a derivative code profile."
+  ],
+  "required_provenance": [
+    "source_family",
+    "source_designation",
+    "source_version_or_section_date",
+    "source_sha256",
+    "source_path",
+    "source_locator",
+    "source_text_exact",
+    "evidence_category",
+    "scope",
+    "extraction_method",
+    "review_status",
+    "rights_status"
+  ],
+  "source_specific_locators": {
+    "UFC": [
+      "criterion_id",
+      "version_id",
+      "node_id",
+      "sentence_id_when_available",
+      "section_path"
+    ],
+    "UFGS": [
+      "archive_sha256",
+      "archive_member",
+      "member_sha256",
+      "section_number",
+      "xml_path_or_raw_byte_span",
+      "part_article_context"
+    ],
+    "USACE ER": [
+      "document_designation",
+      "edition_or_change",
+      "chapter_section_paragraph",
+      "printed_page_when_available",
+      "pdf_page_or_structured_source_locator",
+      "source_sha256_when_acquired"
+    ],
+    "USACE EM": [
+      "document_designation",
+      "edition_or_change",
+      "chapter_section_paragraph",
+      "printed_page_when_available",
+      "pdf_page_or_structured_source_locator",
+      "source_sha256_when_acquired"
+    ],
+    "WHSBC": [
+      "document_designation",
+      "edition_or_change",
+      "chapter_section_paragraph",
+      "printed_page_when_available",
+      "pdf_page_or_structured_source_locator",
+      "source_sha256_when_acquired"
+    ],
+    "PFGS": [
+      "document_designation",
+      "edition_or_change",
+      "chapter_section_paragraph",
+      "printed_page_when_available",
+      "pdf_page_or_structured_source_locator",
+      "source_sha256_when_acquired"
+    ],
+    "Community of Practice": [
+      "publisher_or_steward",
+      "source_title",
+      "version_or_capture_date",
+      "entry_or_page_locator",
+      "source_sha256_when_acquired",
+      "inherited_assertion_ids"
+    ]
+  },
+  "mining_order": [
+    "Explicit definitions and source-declared synonyms",
+    "Glossaries, abbreviations, and acronym expansions",
+    "Section titles, tagged headings, named systems, materials, processes, roles, and deliverables",
+    "Scoped requirements and typed relationships",
+    "Cross-document reconciliation and externally reviewed vocabulary mappings"
+  ],
+  "release_gates": [
+    "Traceable source evidence for every published concept and semantic assertion",
+    "Explicit editorial acceptance with retained change history",
+    "No unresolved source corruption for the evidence used by an accepted record",
+    "Source-level and excerpt-level rights classification for redistributed content",
+    "Coverage reported separately for source acquisition, syntax parsing, semantic extraction, and adjudication",
+    "Evaluation on independently adjudicated examples and retrieval questions",
+    "Version-pinned profile imports and explicit disposition of upstream edition changes",
+    "Scope and cited authority for every accepted amendment or precedence relationship",
+    "Local explanation fidelity and visible unresolved conflicts",
+    "Extension-source acquisition, extraction, and adjudication coverage reported separately from the original baseline"
+  ],
+  "governance_foundation": {
+    "designation": "MIL-STD-3007G",
+    "edition_date": "2019-11-01",
+    "role": "Foundational program-governance and authority source for the UFC/UFGS corpus",
+    "source_path": "data/source/MIL-STD-3007 20191101.pdf",
+    "source_sha256": "1989b8f8f12eac83c06de0108a32b8d569f52f1984f4fa1a53ed240c60114fab",
+    "source_url": "https://www.wbdg.org/FFC/FEDMIL/milstd3007g.pdf",
+    "scope": "Authority source and definitions included separately from UFC/UFGS technical-corpus counts",
+    "authority_sections": [
+      {
+        "section": "1.1",
+        "pdf_page": 9,
+        "printed_page": "1",
+        "role": "Development and maintenance policy for common facilities standards"
+      },
+      {
+        "section": "1.2",
+        "pdf_page": 9,
+        "printed_page": "1",
+        "role": "Facilities lifecycle applicability"
+      },
+      {
+        "section": "1.3",
+        "pdf_page": 9,
+        "printed_page": "1",
+        "role": "Defense Standardization Program and stated authorities, including Military Departments Title 10 authorities"
+      },
+      {
+        "section": "5.1",
+        "pdf_page": 21,
+        "printed_page": "13",
+        "role": "UFC/FC purpose and issuance under ESEP authority"
+      },
+      {
+        "section": "5.4",
+        "pdf_page": 25,
+        "printed_page": "17",
+        "role": "Official UFGS construction guide specifications and delegated ESEP issuance authority"
+      }
+    ],
+    "semantic_rule": "Preserve the authorities cited by MIL-STD-3007G and scope each derived authority relationship to the source edition."
+  },
+  "extension_source_families": [
+    {
+      "family": "USACE ER",
+      "name": "Engineer Regulations",
+      "scope": "Determine applicability and authority per publication and assertion, including program context.",
+      "acquisition_status": "not_inventoried_in_this_update"
+    },
+    {
+      "family": "USACE EM",
+      "name": "Engineer Manuals",
+      "scope": "Determine applicability and authority per publication and assertion; no blanket placement below UFGS.",
+      "acquisition_status": "not_inventoried_in_this_update"
+    },
+    {
+      "family": "USACE organizational and Community of Practice terminology",
+      "scope": "Engineering and Construction, Real Estate, and future communities; preserve local wording and reconcile with applicable parent definitions.",
+      "acquisition_status": "examples_pending"
+    },
+    {
+      "family": "USAF agency terminology",
+      "scope": "Independent module; source selection and scope pending.",
+      "acquisition_status": "reserved"
+    },
+    {
+      "family": "NAVFAC agency terminology",
+      "scope": "Independent module; source selection and scope pending.",
+      "acquisition_status": "reserved"
+    },
+    {
+      "family": "WHSBC",
+      "name": "Washington Headquarters Services Building Code",
+      "scope": "Versioned jurisdictional extension; preserve adopted UFC editions and assertion-level amendments.",
+      "acquisition_status": "selected_2026_indexed_source_text_inspected_full_source_bytes_pending"
+    },
+    {
+      "family": "PFGS",
+      "name": "Pentagon Facility Guide Specifications",
+      "scope": "WHS/Pentagon specification extension with documented, scoped relationships to UFGS.",
+      "acquisition_status": "not_inventoried_in_this_update"
+    }
+  ],
+  "vocabulary_framework": {
+    "architecture_path": "research/corpus/scoped-vocabulary-framework.md",
+    "registry_path": "research/corpus/scoped-vocabulary-profiles.json",
+    "implementation_status": "architecture_and_registry_only_resolver_not_implemented",
+    "separate_dimensions": [
+      "concept_identity_and_semantic_specialization",
+      "source_authority_and_applicability",
+      "organizational_context",
+      "community_presentation"
+    ],
+    "definition_fields": [
+      "assertion_id",
+      "concept_or_candidate_sense_id",
+      "module_id",
+      "source_edition_id",
+      "source_locator",
+      "source_text_exact",
+      "evidence_category",
+      "scope",
+      "extraction_provenance",
+      "review_status"
+    ],
+    "local_explanation_fields": [
+      "explanation_id",
+      "inherited_assertion_ids",
+      "local_wording",
+      "local_label",
+      "audience",
+      "curator",
+      "fidelity_review_status"
+    ],
+    "scope_dimensions": [
+      "organization",
+      "jurisdiction_or_site",
+      "program",
+      "asset_or_facility_type",
+      "lifecycle_phase",
+      "project_or_contract",
+      "effective_interval",
+      "adopted_editions",
+      "tailoring_decisions"
+    ],
+    "unknown_scope_is_universal": false,
+    "definition_review_outcomes": [
+      "adopts_definition",
+      "local_label",
+      "faithful_explanation",
+      "narrower_concept",
+      "distinct_sense",
+      "authorized_scoped_amendment",
+      "conflict",
+      "unresolved"
+    ],
+    "profile_import_rule": "Published imports pin vocabulary releases and adopted source editions. Draft unresolved imports confer no authority and cannot produce an accepted governing definition.",
+    "authority_rule": "Resolve applicability before precedence. Apply only an evidenced authority relationship within its documented scope; otherwise retain competing assertions.",
+    "organization_rule": "Organizational membership and profile ancestry do not create authority to redefine or override an inherited source assertion.",
+    "community_view_rule": "Display local labels and explanations with inheritance status, accessible governing wording and edition, and visible unresolved conflicts.",
+    "change_rule": "Upstream changes create impact-review candidates and preserve prior releases; do not automatically update adopted editions or project codes of record.",
+    "access_rule": "Profile imports inherit no automatic permission to disclose source text; retain source-level access and redistribution conditions."
+  }
+}

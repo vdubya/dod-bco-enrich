@@ -1,0 +1,1289 @@
+{
+  "extraction_version": "0.1.0",
+  "generated_at": "2026-09-26T16:36:40.156687+00:00",
+  "script_sha256": "f7bfe24fd287d4a4ab0a35995699036bd7c85b48155f96b368affd55baba582a",
+  "policy_path": "research/reports/ufc-vocabulary-pilot-2026-09-26/corpus-policy-snapshot.json",
+  "policy_origin_path": "research/corpus/ufc-ufgs-corpus-policy.json",
+  "policy_sha256": "1d68c07433ca8ac66deb930352793580e918033ff13b61677a5d0bcaf9ec260a",
+  "source_document_count": 48,
+  "source_manifest": [
+    {
+      "source_family": "UFC",
+      "designation": "UFC 1-200-01",
+      "title": "DoD Building Code",
+      "criterion_id": "19642a6d-cab5-4204-8c7a-ea980e71e2d5",
+      "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+      "version_label": "07/27/2026",
+      "date_published": "2026-07-27T13:59:31.685Z",
+      "source_path": "data/source/ufc/UFC_1-200-01.json",
+      "source_sha256": "e2c907c28b87107abd437c362281ee8b3a2ab5633bea842739f92d5faa3b2adb",
+      "source_url": "https://digital.wbdg.org/versions/a093a449-9220-45e0-866a-67d3139af067",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 706,
+      "sentence_count": 507,
+      "heading_count": 199,
+      "exclusions": {
+        "commentary_records_not_mined": 16,
+        "content_only_leaf_nodes_not_mined": 27,
+        "media_nodes_not_mined": 2
+      },
+      "candidate_counts": {
+        "descriptive_definition_candidate": 2,
+        "explicit_definition": 7,
+        "explicit_synonym_statement": 7,
+        "abbreviation_expansion": 70
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 1-200-02",
+      "title": "High Performance and Sustainable Building Requirements",
+      "criterion_id": "97483858-f87a-43be-a26e-596f738ac19b",
+      "version_id": "8cd6c3e0-12c3-462c-8107-c09979a720d9",
+      "version_label": "08/12/2026",
+      "date_published": "2026-08-12T19:30:41.082Z",
+      "source_path": "data/source/ufc/UFC_1-200-02.json",
+      "source_sha256": "03898d92e10a4220d7f5b2455c6b9b81334965a064b04945033bd72644010951",
+      "source_url": "https://digital.wbdg.org/versions/8cd6c3e0-12c3-462c-8107-c09979a720d9",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 55,
+      "sentence_count": 45,
+      "heading_count": 10,
+      "exclusions": {
+        "commentary_records_not_mined": 0,
+        "content_only_leaf_nodes_not_mined": 1,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 1
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 1-201-01",
+      "title": "Non-Permanent DoD Facilities in Support of Military Operations",
+      "criterion_id": "a4e130d6-220f-4735-81bd-4c03e6f1477a",
+      "version_id": "6d659977-9c9b-4cde-84f5-03fb34679eca",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T17:50:47.291Z",
+      "source_path": "data/source/ufc/UFC_1-201-01.json",
+      "source_sha256": "8363387a320be78368e843ab3b3733ab2f3cc80981796d5440304e6328ec91a9",
+      "source_url": "https://digital.wbdg.org/versions/6d659977-9c9b-4cde-84f5-03fb34679eca",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1514,
+      "sentence_count": 1188,
+      "heading_count": 326,
+      "exclusions": {
+        "commentary_records_not_mined": 0
+      },
+      "candidate_counts": {
+        "definition_reference": 1,
+        "explicit_definition": 23,
+        "explicit_synonym_statement": 1,
+        "descriptive_definition_candidate": 6,
+        "abbreviation_expansion": 54
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-101-01",
+      "title": "Architecture",
+      "criterion_id": "65543d5d-3164-4b32-abb1-f911e40443e5",
+      "version_id": "2c9126f4-7e10-4b13-b87f-6b988e9d8872",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:39:54.388Z",
+      "source_path": "data/source/ufc/UFC_3-101-01.json",
+      "source_sha256": "a3249595570d654777be4466d6be53af71416719fbfa6cd166d5b780e915ed7a",
+      "source_url": "https://digital.wbdg.org/versions/2c9126f4-7e10-4b13-b87f-6b988e9d8872",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 240,
+      "sentence_count": 174,
+      "heading_count": 66,
+      "exclusions": {
+        "commentary_records_not_mined": 20,
+        "content_only_leaf_nodes_not_mined": 5,
+        "media_nodes_not_mined": 7
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 36
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-110-03",
+      "title": "Roofing",
+      "criterion_id": "7a091634-f3f2-4dbb-ada3-f494ac7f3dd9",
+      "version_id": "78810376-2a03-49cb-b029-086ff48ce1c8",
+      "version_label": "07/27/2026",
+      "date_published": "2026-07-27T14:01:03.635Z",
+      "source_path": "data/source/ufc/UFC_3-110-03.json",
+      "source_sha256": "5fbcef743d40cc7c0ed35a07602e236a1b7790f646fca9836b1c35b513cb277d",
+      "source_url": "https://digital.wbdg.org/versions/78810376-2a03-49cb-b029-086ff48ce1c8",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 332,
+      "sentence_count": 232,
+      "heading_count": 100,
+      "exclusions": {
+        "commentary_records_not_mined": 0,
+        "content_only_leaf_nodes_not_mined": 2,
+        "media_nodes_not_mined": 2
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 28
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-120-10",
+      "title": "Interior Design",
+      "criterion_id": "9aa50916-5af5-40e5-b8c3-c78f5528a79c",
+      "version_id": "ed9cb9ce-e44e-41d2-a10d-4f2b1cd4114b",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:40:29.784Z",
+      "source_path": "data/source/ufc/UFC_3-120-10.json",
+      "source_sha256": "79464743f910c823b8829aad5fe83c8c40a67f62ff400c2d3d2ab6ff2e039201",
+      "source_url": "https://digital.wbdg.org/versions/ed9cb9ce-e44e-41d2-a10d-4f2b1cd4114b",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 60,
+      "sentence_count": 45,
+      "heading_count": 15,
+      "exclusions": {
+        "commentary_records_not_mined": 9
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 10
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-130-01",
+      "title": "Arctic and Subarctic Engineering",
+      "criterion_id": "437133db-63fa-47c2-8c53-fb3fdce68bdb",
+      "version_id": "294e82fb-af3a-4d5f-ae4a-773a40bb738b",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:53:25.975Z",
+      "source_path": "data/source/ufc/UFC_3-130-01.json",
+      "source_sha256": "ae3b4b9218748e4b17bf0dfd9cca96fd7800649d4951ccc586955019521ff572",
+      "source_url": "https://digital.wbdg.org/versions/294e82fb-af3a-4d5f-ae4a-773a40bb738b",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 368,
+      "sentence_count": 300,
+      "heading_count": 68,
+      "exclusions": {
+        "commentary_records_not_mined": 0
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 1,
+        "abbreviation_expansion": 17
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-130-04",
+      "title": "Arctic and Subarctic Buildings",
+      "criterion_id": "b8358f75-51b2-405c-9ae8-4e0072e771da",
+      "version_id": "6ddf20ed-5e08-4d5f-bbcd-5500329b08b0",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:32:52.770Z",
+      "source_path": "data/source/ufc/UFC_3-130-04.json",
+      "source_sha256": "50b6f2e9f44e55d7e42414d50fb434ddb84f3053db454996058b5e3b464499f5",
+      "source_url": "https://digital.wbdg.org/versions/6ddf20ed-5e08-4d5f-bbcd-5500329b08b0",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 324,
+      "sentence_count": 227,
+      "heading_count": 97,
+      "exclusions": {
+        "commentary_records_not_mined": 47
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 4
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-130-05",
+      "title": "Arctic and Subarctic Utilities",
+      "criterion_id": "f1c6fdc5-b28e-4984-9c5e-b8330047b4e4",
+      "version_id": "d8b0f15c-e33e-4b21-8c6d-6e137b90e9dd",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T17:58:36.426Z",
+      "source_path": "data/source/ufc/UFC_3-130-05.json",
+      "source_sha256": "a8c1dff3dbd87817d55eeb9410d39a7b37047246f71315cc9eba0cf2cfa7a3d7",
+      "source_url": "https://digital.wbdg.org/versions/d8b0f15c-e33e-4b21-8c6d-6e137b90e9dd",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 915,
+      "sentence_count": 732,
+      "heading_count": 183,
+      "exclusions": {
+        "commentary_records_not_mined": 0,
+        "content_only_leaf_nodes_not_mined": 3,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "descriptive_definition_candidate": 1,
+        "abbreviation_expansion": 10
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-190-06",
+      "title": "Protective Coatings and Paints",
+      "criterion_id": "f3e831a8-2295-40fe-9de0-50032824b4ea",
+      "version_id": "d1fd6a9a-6cea-4895-9b48-715a9578065c",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:41:27.265Z",
+      "source_path": "data/source/ufc/UFC_3-190-06.json",
+      "source_sha256": "6f8c125b0120b3e19f043715f7d8373afd647a33b75df361403269ec93647e24",
+      "source_url": "https://digital.wbdg.org/versions/d1fd6a9a-6cea-4895-9b48-715a9578065c",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 177,
+      "sentence_count": 123,
+      "heading_count": 54,
+      "exclusions": {
+        "commentary_records_not_mined": 14,
+        "content_only_leaf_nodes_not_mined": 5,
+        "media_nodes_not_mined": 5
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 11
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-201-01",
+      "title": "Civil Engineering",
+      "criterion_id": "e8aebd34-524d-4540-b814-36764edfffbf",
+      "version_id": "3ec9e8ed-e5e3-4b39-8dee-62bda073fb65",
+      "version_label": "08/06/2026",
+      "date_published": "2026-08-06T17:02:33.810Z",
+      "source_path": "data/source/ufc/UFC_3-201-01.json",
+      "source_sha256": "89692e6ffa7ff435159af39a3c9ebcd2195ac49f38bd4e2101dca5c45fcbd84a",
+      "source_url": "https://digital.wbdg.org/versions/3ec9e8ed-e5e3-4b39-8dee-62bda073fb65",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 642,
+      "sentence_count": 503,
+      "heading_count": 139,
+      "exclusions": {
+        "commentary_records_not_mined": 10,
+        "content_only_leaf_nodes_not_mined": 4,
+        "media_nodes_not_mined": 6
+      },
+      "candidate_counts": {
+        "descriptive_definition_candidate": 1,
+        "abbreviation_expansion": 21
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-201-02",
+      "title": "Landscape Architecture",
+      "criterion_id": "228b2fa5-9506-4f8f-9590-a1ef6303d7ab",
+      "version_id": "262387ed-d1b0-4101-b2f0-8a45f9a04274",
+      "version_label": "07/02/2026",
+      "date_published": "2026-07-02T15:44:20.080Z",
+      "source_path": "data/source/ufc/UFC_3-201-02.json",
+      "source_sha256": "2edd1cbe87bd22f7783d663a0dd2290358b2479ccaa11861b1df2ac8a11f32c5",
+      "source_url": "https://digital.wbdg.org/versions/262387ed-d1b0-4101-b2f0-8a45f9a04274",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 162,
+      "sentence_count": 119,
+      "heading_count": 43,
+      "exclusions": {
+        "commentary_records_not_mined": 11
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 17
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-210-10",
+      "title": "Low Impact Development",
+      "criterion_id": "16f672fe-9ab1-4573-87e1-4b4e0d82112f",
+      "version_id": "bb3b66be-d227-4a40-8c86-ba1e4d0872d0",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:45:30.889Z",
+      "source_path": "data/source/ufc/UFC_3-210-10.json",
+      "source_sha256": "d68001a0886fc5215de0a8a6dcd6d01e8ab8381b65ba94885d9f55d6b8355d57",
+      "source_url": "https://digital.wbdg.org/versions/bb3b66be-d227-4a40-8c86-ba1e4d0872d0",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 96,
+      "sentence_count": 68,
+      "heading_count": 28,
+      "exclusions": {
+        "commentary_records_not_mined": 0
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 2,
+        "abbreviation_expansion": 6
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-220-01",
+      "title": "Geotechnical Engineering",
+      "criterion_id": "b1df8bb0-4932-492e-990b-754d2485abef",
+      "version_id": "2352ff43-093e-47ba-a7ce-f5a07c47c7e1",
+      "version_label": "07/02/2026",
+      "date_published": "2026-07-02T15:19:33.888Z",
+      "source_path": "data/source/ufc/UFC_3-220-01.json",
+      "source_sha256": "1659f6d4fc1a999affcb94e909cb65f92546280f7b25114e542cd0ef3c3cc08e",
+      "source_url": "https://digital.wbdg.org/versions/2352ff43-093e-47ba-a7ce-f5a07c47c7e1",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 231,
+      "sentence_count": 156,
+      "heading_count": 75,
+      "exclusions": {
+        "commentary_records_not_mined": 13,
+        "content_only_leaf_nodes_not_mined": 3,
+        "media_nodes_not_mined": 3
+      },
+      "candidate_counts": {
+        "explicit_definition": 1,
+        "explicit_synonym_statement": 1,
+        "abbreviation_expansion": 7
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-230-01",
+      "title": "Water Storage, Distribution, and Treatment",
+      "criterion_id": "9f7eb52f-7405-439e-ac53-44cc1cb54b3c",
+      "version_id": "0a3337c8-19cb-4b6b-aa0d-2f7c57b827cc",
+      "version_label": "08/06/2026",
+      "date_published": "2026-08-06T17:01:59.799Z",
+      "source_path": "data/source/ufc/UFC_3-230-01.json",
+      "source_sha256": "002bc4e22146d9777bd2103a9107bc4a76c9a9ba8242be11d987f7456bc93ecc",
+      "source_url": "https://digital.wbdg.org/versions/0a3337c8-19cb-4b6b-aa0d-2f7c57b827cc",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 531,
+      "sentence_count": 471,
+      "heading_count": 60,
+      "exclusions": {
+        "commentary_records_not_mined": 0,
+        "media_nodes_not_mined": 3
+      },
+      "candidate_counts": {
+        "explicit_definition": 4,
+        "descriptive_definition_candidate": 1,
+        "abbreviation_expansion": 11
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-240-01",
+      "title": "Wastewater Collection and Treatment",
+      "criterion_id": "141b0a39-7b51-4c88-873c-66363838d524",
+      "version_id": "66743919-1a6d-4274-baa5-124350b2b092",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:48:35.465Z",
+      "source_path": "data/source/ufc/UFC_3-240-01.json",
+      "source_sha256": "348f0d41737410e8adadc963673385393308fc45fb057c224fb34a3f89f51865",
+      "source_url": "https://digital.wbdg.org/versions/66743919-1a6d-4274-baa5-124350b2b092",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 922,
+      "sentence_count": 772,
+      "heading_count": 150,
+      "exclusions": {
+        "commentary_records_not_mined": 10,
+        "content_only_leaf_nodes_not_mined": 3,
+        "media_nodes_not_mined": 3
+      },
+      "candidate_counts": {
+        "explicit_definition": 4,
+        "abbreviation_expansion": 17
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-250-01",
+      "title": "Pavement Design for Roads and Parking Areas",
+      "criterion_id": "e2847fb8-1fb2-4b7e-b5f1-e89af9a25095",
+      "version_id": "f52b3dc7-516f-4784-b405-b1e1e0d5f63d",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:49:43.208Z",
+      "source_path": "data/source/ufc/UFC_3-250-01.json",
+      "source_sha256": "d08012899b49771dc2a589d6aa6a5bca6672024791c5ac1e80a0270bdf393df5",
+      "source_url": "https://digital.wbdg.org/versions/f52b3dc7-516f-4784-b405-b1e1e0d5f63d",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1634,
+      "sentence_count": 1343,
+      "heading_count": 291,
+      "exclusions": {
+        "commentary_records_not_mined": 0,
+        "content_only_leaf_nodes_not_mined": 32,
+        "media_nodes_not_mined": 72
+      },
+      "candidate_counts": {
+        "descriptive_definition_candidate": 2,
+        "explicit_synonym_statement": 1,
+        "definition_reference": 2,
+        "abbreviation_expansion": 36
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-301-01",
+      "title": "Structural Engineering",
+      "criterion_id": "8b2a6677-6a8c-480b-899d-e839f07a0c03",
+      "version_id": "2a853bc9-50ee-4414-9ffc-f592c9b7ad3e",
+      "version_label": "07/02/2026",
+      "date_published": "2026-07-02T15:41:59.121Z",
+      "source_path": "data/source/ufc/UFC_3-301-01.json",
+      "source_sha256": "b789e4cded68557ddd12d472407b9e1250e2eba7673d0860f09cf6d1ec93fbf4",
+      "source_url": "https://digital.wbdg.org/versions/2a853bc9-50ee-4414-9ffc-f592c9b7ad3e",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1036,
+      "sentence_count": 871,
+      "heading_count": 165,
+      "exclusions": {
+        "commentary_records_not_mined": 45,
+        "content_only_leaf_nodes_not_mined": 11,
+        "media_nodes_not_mined": 14
+      },
+      "candidate_counts": {
+        "explicit_definition": 5,
+        "definition_reference": 2,
+        "explicit_synonym_statement": 1,
+        "abbreviation_expansion": 36
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-401-01",
+      "title": "Mechanical Engineering",
+      "criterion_id": "a3c80465-3981-4c68-a607-edca4d0c40a2",
+      "version_id": "9184e792-67d1-456d-a9d9-e98c9bb001af",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:50:00.794Z",
+      "source_path": "data/source/ufc/UFC_3-401-01.json",
+      "source_sha256": "beaddc994bde1924824c37f91e6955464ef13fd890bea477cfbf271ddef6a1bc",
+      "source_url": "https://digital.wbdg.org/versions/9184e792-67d1-456d-a9d9-e98c9bb001af",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 97,
+      "sentence_count": 71,
+      "heading_count": 26,
+      "exclusions": {
+        "commentary_records_not_mined": 3,
+        "content_only_leaf_nodes_not_mined": 3,
+        "media_nodes_not_mined": 3
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 6
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-410-01",
+      "title": "Heating, Ventilating and Air Conditioning",
+      "criterion_id": "3d1fc2f6-4742-4c3a-b919-1830a5b1c598",
+      "version_id": "5024bc7e-c542-4424-a579-dca4fc5c6657",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:50:23.086Z",
+      "source_path": "data/source/ufc/UFC_3-410-01.json",
+      "source_sha256": "893a83cac5357c5871be5f08ac96200d0b4a4caca0e777a004059b2f124abcc6",
+      "source_url": "https://digital.wbdg.org/versions/5024bc7e-c542-4424-a579-dca4fc5c6657",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 908,
+      "sentence_count": 751,
+      "heading_count": 157,
+      "exclusions": {
+        "commentary_records_not_mined": 39,
+        "content_only_leaf_nodes_not_mined": 2,
+        "media_nodes_not_mined": 2
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 2,
+        "explicit_definition": 10,
+        "abbreviation_expansion": 34
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-410-02",
+      "title": "Direct Digital Control for HVAC and Other Building Control Systems",
+      "criterion_id": "efa70180-f718-4aa8-8a6d-df937ed3dec9",
+      "version_id": "1b3a40b4-c8cc-4418-b5b0-89ad6376903a",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:03:41.863Z",
+      "source_path": "data/source/ufc/UFC_3-410-02.json",
+      "source_sha256": "b2eb4d773e839f8f4ce858cf57f53d52ddcdb7c06913a5f82ac8f1c32d084d24",
+      "source_url": "https://digital.wbdg.org/versions/1b3a40b4-c8cc-4418-b5b0-89ad6376903a",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 93,
+      "sentence_count": 74,
+      "heading_count": 19,
+      "exclusions": {
+        "commentary_records_not_mined": 5
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 4
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-410-04",
+      "title": "Industrial Ventilation",
+      "criterion_id": "ad0ea76c-a307-4f1a-a7af-35fde2a08b60",
+      "version_id": "798d6f34-8cc7-48b5-8c31-5d09d1254e10",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:39:23.291Z",
+      "source_path": "data/source/ufc/UFC_3-410-04.json",
+      "source_sha256": "62597b3a1d42cea3abf877d8b1f006e3fff2fd6512c321444ccfb24181bbe7f7",
+      "source_url": "https://digital.wbdg.org/versions/798d6f34-8cc7-48b5-8c31-5d09d1254e10",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 401,
+      "sentence_count": 273,
+      "heading_count": 128,
+      "exclusions": {
+        "commentary_records_not_mined": 45,
+        "content_only_leaf_nodes_not_mined": 19,
+        "media_nodes_not_mined": 18
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 1
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-420-01",
+      "title": "Plumbing Systems",
+      "criterion_id": "aef66f79-9bb2-4f23-9573-759e1b523e2c",
+      "version_id": "c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:51:09.322Z",
+      "source_path": "data/source/ufc/UFC_3-420-01.json",
+      "source_sha256": "c131fb58297606c0f8d3e6d32aabe8c875b17ea07ddd8dc45591e460ce799f98",
+      "source_url": "https://digital.wbdg.org/versions/c0f3cb57-68f4-4e20-a713-2bab6e8173ee",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 524,
+      "sentence_count": 448,
+      "heading_count": 76,
+      "exclusions": {
+        "commentary_records_not_mined": 28,
+        "content_only_leaf_nodes_not_mined": 1,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "explicit_definition": 10,
+        "abbreviation_expansion": 11
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-420-02",
+      "title": "Compressed Air",
+      "criterion_id": "81f807d1-eeee-46ec-89ec-407a19cd19cb",
+      "version_id": "c0aae4dd-4779-4a04-b765-dd0155008697",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:46:39.620Z",
+      "source_path": "data/source/ufc/UFC_3-420-02.json",
+      "source_sha256": "104ed602ca77a7e92904723ca81b29a425301765d44cbe96d0bc29c2869b1491",
+      "source_url": "https://digital.wbdg.org/versions/c0aae4dd-4779-4a04-b765-dd0155008697",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 116,
+      "sentence_count": 87,
+      "heading_count": 29,
+      "exclusions": {
+        "commentary_records_not_mined": 10
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 1
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-430-09",
+      "title": "Exterior Mechanical Utility Distribution",
+      "criterion_id": "47a6cc7c-9aa4-44e2-ae82-6d5cc4528352",
+      "version_id": "0a372c8c-9cd3-4fa0-ab9d-9874243d63dd",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:44:39.131Z",
+      "source_path": "data/source/ufc/UFC_3-430-09.json",
+      "source_sha256": "00c3dfd2e80007cee998be2c5298f9d9e335c4f258035769498ae2ba89701821",
+      "source_url": "https://digital.wbdg.org/versions/0a372c8c-9cd3-4fa0-ab9d-9874243d63dd",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 749,
+      "sentence_count": 599,
+      "heading_count": 150,
+      "exclusions": {
+        "commentary_records_not_mined": 1,
+        "media_nodes_not_mined": 2,
+        "content_only_leaf_nodes_not_mined": 9
+      },
+      "candidate_counts": {
+        "definition_reference": 2,
+        "abbreviation_expansion": 16
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-440-01",
+      "title": "Facility-Scale Renewable Energy Systems",
+      "criterion_id": "8d69fc23-13a9-401e-83fa-5b5e1cafb2ca",
+      "version_id": "cdf1ef87-bb69-4c12-af9c-6535e61606b3",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:07:38.148Z",
+      "source_path": "data/source/ufc/UFC_3-440-01.json",
+      "source_sha256": "6d0aefdb8eb25ba296f97e29d266a30de7a47a48e25b34e2fa8d7156f11ce714",
+      "source_url": "https://digital.wbdg.org/versions/cdf1ef87-bb69-4c12-af9c-6535e61606b3",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 411,
+      "sentence_count": 291,
+      "heading_count": 120,
+      "exclusions": {
+        "commentary_records_not_mined": 32
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 4
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-470-01",
+      "title": "Utility Monitoring and Control System (UMCS) Front End and Integration",
+      "criterion_id": "b34f95e9-5fc1-4bbb-91ef-646ae4c1d3df",
+      "version_id": "2f041e01-76de-488d-a7ac-3d17c4823e2d",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:40:50.032Z",
+      "source_path": "data/source/ufc/UFC_3-470-01.json",
+      "source_sha256": "d4d3f0e117a56841f1f66c9ae3c580c2d64708f0034059e920230da0f6ee1de4",
+      "source_url": "https://digital.wbdg.org/versions/2f041e01-76de-488d-a7ac-3d17c4823e2d",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 34,
+      "sentence_count": 23,
+      "heading_count": 11,
+      "exclusions": {
+        "commentary_records_not_mined": 7
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 2
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-490-06",
+      "title": "Design: Elevators",
+      "criterion_id": "9e2a3441-1c22-483e-b646-78c251fcc7d9",
+      "version_id": "24be72e9-ed8d-434b-b015-8344eceb3d08",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:51:36.188Z",
+      "source_path": "data/source/ufc/UFC_3-490-06.json",
+      "source_sha256": "423d97b5eb940b4e39c6fbfb046e21e6ccb7e9fe578dbe521edf0a9e95908580",
+      "source_url": "https://digital.wbdg.org/versions/24be72e9-ed8d-434b-b015-8344eceb3d08",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 409,
+      "sentence_count": 316,
+      "heading_count": 93,
+      "exclusions": {
+        "commentary_records_not_mined": 7,
+        "content_only_leaf_nodes_not_mined": 8
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 9
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-501-01",
+      "title": "Electrical Engineering",
+      "criterion_id": "664fbd72-d5f2-42d8-b52d-4087e852b7e8",
+      "version_id": "7de957e4-97e3-43aa-9bdc-723088accc82",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:52:04.441Z",
+      "source_path": "data/source/ufc/UFC_3-501-01.json",
+      "source_sha256": "f2bd733a8633697da74786ea14a820c591291e6b98725ffd1631794c9c3ee474",
+      "source_url": "https://digital.wbdg.org/versions/7de957e4-97e3-43aa-9bdc-723088accc82",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 103,
+      "sentence_count": 63,
+      "heading_count": 40,
+      "exclusions": {
+        "commentary_records_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 6
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-520-01",
+      "title": "Interior Electrical Systems",
+      "criterion_id": "a827da11-317b-4385-8e19-31f5fc0de7b2",
+      "version_id": "b69e80aa-59e2-47ce-ba63-2f943812b571",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:52:30.320Z",
+      "source_path": "data/source/ufc/UFC_3-520-01.json",
+      "source_sha256": "8e0b670b045ff9be132f97b937a845b24e7a464d02a399ffc1ea4535b33cc9b4",
+      "source_url": "https://digital.wbdg.org/versions/b69e80aa-59e2-47ce-ba63-2f943812b571",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 342,
+      "sentence_count": 252,
+      "heading_count": 90,
+      "exclusions": {
+        "commentary_records_not_mined": 14,
+        "content_only_leaf_nodes_not_mined": 3,
+        "media_nodes_not_mined": 3
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 7
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-520-05",
+      "title": "Stationary and Mission Batteries",
+      "criterion_id": "a6f0bf70-c825-4ae1-a14b-88387367a9a9",
+      "version_id": "31f2e974-b245-4307-8ceb-5fcc215d30c0",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:11:00.459Z",
+      "source_path": "data/source/ufc/UFC_3-520-05.json",
+      "source_sha256": "1d2ee7aca2e88c80a7204bece35715a70cacf09771f8fdc9d520c79a9a35d934",
+      "source_url": "https://digital.wbdg.org/versions/31f2e974-b245-4307-8ceb-5fcc215d30c0",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 302,
+      "sentence_count": 214,
+      "heading_count": 88,
+      "exclusions": {
+        "commentary_records_not_mined": 5,
+        "content_only_leaf_nodes_not_mined": 4,
+        "media_nodes_not_mined": 4
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 18
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-530-01",
+      "title": "Interior and Exterior Lighting Systems",
+      "criterion_id": "ad51cb1b-07b8-402c-afa2-83dbd5acf6c4",
+      "version_id": "3d147989-ea4f-405e-a40d-4356a22ac1db",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:52:58.825Z",
+      "source_path": "data/source/ufc/UFC_3-530-01.json",
+      "source_sha256": "16c1e6220b81ee6ecae8be78c946f6753a4e3bbcc54ca0acfe0f17df9c417cf0",
+      "source_url": "https://digital.wbdg.org/versions/3d147989-ea4f-405e-a40d-4356a22ac1db",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 871,
+      "sentence_count": 494,
+      "heading_count": 377,
+      "exclusions": {
+        "commentary_records_not_mined": 34,
+        "content_only_leaf_nodes_not_mined": 97,
+        "media_nodes_not_mined": 96
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 16
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-540-01",
+      "title": "Engine-Driven Generator Systems for Prime and Standby Power Applications",
+      "criterion_id": "724c46ce-0afa-4e1f-b069-930d2f4f9e7f",
+      "version_id": "2b4a223f-c35e-4735-9f30-96e47c839a8f",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:48:40.715Z",
+      "source_path": "data/source/ufc/UFC_3-540-01.json",
+      "source_sha256": "1ecd8cdc0abeced184ea70ed38c7962c94665362c21ba8e8e7e07a49f788828c",
+      "source_url": "https://digital.wbdg.org/versions/2b4a223f-c35e-4735-9f30-96e47c839a8f",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 380,
+      "sentence_count": 295,
+      "heading_count": 85,
+      "exclusions": {
+        "commentary_records_not_mined": 2,
+        "content_only_leaf_nodes_not_mined": 1,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 20
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-540-08",
+      "title": "Utility-Scale Alternative On-Site Energy Systems",
+      "criterion_id": "9097f4cb-1c55-401c-9bf8-93d18338d6f4",
+      "version_id": "e97c88f1-11aa-4124-a94e-142abceb6c5b",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:35:24.745Z",
+      "source_path": "data/source/ufc/UFC_3-540-08.json",
+      "source_sha256": "e9dbb5e490a80e70fd8890057bc2d7ca76b3ffefe5563fede36b63f9c7855d22",
+      "source_url": "https://digital.wbdg.org/versions/e97c88f1-11aa-4124-a94e-142abceb6c5b",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1931,
+      "sentence_count": 1430,
+      "heading_count": 501,
+      "exclusions": {
+        "commentary_records_not_mined": 75,
+        "content_only_leaf_nodes_not_mined": 22,
+        "media_nodes_not_mined": 22
+      },
+      "candidate_counts": {
+        "descriptive_definition_candidate": 1,
+        "explicit_synonym_statement": 1,
+        "abbreviation_expansion": 68
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-550-01",
+      "title": "Exterior Electrical Power Distribution",
+      "criterion_id": "56d211db-a76f-48fd-83ee-756b41835da1",
+      "version_id": "6687ce31-531e-4a75-9e72-e3688772a869",
+      "version_label": "06/04/2026",
+      "date_published": "2026-06-04T20:54:17.308Z",
+      "source_path": "data/source/ufc/UFC_3-550-01.json",
+      "source_sha256": "be08b59f6bd00cc35e7777e568ddea30b9574afac6857c214b4839ab5879fcf5",
+      "source_url": "https://digital.wbdg.org/versions/6687ce31-531e-4a75-9e72-e3688772a869",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 292,
+      "sentence_count": 205,
+      "heading_count": 87,
+      "exclusions": {
+        "commentary_records_not_mined": 9
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 2
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-550-06",
+      "title": "Electric Vehicle Charging Facilities (EVCF)",
+      "criterion_id": "9511afcb-1c2b-47f2-993e-fcf229cb0a16",
+      "version_id": "220d3e85-12a9-464d-8e38-eeada830187a",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:49:02.334Z",
+      "source_path": "data/source/ufc/UFC_3-550-06.json",
+      "source_sha256": "ec3262177f49d9f2f72fbbe48e5799f503bff055a2b4a3a4f9c547db97ecaa33",
+      "source_url": "https://digital.wbdg.org/versions/220d3e85-12a9-464d-8e38-eeada830187a",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 192,
+      "sentence_count": 125,
+      "heading_count": 67,
+      "exclusions": {
+        "commentary_records_not_mined": 19,
+        "content_only_leaf_nodes_not_mined": 5,
+        "media_nodes_not_mined": 6
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 13
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-555-01",
+      "title": "Aircraft Point-of-Use Power Systems",
+      "criterion_id": "7a703a40-386d-4a35-9ca5-80bbb2a48a91",
+      "version_id": "e4345f8e-d0e6-4c82-a875-691b85ac332a",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:37:26.855Z",
+      "source_path": "data/source/ufc/UFC_3-555-01.json",
+      "source_sha256": "80521cd1dec7dfac9164398e4434030cf3bc75e44243092fb7e7e55b702f1890",
+      "source_url": "https://digital.wbdg.org/versions/e4345f8e-d0e6-4c82-a875-691b85ac332a",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 377,
+      "sentence_count": 320,
+      "heading_count": 57,
+      "exclusions": {
+        "commentary_records_not_mined": 6,
+        "content_only_leaf_nodes_not_mined": 9,
+        "media_nodes_not_mined": 9
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 13
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-570-01",
+      "title": "Cathodic Protection",
+      "criterion_id": "15b7c97a-c721-4ba3-9a5e-3c8e205f2fd4",
+      "version_id": "6aec9ba3-5b2b-4cca-89d6-09510483dac9",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:26:01.346Z",
+      "source_path": "data/source/ufc/UFC_3-570-01.json",
+      "source_sha256": "d1512b53a4c7932ff4486c7d5efa3ef8f4c93dccec8d981b7f2f28d3676ea475",
+      "source_url": "https://digital.wbdg.org/versions/6aec9ba3-5b2b-4cca-89d6-09510483dac9",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 410,
+      "sentence_count": 299,
+      "heading_count": 111,
+      "exclusions": {
+        "commentary_records_not_mined": 24,
+        "content_only_leaf_nodes_not_mined": 1,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 21
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-575-01",
+      "title": "Lightning and Static Electricity Protection Systems",
+      "criterion_id": "06067ca6-5edd-4a44-99ad-eed0976ced99",
+      "version_id": "36b6f514-8a1f-42fa-a94e-3c7e7977a44c",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:41:17.304Z",
+      "source_path": "data/source/ufc/UFC_3-575-01.json",
+      "source_sha256": "434097f5fa00d2f5d67bda233e68638575e8782a396483b907d72929e1597863",
+      "source_url": "https://digital.wbdg.org/versions/36b6f514-8a1f-42fa-a94e-3c7e7977a44c",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 257,
+      "sentence_count": 194,
+      "heading_count": 63,
+      "exclusions": {
+        "commentary_records_not_mined": 7,
+        "content_only_leaf_nodes_not_mined": 1,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 8
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-580-01",
+      "title": "Information and Communications Technology Infrastructure Planning and Design",
+      "criterion_id": "16c16f02-0044-4e50-bfe4-8596a1cfedd8",
+      "version_id": "d69c6ad6-7bc6-4a0a-aede-19e1e58ff97f",
+      "version_label": "07/27/2026",
+      "date_published": "2026-07-27T14:00:03.863Z",
+      "source_path": "data/source/ufc/UFC_3-580-01.json",
+      "source_sha256": "9f137f864b0104980cc27a8cd7ee444f18a01b184fdefdef97159e1105615e1d",
+      "source_url": "https://digital.wbdg.org/versions/d69c6ad6-7bc6-4a0a-aede-19e1e58ff97f",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1974,
+      "sentence_count": 1591,
+      "heading_count": 383,
+      "exclusions": {
+        "commentary_records_not_mined": 79,
+        "media_nodes_not_mined": 26,
+        "content_only_leaf_nodes_not_mined": 2
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 1,
+        "definition_reference": 1,
+        "abbreviation_expansion": 132
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-600-01",
+      "title": "Fire Protection Engineering for Facilities",
+      "criterion_id": "9d8609ed-2f2b-4d17-a5c7-47c8e72a53b5",
+      "version_id": "79a0caab-8a3a-4ee4-a62c-0a517b485e06",
+      "version_label": "07/02/2026",
+      "date_published": "2026-07-02T15:55:47.965Z",
+      "source_path": "data/source/ufc/UFC_3-600-01.json",
+      "source_sha256": "449b07cb8b05f171a46e6c6bfc20b29e3e92cbc9a192ecaf617172059f964f35",
+      "source_url": "https://digital.wbdg.org/versions/79a0caab-8a3a-4ee4-a62c-0a517b485e06",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1682,
+      "sentence_count": 1178,
+      "heading_count": 504,
+      "exclusions": {
+        "commentary_records_not_mined": 135,
+        "content_only_leaf_nodes_not_mined": 8,
+        "media_nodes_not_mined": 8
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 1,
+        "explicit_definition": 1,
+        "definition_reference": 1,
+        "abbreviation_expansion": 73
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 3-810-01",
+      "title": "Environmental Engineering for Facility Construction",
+      "criterion_id": "3012db55-4837-4eb5-9d8c-fe1680707de5",
+      "version_id": "4cd88605-48ac-4295-b907-24d8a218ea31",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:04:24.598Z",
+      "source_path": "data/source/ufc/UFC_3-810-01.json",
+      "source_sha256": "bd7f08e6e738eae444b1533ac757c0ac3b0146aeb11e4491565791aeb72c16eb",
+      "source_url": "https://digital.wbdg.org/versions/4cd88605-48ac-4295-b907-24d8a218ea31",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 444,
+      "sentence_count": 296,
+      "heading_count": 148,
+      "exclusions": {
+        "commentary_records_not_mined": 37,
+        "content_only_leaf_nodes_not_mined": 2,
+        "media_nodes_not_mined": 1
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 14
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-010-01",
+      "title": "Antiterrorism, Force Protection, and Security Engineering",
+      "criterion_id": "232da0b3-da5b-430e-aaaf-232c4e98d202",
+      "version_id": "8b5ee69d-bcf1-4a2d-86ad-b4415c6c0595",
+      "version_label": "07/02/2026",
+      "date_published": "2026-07-02T16:01:38.684Z",
+      "source_path": "data/source/ufc/UFC_4-010-01.json",
+      "source_sha256": "f741f5c284b11c70ef7e9958528314fb44b73c0d62717aae63ab174740f1ec4c",
+      "source_url": "https://digital.wbdg.org/versions/8b5ee69d-bcf1-4a2d-86ad-b4415c6c0595",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 543,
+      "sentence_count": 318,
+      "heading_count": 225,
+      "exclusions": {
+        "commentary_records_not_mined": 105,
+        "content_only_leaf_nodes_not_mined": 66,
+        "media_nodes_not_mined": 53
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 11
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-010-06",
+      "title": "Cybersecurity of Facility-Related Control Systems (FRCS)",
+      "criterion_id": "3453f470-40ba-44cd-90da-a9eb84577ca2",
+      "version_id": "d6247a64-ae26-4c82-b443-1f5aec924db5",
+      "version_label": "07/27/2026",
+      "date_published": "2026-07-27T14:00:39.650Z",
+      "source_path": "data/source/ufc/UFC_4-010-06.json",
+      "source_sha256": "0f0614fd6c06af2fb3171d2035df76a1703f26d4faecd07b8e88e349df24ea54",
+      "source_url": "https://digital.wbdg.org/versions/d6247a64-ae26-4c82-b443-1f5aec924db5",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 116,
+      "sentence_count": 82,
+      "heading_count": 34,
+      "exclusions": {
+        "commentary_records_not_mined": 16,
+        "content_only_leaf_nodes_not_mined": 2,
+        "media_nodes_not_mined": 2
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 1,
+        "abbreviation_expansion": 7
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-021-02",
+      "title": "Electronic Security Systems",
+      "criterion_id": "46e42b72-bca6-4126-8d1a-1a815e697de5",
+      "version_id": "86db04f8-9403-44d2-b2ec-4ee5a458e781",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T15:40:47.428Z",
+      "source_path": "data/source/ufc/UFC_4-021-02.json",
+      "source_sha256": "44ab2066c47716ab900aa762c1814524c9ab43fae0d09aa9f1bd7c06a7fedcf3",
+      "source_url": "https://digital.wbdg.org/versions/86db04f8-9403-44d2-b2ec-4ee5a458e781",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 393,
+      "sentence_count": 258,
+      "heading_count": 135,
+      "exclusions": {
+        "commentary_records_not_mined": 47
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 34
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-022-03",
+      "title": "Security Fences and Gates",
+      "criterion_id": "d9f74a04-db5e-4550-9929-c7d5dfa600f6",
+      "version_id": "baefe807-791e-443d-8347-1e84f54dac38",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:11:58.939Z",
+      "source_path": "data/source/ufc/UFC_4-022-03.json",
+      "source_sha256": "2b3d0c8f6cf356581b3a383af013cfb49e80675fee80ba92eabbf92e0c6be205",
+      "source_url": "https://digital.wbdg.org/versions/baefe807-791e-443d-8347-1e84f54dac38",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 325,
+      "sentence_count": 210,
+      "heading_count": 115,
+      "exclusions": {
+        "commentary_records_not_mined": 46,
+        "content_only_leaf_nodes_not_mined": 30,
+        "media_nodes_not_mined": 12
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 14
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-025-01",
+      "title": "Security Engineering: Waterfront Security",
+      "criterion_id": "cb7b92dc-0374-4479-bfbc-14d7b8795b96",
+      "version_id": "761407b1-dbd5-4ba8-975e-828af8533bba",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T18:50:02.616Z",
+      "source_path": "data/source/ufc/UFC_4-025-01.json",
+      "source_sha256": "5abfb2a737e8f6f73d3c6a4f6a547e3b8df37c4a2660083141972d6c5faff8ce",
+      "source_url": "https://digital.wbdg.org/versions/761407b1-dbd5-4ba8-975e-828af8533bba",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 331,
+      "sentence_count": 212,
+      "heading_count": 119,
+      "exclusions": {
+        "commentary_records_not_mined": 75,
+        "content_only_leaf_nodes_not_mined": 8
+      },
+      "candidate_counts": {
+        "abbreviation_expansion": 12
+      },
+      "baseline_hash_match": true
+    },
+    {
+      "source_family": "UFC",
+      "designation": "UFC 4-860-01",
+      "title": "Railroad Design and Rehabilitation",
+      "criterion_id": "d914a95d-e35b-4633-86cb-eb3bdede3373",
+      "version_id": "ef180c76-74bf-47da-86ac-ef5b325e1959",
+      "version_label": "07/31/2026",
+      "date_published": "2026-07-31T16:16:22.750Z",
+      "source_path": "data/source/ufc/UFC_4-860-01.json",
+      "source_sha256": "3fbbef7fabc02b3e3137be32d4d835b6c1b6e1088a790b01425b07c77f87f562",
+      "source_url": "https://digital.wbdg.org/versions/ef180c76-74bf-47da-86ac-ef5b325e1959",
+      "rights_status": "government_source_with_third_party_rights_to_classify",
+      "live_version_check": "not_refreshed_by_this_extraction",
+      "source_unit_count": 1257,
+      "sentence_count": 908,
+      "heading_count": 349,
+      "exclusions": {
+        "commentary_records_not_mined": 38,
+        "content_only_leaf_nodes_not_mined": 44,
+        "media_nodes_not_mined": 73
+      },
+      "candidate_counts": {
+        "explicit_synonym_statement": 2,
+        "abbreviation_expansion": 9
+      },
+      "baseline_hash_match": true
+    }
+  ],
+  "candidate_counts": {
+    "descriptive_definition_candidate": 14,
+    "explicit_definition": 65,
+    "explicit_synonym_statement": 22,
+    "abbreviation_expansion": 978,
+    "definition_reference": 9
+  },
+  "evidence_unit_count": 1614,
+  "validation": {
+    "source_units_validated_against_json_pointers": 26209,
+    "exact_spans_validated": 3263,
+    "candidate_ids_unique": 1088,
+    "accepted_concepts": 0,
+    "semantic_precision_or_recall_measured": false
+  },
+  "scope": "Local UFC JSON sentence and heading fields only. No live refresh or extension-source mining.",
+  "limitations": [
+    "Candidate discovery is not complete semantic extraction.",
+    "Tables, media, commentary, and content-only leaves are not mined in this pass.",
+    "Parenthetical abbreviations are alignment candidates and require lexical review.",
+    "Definition references remain unresolved unless separately reviewed.",
+    "No source editions, concept senses, or labels are merged automatically.",
+    "Source quotations may include third-party material; redistribution classification is pending."
+  ]
+}

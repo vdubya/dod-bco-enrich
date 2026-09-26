@@ -1,0 +1,258 @@
+{
+  "selection_version": "0.1.0",
+  "status": "review_set_not_an_accepted_vocabulary",
+  "selection_method": "assistant_selection_of_source_explicit_entries_and_two_descriptive_construction_level_candidates",
+  "selection_rationale": "Prioritize UFC 1-200-01, source-scoped definitions, authority and property roles, construction levels, retained exclusions, and comparison cases. Include two lexical expansions and one unresolved definition reference to make boundaries explicit.",
+  "entries": [
+    {
+      "candidate_id": "ufc-vocab-75e16cef1c2fdb7db11e32da",
+      "review_focus": "Compare with the non-permanent-facilities glossary. Preserve the specific period and the qualifier typically; do not collapse waiver into exemption.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1d296d21c5df1d275c3caf9c",
+      "review_focus": "Keep the indefinite duration distinct from waiver. The source refers approval procedures to MIL-STD-3007.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-01e78e6e0bb40f3fdd04d9b6",
+      "review_focus": "Source-declared equivalence within the stated UFC/FC and referenced-code context. Retain the adjacent exclusion of waiver and exemption approval from this authority.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-bf7d5be76afcdc1e5bf94664",
+      "review_focus": "Compare with mechanical and plumbing owner definitions. This statement appears in the IEBC scope-and-administration context; no universal Owner equivalence is asserted.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-6060f6aaea47cd3f6aedb4aa",
+      "review_focus": "Descriptive construction-level candidate. Retain the default treatment and intended life expectancy; review the distinction between construction level and an individual asset lifetime.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-f31faec67dcd2334f4605598",
+      "review_focus": "Compare with Temporary construction level in UFC 1-201-01. Keep the initial period, approval conditions, and further-extension text together; different source scopes are not automatically a contradiction.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-5d8d77ebb9128fa2c88c9472",
+      "review_focus": "This is a code-modification operation in the source legend, not a building addition or an arithmetic operation.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-ab250ada755de6677919e729",
+      "review_focus": "Code-modification vocabulary scoped to the referenced IBC/IEBC sections.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-3c4ad52b805dfd3ac358123f",
+      "review_focus": "Code-modification vocabulary scoped to the referenced text; do not infer that every later publication replaces earlier guidance.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1754e32842ccc68d677e5fc6",
+      "review_focus": "Preserve the distinction between adding narrative and replacing a parent requirement.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1db53ca6d081e7040951ac38",
+      "review_focus": "This UFC quotes a definition attributed to 10 USC 2228. Preserve the attribution; the statute itself was not independently acquired or checked in this pass.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-41f86dfe9ae39112e842f23d",
+      "review_focus": "Abbreviation observation only. Adjacent role text is retained as context; an expansion alone does not define the authority of the organization.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-0bd7b08a4e00d67ca51cc9a1",
+      "review_focus": "Abbreviation observation only. The source role paragraph and its conditions are retained in context.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-91303c443edd6aceed96ed64",
+      "review_focus": "Retain the 11-person threshold, expeditionary-structure scope, and the exclusion for sleeping spaces in 24-hour operations facilities.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1a414837790f5f8cad77545d",
+      "review_focus": "Preserve the contingency-location scope and JP 4-0 attribution. A responsible role is distinct from the organization that fills it.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-fda4868fe28caae46d461d04",
+      "review_focus": "Preserve the canopy exclusion and UFC 4-010-01 attribution. Review before mapping to general-purpose Building vocabularies.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-75d8d1f02b6cc9a6a7d7f9bb",
+      "review_focus": "Keep the complete equipment description and source-declared alternative name; link to the separate synonym assertion.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-7f3cd03886cc1ccd723e9b38",
+      "review_focus": "Compare with CLU. Identical source wording is evidence for a possible mapping, not an automatic concept merge. Retain configuration restrictions.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-d8c60c1185d1f82656be4c33",
+      "review_focus": "Compare with CHU while preserving its separate heading and configuration restrictions.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-7659f87daf6a44ac96293e16",
+      "review_focus": "Compare with the geotechnical Registered Design Professional and structural SER definitions before choosing broader or narrower mappings.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-d84f0fdf3243b8e8f4f74492",
+      "review_focus": "Compare with UFC 1-200-01; keep this source assertion and its non-permanent-facilities context separate.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-a7d829655c64ff3134eb7f91",
+      "review_focus": "Explicitly includes a building, structure, utility system, pavement, and underlying land. Preserve the attribution to the DoD dictionary.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-d28d0aa7cd9a291ce0cb3982",
+      "review_focus": "Preserve its stated subset relation to Initial construction level, duration, extension, and JP 3-34 attribution.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1bacc02130ba298dae819602",
+      "review_focus": "Retain the arrival-in-theater context, duration, and JP 3-34 attribution.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-3528b58f9393b236d0057151",
+      "review_focus": "Compare with Temporary Construction in UFC 1-200-01. Preserve this document scope and the cited JP 3-34 definition.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-f286cd3ac926a292f65e0c24",
+      "review_focus": "Keep the extension conditional on maintenance of critical building systems.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-f46eac4a3604546cf02848f2",
+      "review_focus": "A facility-level definition. Compare with the space-level Living Unit definition without merging them.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-5f4b275e9a36d0272852553c",
+      "review_focus": "A space within a facility. Preserve its distinction from Living Quarters.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-58bb868f8dacdd20102dea44",
+      "review_focus": "Review the relationship to code occupancy classifications; the source provides a short usage-based definition.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-2451f31ffa8d6d058215b06d",
+      "review_focus": "Preserve the vehicle exclusion, threat scope, and included examples. The CBRNE expansion is part of the source evidence.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-739ea650f5b610a380f7a556",
+      "review_focus": "A scoped glossary definition; do not universalize this qualification requirement across other communities.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-8f3a9b9a9567464fcfe2fbfb",
+      "review_focus": "Retain the JP 1 attribution and use this concept to describe the source document scope, not as a facilities-specific asset class.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-e778b011cbb07fd958f5e789",
+      "review_focus": "Retain the typical population and DEPMEDS exception. Compare later use of the term elsewhere in the same UFC.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-0c8fe48b78dc46e6e7c65092",
+      "review_focus": "Compare with the UFC 1-200-01 formulation. Preserve the approval-authority qualification and distinguish it from exemption.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-b07a1d0bb3204e0eed02c74c",
+      "review_focus": "The alternate name is explicitly stated. Resolve the antecedent through the glossary heading; scope the mapping to this source assertion.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-af685264dc8f412d581be486",
+      "review_focus": "This entry delegates its definition to UFC 1-200-01. It contains no independent definition; target edition and adopted meaning remain unresolved.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-14fc75cb2a4de29ae2440e14",
+      "review_focus": "Geotechnical replacement definition with Engineer of Record and Designer of Record aliases. Preserve local knowledge requirements and the limited pre-approval exception.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-e1a131b470b3c8dc06577c66",
+      "review_focus": "Structural role definition and responsibility statement. Compare with Designer of Record without assuming global equivalence.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1f3d7490e29c40c504a71f7d",
+      "review_focus": "Preserve the UFGS material constraint alongside acceptance by the code official. Scope this assertion to its mechanical or plumbing code context.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-f3b132fd656945c53d43bd88",
+      "review_focus": "Retain the UFC 1-200-01 definition reference. Repeated wording in another discipline remains separate evidence.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-e3107acfce413540b43991a9",
+      "review_focus": "The source assigns different roles for Government-owned and leased facilities. Keep both conditions and compare with the IEBC Owner/CTR synonym statement.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-4ed30a864bb8c75e5cfac9cc",
+      "review_focus": "The definition identifies the contractor accomplishing the project; keep it distinct from owner and code official.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-ba37db914b903ce2f8d93a53",
+      "review_focus": "Preserve the DD Form 1354 acceptance role. Do not substitute Owner or Owner’s Representative automatically. Source spelling is retained, including any typo.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-1df262b44a9d597d603aaf9f",
+      "review_focus": "Preserve the separation from space-conditioning systems and the requirement that supplied air is 100 percent outdoor air.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-aa6631b4db5ca96456960d1c",
+      "review_focus": "Preserve the UFGS material constraint alongside acceptance by the code official. Scope this assertion to its mechanical or plumbing code context.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-452e6d5c81e553d93ce4bf5b",
+      "review_focus": "Retain the UFC 1-200-01 definition reference. Repeated wording in another discipline remains separate evidence.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-96198567d4a7c6bd41fa4ce9",
+      "review_focus": "The source assigns different roles for Government-owned and leased facilities. Keep both conditions and compare with the IEBC Owner/CTR synonym statement.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-33622d235d8f4502b7ef7875",
+      "review_focus": "The definition identifies the contractor accomplishing the project; keep it distinct from owner and code official.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-217ab62be023b134c4a8fea3",
+      "review_focus": "Preserve the DD Form 1354 acceptance role. Do not substitute Owner or Owner’s Representative automatically. Source spelling is retained, including any typo.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    },
+    {
+      "candidate_id": "ufc-vocab-2c69a85eb7bec97be771a411",
+      "review_focus": "The meaning depends on the IPC edition approved through UFC 1-200-01, errata, amendments, and this UFC; Code is not a universal unqualified concept.",
+      "triage_status": "assistant_screened_for_relevance_not_subject_matter_adjudicated"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-> **DoD BCO Enrich fork:** See [BCO_README.md](BCO_README.md) for the Building Code Ontology profile, source-preserving adapters, setup, and validation. The original upstream documentation follows.
+> **DoD BCO Enrich fork:** [Open the live vocabulary review](https://vdubya.github.io/dod-bco-enrich/). See [BCO_README.md](BCO_README.md) for the Building Code Ontology profile, source-preserving adapters, setup, and validation. The original upstream documentation follows.
 
 # FOLIO Enrich
 

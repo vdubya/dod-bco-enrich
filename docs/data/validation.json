@@ -1,0 +1,7 @@
+{
+  "source_units_validated_against_json_pointers": 26209,
+  "exact_spans_validated": 3263,
+  "candidate_ids_unique": 1088,
+  "accepted_concepts": 0,
+  "semantic_precision_or_recall_measured": false
+}

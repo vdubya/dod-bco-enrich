@@ -5,6 +5,10 @@ Descriptor: **Ontology and Knowledge Graph for the DoD built environment**.
 
 This is [vdubya's fork](https://github.com/vdubya/dod-bco-enrich) of [Alea Institute's FOLIO Enrich](https://github.com/alea-institute/folio-enrich), with upstream history preserved on branch `dod-bco`. It adds facilities vocabulary, source adapters, scoped evidence, and domain prompts to the existing extraction pipeline. It is a research prototype, without agency endorsement or approved definitions.
 
+## Live vocabulary review
+
+Open the [DoD BCO vocabulary review](https://vdubya.github.io/dod-bco-enrich/) to search the 50-source-assertion pilot, inspect evidence, and save decisions through your GitHub sign-in. Report assets and append-only review events are versioned on `dod-bco`. See [the review-site guide](docs/REVIEW_SITE.md) for saving, source coverage, and verification.
+
 ## Run the installed workspace
 
 From this repository:
