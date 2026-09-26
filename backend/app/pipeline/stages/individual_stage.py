@@ -89,7 +89,11 @@ class EarlyIndividualStage(PipelineStage):
 
         # Pass 1: Citation extraction (Eyecite + CiteURL)
         try:
-            citations = await self._citation_extractor.extract(full_text)
+            if job.ontology == "dod-bco":
+                from app.bco.individuals import publication_mentions
+                citations = publication_mentions(full_text)
+            else:
+                citations = await self._citation_extractor.extract(full_text)
         except Exception:
             logger.warning("Citation extraction failed", exc_info=True)
             citations = []
@@ -102,7 +106,11 @@ class EarlyIndividualStage(PipelineStage):
 
         # Pass 2: Custom regex/spaCy extractors
         try:
-            entities = await self._entity_runner.extract(full_text)
+            if job.ontology == "dod-bco":
+                from app.bco.individuals import entity_runner
+                entities = await entity_runner().extract(full_text)
+            else:
+                entities = await self._entity_runner.extract(full_text)
         except Exception:
             logger.warning("Entity extraction failed", exc_info=True)
             entities = []
@@ -174,7 +182,7 @@ class LLMIndividualStage(PipelineStage):
                     LLMIndividualIdentifier,
                 )
 
-                identifier = LLMIndividualIdentifier(self.llm)
+                identifier = LLMIndividualIdentifier(self.llm, ontology_id=job.ontology)
                 document_type = job.result.metadata.get("self_identified_type", "")
                 llm_new = await identifier.identify_batch(
                     chunks, job.result.annotations, existing_individuals,

@@ -3454,6 +3454,13 @@
     z-index: 10000;
   }
   .demo-toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+  html[data-ontology="dod-bco"] .folio-only-samples,
+  html[data-ontology="dod-bco"] .demo-toggle-bar,
+  html[data-ontology="dod-bco"] #demoExemplars,
+  html[data-ontology="dod-bco"] #demoExemplarsCanon,
+  html[data-ontology="dod-bco"] [data-tab="propositions"] { display: none !important; }
+  #bcoNotice { font-size: 13px; color: var(--text); }
+  #bcoProfile { margin-top: 8px; max-width: 100%; background: var(--surface); color: var(--text); }
 </style>
 <script>
 (function() {
@@ -3466,7 +3473,7 @@
   // Resolve ontology BEFORE first paint so the palette/brand never flash.
   // Precedence: ?ontology= query param > localStorage > 'folio'. Allowlist only
   // the ontologies we ship a palette for; anything else falls back to 'folio'.
-  var allow = { folio: 1, canon: 1 };
+  var allow = { folio: 1, canon: 1, 'dod-bco': 1 };
   var o = null;
   try { o = new URLSearchParams(location.search).get('ontology'); } catch (e) {}
   if (!o) { try { o = localStorage.getItem('ontology'); } catch (e) {} }
@@ -3668,7 +3675,7 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--accent)" stroke-width="1.5"/><line x1="8" y1="5" x2="8" y2="9" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.5" r="0.75" fill="var(--accent)"/></svg>
         <span id="llmBannerTitleText">No AI provider configured</span>
       </div>
-      <div id="llmBannerBody">The ontology's symbolic AI (pattern matching, ontology lookup, dependency parsing) works great without a cloud key. For deeper concept extraction, you can add one.</div>
+      <div id="llmBannerBody">Pattern matching, ontology lookup, and dependency parsing can run without an AI provider. Configure one for optional concept discovery.</div>
       <div class="llm-banner-actions">
         <button class="btn-configure" id="llmBannerConfigureBtn" onclick="llmBannerConfigure()">Configure AI Provider</button>
         <button class="btn-symbolic" onclick="llmBannerSymbolic()">Continue without AI &#8594;</button>
@@ -3685,8 +3692,23 @@
 
       <!-- File upload -->
       <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
-        Drop a file here or click to upload (PDF, DOCX, HTML, MD, TXT, RTF, EML, MSG)
-        <input type="file" id="fileInput" accept=".pdf,.docx,.doc,.html,.htm,.md,.txt,.rtf,.eml,.msg" onchange="handleFileUpload(event)">
+        Drop a file here or click to upload (UFC JSON, UFGS SEC/XML, PDF, DOCX, HTML, MD, TXT)
+        <input type="file" id="fileInput" accept=".json,.sec,.xml,.pdf,.docx,.doc,.html,.htm,.md,.txt,.rtf,.eml,.msg" onchange="handleFileUpload(event)">
+      </div>
+
+      <div id="bcoNotice" hidden style="padding:12px 0;line-height:1.5">
+        <strong>DoD BCO</strong> (beeco)<br>
+        Building Code Ontology and Knowledge Graph<br>
+        <small>Prototype vocabulary. Matches are candidates for review; they do not establish approved definitions or project applicability.</small><br>
+        <label for="bcoProfile">Review scope</label>
+        <select id="bcoProfile">
+          <option value="dod-base">DoD base</option><option value="usace">USACE</option>
+          <option value="usace-ec">USACE Engineering and Construction</option><option value="usace-re">USACE Real Estate</option>
+          <option value="usaf">USAF</option><option value="navfac">NAVFAC</option>
+          <option value="whs">WHS</option><option value="whs-pentagon">WHS Pentagon</option>
+        </select>
+        <p id="bcoSourceStatus">Upload UFC JSON or UFGS SEC/XML to retain source locations. Pasted text has no source-file anchor.</p>
+        <a id="bcoEvidenceBtn" hidden download>Download source evidence</a>
       </div>
 
       <!-- Text input -->
@@ -3783,7 +3805,7 @@
       </div>
       </div><!-- /#demoExemplarsCanon -->
 
-      <div style="margin-top:8px">
+      <div class="folio-only-samples" style="margin-top:8px">
         <label style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim)">Narratives</label>
         <div class="sample-grid" style="margin-top:4px">
           <button class="secondary sample-btn" onclick="loadSample('narr_pi')">Personal Injury</button>
@@ -3796,7 +3818,7 @@
         </div>
       </div>
 
-      <div style="margin-top:8px">
+      <div class="folio-only-samples" style="margin-top:8px">
         <label style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim)">Debugging Examples</label>
 
         <label style="font-size:10px;font-weight:600;letter-spacing:0.3px;color:var(--text-dim);margin-top:6px;display:block">Feature-Specific</label>
@@ -3821,7 +3843,7 @@
         </div>
       </div>
 
-      <div style="margin-top:8px">
+      <div class="folio-only-samples" style="margin-top:8px">
         <label style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim)">Generate Your Own</label>
         <div class="sample-grid" style="margin-top:4px">
           <button class="secondary sample-btn" onclick="openSynthetic()">Generate...</button>
@@ -4208,6 +4230,7 @@ let currentJobId = null;
 let currentJob = null;
 let pollInterval = null;
 let uploadedFilename = null;
+let bcoSourceUpload = null;
 let pollTimeout = null;
 let eventSource = null;
 let accumulatedAnnotations = [];
@@ -4286,8 +4309,9 @@ let activeOntology = document.documentElement.getAttribute('data-ontology') || '
 let ONTOLOGIES = {
   folio: { display_name: 'FOLIO', default: true },
   canon: { display_name: 'Catholic Semantic Canon', default: false },
+  'dod-bco': { display_name: 'DoD BCO', default: false },
 };
-let ONTOLOGY_ALLOW = new Set(['folio', 'canon']);
+let ONTOLOGY_ALLOW = new Set(['folio', 'canon', 'dod-bco']);
 let _canonFontInjected = false;
 let _ontologyPopoverOpen = false;
 let _ontologyOutsideClickHandler = null;
@@ -4504,8 +4528,8 @@ function updateThemeSwatches(theme) {
 // the backend at submit time (capture-at-submit) and mirrored into ?ontology= for
 // shareable URLs.
 
-function ontologyBrand(id) { return id === 'canon' ? 'CatholicOS' : 'FOLIO'; }
-function ontologyShortName(id) { return id === 'canon' ? 'Canon' : 'FOLIO'; }
+function ontologyBrand(id) { return id === 'dod-bco' ? 'DoD BCO' : id === 'canon' ? 'CatholicOS' : 'FOLIO'; }
+function ontologyShortName(id) { return id === 'dod-bco' ? 'DoD BCO' : id === 'canon' ? 'Canon' : 'FOLIO'; }
 function ontologyDisplayName(id) {
   return (ONTOLOGIES[id] && ONTOLOGIES[id].display_name)
     || (id === 'canon' ? 'Catholic Semantic Canon' : 'FOLIO');
@@ -4554,8 +4578,16 @@ function syncOntologyUI() {
   // grid — it does not open/close the demo panel (demo-mode gating is unchanged).
   const fg = document.getElementById('demoExemplars');
   const cg = document.getElementById('demoExemplarsCanon');
-  if (fg) fg.hidden = (id === 'canon');
+  if (fg) fg.hidden = (id !== 'folio');
   if (cg) cg.hidden = (id !== 'canon');
+  document.getElementById('bcoNotice').hidden = id !== 'dod-bco';
+  document.querySelectorAll('.folio-only-samples, .demo-toggle-bar').forEach(el => { el.hidden = id === 'dod-bco'; });
+  document.querySelectorAll('[data-tab="propositions"]').forEach(el => { el.hidden = id === 'dod-bco'; });
+  const emptyText = document.querySelector('#emptyState p');
+  if (emptyText) emptyText.textContent = id === 'dod-bco' ? 'Upload facilities criteria or paste text, then click Enrich Document.' : 'Paste a document and click Enrich Document to see annotations.';
+  const input = document.getElementById('docInput');
+  if (id === 'dod-bco') input.placeholder = 'Paste facilities criteria text, or upload UFC JSON / UFGS SEC above.';
+  if (id !== 'dod-bco') { bcoSourceUpload = null; input.readOnly = false; }
 }
 
 // True while a job is in flight (streaming OR poll fallback). Same predicate the
@@ -4785,7 +4817,7 @@ function showLlmBanner() {
   } else {
     if (titleEl) titleEl.textContent = 'No AI provider configured';
     if (bodyEl) bodyEl.textContent =
-      'FOLIO’s symbolic AI (pattern matching, ontology lookup, dependency parsing) works great without a cloud key. For deeper concept extraction, you can add one.';
+      'Pattern matching, ontology lookup, and dependency parsing can run without an AI provider. Configure one for optional concept discovery.';
     if (btnEl) btnEl.textContent = 'Configure AI Provider';
   }
   banner.setAttribute('role', 'status');
@@ -6551,9 +6583,27 @@ function readFileAsBase64(file) {
 }
 
 async function processFile(file) {
+  bcoSourceUpload = null;
   uploadedFilename = file.name;
   const ext = file.name.split('.').pop().toLowerCase();
   const ta = document.getElementById('docInput');
+  ta.readOnly = false;
+  if (activeOntology === 'dod-bco' && ['json', 'sec', 'xml'].includes(ext)) {
+    const upload = { content_base64: await readFileAsBase64(file), source_format: ext === 'json' ? 'ufc_json' : 'ufgs_sec', filename: file.name };
+    try {
+      const response = await fetch(`${API}/bco/parse`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(upload) });
+      const source = await response.json();
+      if (!response.ok) throw new Error(source.detail || 'Source parsing failed');
+      bcoSourceUpload = upload;
+      ta.value = source.text;
+      ta.readOnly = true;
+      document.getElementById('bcoSourceStatus').textContent = `${source.designation}: ${source.units.length} source units retained. Preview is read-only to preserve evidence.`;
+    } catch (error) {
+      ta.value = '';
+      document.getElementById('bcoSourceStatus').textContent = error.message;
+    }
+    return;
+  }
 
   const isBinary = EXTRACT_BINARY_EXTS.includes(ext);
   const needsExtraction = isBinary || EXTRACT_TEXT_EXTS.includes(ext);
@@ -6612,7 +6662,7 @@ function truncateToWords(text, maxWords) {
 }
 
 function applyDebugTruncation() {
-  if (!debugMode) return;
+  if (!debugMode || bcoSourceUpload) return;
   const ta = document.getElementById('docInput');
   const text = ta.value.trim();
   if (text) ta.value = truncateToWords(text, DEBUG_MAX_WORDS);
@@ -6658,7 +6708,7 @@ async function submitEnrichment() {
     return; // banner buttons call submitEnrichment() after user chooses
   }
 
-  if (debugMode) content = truncateToWords(content, 500);
+  if (debugMode && !bcoSourceUpload) content = truncateToWords(content, 500);
 
   const provider = document.getElementById('providerSelect').value;
   const model = document.getElementById('modelSelect').value;
@@ -6699,6 +6749,7 @@ async function submitEnrichment() {
     // Capture-at-submit: the job runs under whatever ontology is active right now.
     body.ontology = activeOntology;
     if (_llmBannerSymbolicOnce) {
+      body.use_llm = false;
       // Symbolic AI only — don't send LLM provider/model/key
       // Backend LLM stages will skip gracefully when no provider is configured
       _llmBannerSymbolicOnce = false; // reset after use — only affects this enrichment
@@ -6708,10 +6759,12 @@ async function submitEnrichment() {
       if (apiKey) body.api_key = apiKey;
     }
 
-    const r = await fetch(`${API}/enrich`, {
+    const sourceUpload = activeOntology === 'dod-bco' && bcoSourceUpload;
+    const requestBody = sourceUpload ? { ...body, ...bcoSourceUpload, profile_ids: [document.getElementById('bcoProfile').value] } : body;
+    const r = await fetch(`${API}${sourceUpload ? '/bco/enrich' : '/enrich'}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body: JSON.stringify(requestBody),
     });
 
     if (!r.ok) {
@@ -7428,6 +7481,10 @@ function hideDocTypeBanner() {
 // ==============================================
 
 function renderResults(job) {
+  const evidence = job.result?.metadata?.bco_evidence;
+  document.getElementById('bcoEvidenceBtn').hidden = !evidence;
+  if (evidence) document.getElementById('bcoEvidenceBtn').href = `${API}/bco/evidence/${job.id || currentJobId}`;
+  if (evidence) document.getElementById('bcoSourceStatus').textContent = `${evidence.records.length} candidate records; ${evidence.accepted_concept_count} approved concepts; ${evidence.findings.length} span findings. Scope selection does not establish precedence.`;
   const text = job.result?.canonical_text?.full_text || '';
   const annotations = job.result?.annotations || [];
   const individuals = job.result?.individuals || [];
@@ -12639,6 +12696,10 @@ function loadCanonSample(slug) {
 }
 
 function clearAll() {
+  bcoSourceUpload = null;
+  document.getElementById('docInput').readOnly = false;
+  document.getElementById('bcoEvidenceBtn').hidden = true;
+  document.getElementById('bcoSourceStatus').textContent = 'Upload UFC JSON or UFGS SEC/XML to retain source locations. Pasted text has no source-file anchor.';
   clearCache();
   // Fully reset demo mode (Clear exits any active demo).
   isDemoMode = false;

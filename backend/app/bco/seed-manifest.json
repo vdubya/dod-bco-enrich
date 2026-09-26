@@ -1,0 +1,13 @@
+{
+  "name": "DoD BCO",
+  "pronunciation": "beeco",
+  "expansion": "DoD Building Code Ontology",
+  "descriptor": "Ontology and Knowledge Graph for the DoD built environment",
+  "status": "editorial_prototype_not_an_approved_vocabulary",
+  "base_iri": "https://example.org/dod-bco/",
+  "class_count": 68,
+  "property_count": 10,
+  "accepted_definition_count": 0,
+  "owl_sha256": "de419d31dfd31969a5b4cb3696409c48b894fddae4bf8fb83b885fc8cf4810eb",
+  "source": "scripts/build_bco_seed.py"
+}

@@ -1,0 +1,423 @@
+{
+  "registry_id": "built-environment-scoped-vocabulary-profiles",
+  "registry_version": "0.1.0",
+  "established_on": "2026-09-26",
+  "status": "design_draft",
+  "branding": {
+    "working_name_candidate": "DoD BCO",
+    "expansion": "DoD Building Code Ontology",
+    "selected_by_user": true,
+    "clearance_status": "not_cleared",
+    "domain_availability": "unconfirmed",
+    "superseded_candidate": "UFO",
+    "naming_note_path": "research/corpus/acronym-options-2026-09-26.md",
+    "previous_proposals": [
+      {
+        "name": "FOLK-G",
+        "expansion": "Facilities Ontology and Lifecycle Knowledge Graph"
+      },
+      {
+        "name": "BLOK-G",
+        "expansion": "Built Lifecycle Ontology and Knowledge Graph"
+      },
+      {
+        "name": "BE-OKG",
+        "expansion": "Built Environment Ontology and Knowledge Graph"
+      },
+      {
+        "name": "UFO",
+        "expansion": "Unified Facility Ontology",
+        "status": "rejected_by_user_as_inappropriate"
+      }
+    ],
+    "status": "selected_by_user",
+    "style_reference": "FOLIO: clean, easy to say, and memorable; existing name is a style reference only.",
+    "pronunciation": "beeco",
+    "descriptor": "Ontology and Knowledge Graph for the DoD built environment",
+    "naming_decision": "The user selected DoD BCO. Knowledge Graph remains in the descriptor rather than the acronym expansion."
+  },
+  "implementation_status": "declarative_framework_no_executable_inheritance_or_precedence_resolver",
+  "accepted_definition_count_note": "Counts cover this registry only; zero means no adjudicated definitions are issued here, not that the sources contain no definitions.",
+  "modules": [
+    {
+      "module_id": "dod-governance",
+      "label": "DoD criteria program governance",
+      "source_families": [
+        "MIL-STD-3007G"
+      ],
+      "acquisition_status": "authority_source_archived",
+      "scope_rule": "Authority relationships retain the scope of the cited standard; this module does not govern every other publication by assumption.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "dod-ufc",
+      "label": "DoD facilities criteria",
+      "source_families": [
+        "UFC"
+      ],
+      "acquisition_status": "baseline_inventory_available",
+      "scope_rule": "Use individual source editions, implementation conditions, and agency variants.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "dod-ufgs",
+      "label": "DoD guide specifications",
+      "source_families": [
+        "UFGS"
+      ],
+      "acquisition_status": "baseline_inventory_available",
+      "scope_rule": "Keep guide clauses, tailoring, notes, and project incorporation distinct.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "usace-er",
+      "label": "USACE Engineer Regulations",
+      "source_families": [
+        "USACE ER"
+      ],
+      "acquisition_status": "not_inventoried_in_this_update",
+      "scope_rule": "Determine applicability per assertion, including Civil Works or military program scope.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "usace-em",
+      "label": "USACE Engineer Manuals",
+      "source_families": [
+        "USACE EM"
+      ],
+      "acquisition_status": "not_inventoried_in_this_update",
+      "scope_rule": "Determine applicability and authority per assertion; no automatic UFGS subordination.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "usace-ec-community",
+      "label": "USACE Engineering and Construction community",
+      "source_families": [
+        "Community of Practice"
+      ],
+      "acquisition_status": "examples_pending",
+      "scope_rule": "Local explanations and senses retain links to applicable upstream definitions.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "usace-re-community",
+      "label": "USACE Real Estate community",
+      "source_families": [
+        "Community of Practice"
+      ],
+      "acquisition_status": "examples_pending",
+      "scope_rule": "Allow real estate concepts with separate authority sources and distinct local meanings.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "usaf-local",
+      "label": "USAF terminology",
+      "source_families": [],
+      "acquisition_status": "reserved",
+      "scope_rule": "Select sources independently; equivalence with USACE or NAVFAC is not assumed.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "navfac-local",
+      "label": "NAVFAC terminology",
+      "source_families": [],
+      "acquisition_status": "reserved",
+      "scope_rule": "Select sources independently; equivalence with USACE or USAF is not assumed.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "whsbc",
+      "label": "WHS Building Code",
+      "source_families": [
+        "WHSBC"
+      ],
+      "acquisition_status": "selected_indexed_text_inspected_bytes_pending",
+      "scope_rule": "WHS jurisdiction and adopted edition conditions must be established from the source.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "pfgs",
+      "label": "Pentagon Facility Guide Specifications",
+      "source_families": [
+        "PFGS"
+      ],
+      "acquisition_status": "not_inventoried_in_this_update",
+      "scope_rule": "Pentagon specification scope and source-backed UFGS relationships; do not generalize to all WHS sites.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "dod-base",
+      "label": "DoD facilities base vocabulary",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "dod-governance",
+        "dod-ufc",
+        "dod-ufgs"
+      ],
+      "imports": [],
+      "scope_rule": "Shared concept backbone with individually scoped source assertions; this is not a uniform legal definition dictionary.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "usace",
+      "label": "USACE vocabulary",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "usace-er",
+        "usace-em"
+      ],
+      "imports": [
+        {
+          "profile_id": "dod-base",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Activate applicable program assertions; permit separately sourced Civil Works concepts.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "usace-ec",
+      "label": "USACE Engineering and Construction view",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "usace-ec-community"
+      ],
+      "imports": [
+        {
+          "profile_id": "usace",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Focus the audience view without granting local explanations overriding authority.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "usace-re",
+      "label": "USACE Real Estate view",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "usace-re-community"
+      ],
+      "imports": [
+        {
+          "profile_id": "usace",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Focus the audience view and preserve distinct Real Estate senses.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "usaf",
+      "label": "USAF view",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "usaf-local"
+      ],
+      "imports": [
+        {
+          "profile_id": "dod-base",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Agency-specific source selection and reconciliation pending.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "navfac",
+      "label": "NAVFAC view",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "navfac-local"
+      ],
+      "imports": [
+        {
+          "profile_id": "dod-base",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Agency-specific source selection and reconciliation pending.",
+      "base_source_constraints": []
+    },
+    {
+      "profile_id": "whs",
+      "label": "WHS building-code vocabulary",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "whsbc"
+      ],
+      "imports": [
+        {
+          "profile_id": "dod-base",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Pin adopted DoD editions and retain WHS-specific amendments and applicability.",
+      "base_source_constraints": [
+        {
+          "source_edition_id": "ufc-1-200-01-change4-2024-12-17",
+          "evidence_observation_id": "whs-2026-stated-base",
+          "status": "referenced_edition_acquisition_and_import_review_pending",
+          "automatic_substitution_with_newer_edition": false
+        }
+      ]
+    },
+    {
+      "profile_id": "whs-pentagon",
+      "label": "WHS Pentagon specifications view",
+      "status": "design_draft",
+      "release_id": null,
+      "module_ids": [
+        "pfgs"
+      ],
+      "imports": [
+        {
+          "profile_id": "whs",
+          "release_id": null,
+          "status": "draft_import_awaiting_reviewed_release"
+        }
+      ],
+      "scope_rule": "Apply PFGS relationships only within evidenced site, subject, edition, and project conditions.",
+      "base_source_constraints": []
+    }
+  ],
+  "source_edition_references": [
+    {
+      "source_edition_id": "whsbc-2026",
+      "designation": "WHS Building Code",
+      "edition": "2026",
+      "effective_date": "2026-01-01",
+      "source_url": "https://www.wbdg.org/FFC/WHS/whs_building_code_2026.pdf",
+      "source_sha256": null,
+      "evidence_access": "selected_official_source_indexed_text",
+      "full_source_acquisition": "pending_direct_download_returned_403"
+    },
+    {
+      "source_edition_id": "ufc-1-200-01-change4-2024-12-17",
+      "designation": "UFC 1-200-01",
+      "edition": "Change 4",
+      "change_date": "2024-12-17",
+      "source_sha256": null,
+      "full_source_acquisition": "not_verified_for_this_referenced_edition"
+    },
+    {
+      "source_edition_id": "ufc-1-200-01-digital-2026-07-27",
+      "designation": "UFC 1-200-01",
+      "edition_date": "2026-07-27",
+      "digital_version_id": "a093a449-9220-45e0-866a-67d3139af067",
+      "evidence_path": "research/reports/ufc-ufgs-corpus-baseline-2026-09-26/authority-evidence.json",
+      "role": "different_local_edition_not_an_automatic_whs_import"
+    }
+  ],
+  "source_observations": [
+    {
+      "observation_id": "whs-2026-stated-base",
+      "source_edition_id": "whsbc-2026",
+      "locator": "Revision summary sheet, printed page III",
+      "relation": "supplements_stated_edition",
+      "target_source_edition_id": "ufc-1-200-01-change4-2024-12-17",
+      "observation_status": "indexed_source_statement_inspected",
+      "release_status": "source_bytes_and_import_review_pending"
+    },
+    {
+      "observation_id": "whs-2026-pfgs-scope",
+      "source_edition_id": "whsbc-2026",
+      "locator": "Section 310.1, printed page 67",
+      "relation": "requires_use_in_scope",
+      "target_module_id": "pfgs",
+      "scope": {
+        "site": "Pentagon Campus",
+        "lifecycle_phases": [
+          "planning",
+          "design",
+          "construction",
+          "sustainment",
+          "restoration",
+          "modernization"
+        ],
+        "funding_condition": "regardless_of_funding_source"
+      },
+      "observation_status": "indexed_source_statement_inspected",
+      "release_status": "source_bytes_and_assertion_review_pending"
+    },
+    {
+      "observation_id": "whs-2026-pfgs-ufgs-use",
+      "source_edition_id": "whsbc-2026",
+      "locator": "Section 310.2, printed page 67",
+      "relation": "fulfills_referenced_use_requirement",
+      "subject_module_id": "pfgs",
+      "target_reference": "DoDD 4270.5 UFGS-use requirement",
+      "scope_reference": "whs-2026-pfgs-scope",
+      "observation_status": "indexed_source_statement_inspected",
+      "release_status": "source_bytes_and_assertion_review_pending"
+    },
+    {
+      "observation_id": "whs-2026-pfgs-precedence",
+      "source_edition_id": "whsbc-2026",
+      "locator": "Section 310.3, printed page 67",
+      "relation": "guidance_takes_precedence_in_scope",
+      "subject_module_id": "pfgs",
+      "target_module_id": "dod-ufgs",
+      "scope_reference": "whs-2026-pfgs-scope",
+      "universal_term_redefinition": false,
+      "observation_status": "indexed_source_statement_inspected",
+      "release_status": "source_bytes_and_assertion_review_pending"
+    }
+  ],
+  "composition_rules": {
+    "multiple_profiles_per_project": true,
+    "organization_membership_establishes_precedence": false,
+    "profile_import_establishes_legal_applicability": false,
+    "newest_edition_wins": false,
+    "missing_scope_means_universal": false,
+    "unresolved_conflict_result": "show_competing_assertions_and_missing_authority_or_context",
+    "base_edition_change_result": "impact_review_preserving_prior_release"
+  },
+  "community_display_fields": [
+    "local_label",
+    "local_explanation",
+    "inheritance_or_conflict_status",
+    "source_definition",
+    "source_edition",
+    "source_link",
+    "broader_concept_link"
+  ],
+  "source_catalogs": [
+    {
+      "family": "USACE ER/EM",
+      "url": "https://www.publications.usace.army.mil/",
+      "status": "official_repository_identified_inventory_pending"
+    },
+    {
+      "family": "PFGS",
+      "url": "https://www.wbdg.org/whs/pentagon-guide-specifications",
+      "status": "location_cited_by_whsbc_inventory_pending"
+    }
+  ]
+}

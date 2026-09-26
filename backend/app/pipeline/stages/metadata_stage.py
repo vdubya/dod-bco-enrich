@@ -169,6 +169,13 @@ class MetadataStage(PipelineStage):
         return "metadata"
 
     async def execute(self, job: Job) -> Job:
+        if job.ontology == "dod-bco":
+            source = job.input.bco_source if job.input else None
+            job.result.metadata["metadata_mining_status"] = "source_fields_only"
+            if source:
+                job.result.metadata["document_type"] = source.source_family
+                job.result.metadata["extracted_fields"] = source.model_dump(exclude={"text", "units"})
+            return job
         if job.result.canonical_text is None:
             return job
 

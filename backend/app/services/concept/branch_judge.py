@@ -87,6 +87,11 @@ class BranchJudge:
             .replace("{candidates}", ", ".join(candidate_branches))
             .replace("{folio_context}", folio_context)
         )
+        if ontology_id == "dod-bco":
+            from app.bco.prompts import structured_prompt
+            prompt = structured_prompt("Choose the best supported BCO branch, or an empty branch when unresolved.", sentence,
+                {"concept": concept_text, "candidate_branches": candidate_branches, "branch_info": branch_info},
+                {"branch": "", "confidence": 0.0, "reasoning": ""})
 
         try:
             result = await self.llm.structured(

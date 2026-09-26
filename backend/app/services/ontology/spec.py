@@ -34,6 +34,7 @@ class OntologyCoords:
     # Pinned SHA-256 of the expected OWL (http sources). Verified by the hardened
     # ingestion path before the bytes are handed to folio-python. Empty = no pin.
     owl_sha256: str = ""
+    bundled_file: str = ""
 
 
 @dataclass(frozen=True)
@@ -166,3 +167,12 @@ BUILTIN_SPECS: dict[str, OntologySpec] = {
     FOLIO_SPEC.id: FOLIO_SPEC,
     CANON_SPEC.id: CANON_SPEC,
 }
+
+# A bundled prototype needs no remote OWL fetch or public namespace assignment.
+BCO_SPEC = OntologySpec(
+    id="dod-bco", display_name="DoD BCO", base_iri="https://example.org/dod-bco/",
+    coords=OntologyCoords(source_type="bundled", bundled_file="dod-bco.owl"),
+    behavior=OntologyBehavior(iri_roots=("https://example.org/dod-bco/",)),
+    min_label_coverage=100.0,
+)
+BUILTIN_SPECS[BCO_SPEC.id] = BCO_SPEC

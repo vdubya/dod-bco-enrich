@@ -60,6 +60,10 @@ class DocumentTypeStage(PipelineStage):
 
         snippet = full_text[:500]
         prompt = _DOCUMENT_TYPE_PROMPT.replace("{text}", snippet)
+        if job.ontology == "dod-bco":
+            from app.bco.prompts import structured_prompt
+            prompt = structured_prompt("Identify the publication's stated type. Use the exact designation/header when available; leave it empty if unsupported.", snippet, {},
+                {"self_identified_type": "", "confidence": 0.0, "reasoning": ""})
 
         try:
             result = await self.llm.structured(

@@ -9,3 +9,11 @@ Enrich LLM_PROMPTS_*.md
 DocType_high_value.txt
 UX-REFRESH-INSTRUCTIONS.md
 legal-citation-tools-memo.md
+
+# DoD BCO local runtime and private configuration
+.venv/
+.bco-state/
+.env
+__pycache__/
+.pytest_cache/
+*.pyc

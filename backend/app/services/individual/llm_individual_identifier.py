@@ -25,8 +25,9 @@ logger = logging.getLogger(__name__)
 class LLMIndividualIdentifier:
     """Uses LLM to extract individuals and link them to OWL class annotations."""
 
-    def __init__(self, llm: LLMProvider) -> None:
+    def __init__(self, llm: LLMProvider, ontology_id: str = "folio") -> None:
         self.llm = llm
+        self._ontology_id = ontology_id
 
     async def identify_individuals(
         self,
@@ -67,6 +68,7 @@ class LLMIndividualIdentifier:
         prompt = build_individual_extraction_prompt(
             chunk.text, class_annotations, existing_ind_context,
             document_type=document_type,
+            ontology_id=self._ontology_id,
         )
 
         try:

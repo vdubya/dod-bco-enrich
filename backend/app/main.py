@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.api.routes import concepts, enrich, export, feedback, folio_update, gold, health, ollama, ontologies, settings, synthetic
+from app.api.routes import bco, concepts, enrich, export, feedback, folio_update, gold, health, ollama, ontologies, settings, synthetic
 from app.config import settings as app_settings
 from app.middleware.error_handler import register_error_handlers
 from app.middleware.rate_limit import RateLimitMiddleware
@@ -34,13 +34,16 @@ async def _index_folio_embeddings() -> None:
 
         # Ensure OWL cache is fresh before FOLIO init reads it
         loop = asyncio.get_event_loop()
-        await loop.run_in_executor(None, ensure_owl_fresh)
-
-        owl_hash = get_owl_content_hash()
-
         registry = get_registry()
         default_id = registry.default_id
         folio_service = FolioService.get_instance()
+        if default_id != "folio":
+            await loop.run_in_executor(None, folio_service._get_folio)
+            if not app_settings.embedding_disabled:
+                await loop.run_in_executor(None, registry.get_embedding_service, default_id)
+            return
+        await loop.run_in_executor(None, ensure_owl_fresh)
+        owl_hash = get_owl_content_hash()
         # Build ONLY the default (FOLIO) embedding service via the registry — using
         # the shared provider and the registry's per-ontology cache. Canon (and any
         # other ontology) stays lazy: a FOLIO-only deploy pays no Canon cost here.
@@ -214,6 +217,7 @@ register_error_handlers(app)
 # Routes
 app.include_router(health.router)
 app.include_router(enrich.router)
+app.include_router(bco.router)
 app.include_router(export.router)
 app.include_router(synthetic.router)
 app.include_router(concepts.router)

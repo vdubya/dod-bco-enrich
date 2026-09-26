@@ -120,7 +120,7 @@ class Settings(BaseSettings):
     # first Canon request the OWL lazy-loads via the hardened ingestion path
     # (~14 MB download + validate, one-time).
     default_ontology: str = "folio"
-    enabled_ontologies: list[str] = ["folio", "canon"]
+    enabled_ontologies: list[str] = ["folio", "canon", "dod-bco"]
     # Defensive ceiling on how many NON-default ontologies stay resident (their
     # FolioService + embedding index cached in memory). When exceeded, the least-
     # recently-used non-default ontology is evicted; the default is never evicted.

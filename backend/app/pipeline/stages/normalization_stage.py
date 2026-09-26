@@ -16,7 +16,11 @@ class NormalizationStage(PipelineStage):
     async def execute(self, job: Job) -> Job:
         job.status = JobStatus.NORMALIZING
         raw_text = job.result.metadata.pop("_raw_text", "")
-        canonical = normalize_and_chunk(raw_text, job.input.format)
+        if job.ontology == "dod-bco":
+            from app.bco.normalization import exact_canonical
+            canonical = exact_canonical(raw_text, job.input.format)
+        else:
+            canonical = normalize_and_chunk(raw_text, job.input.format)
 
         # Attach text elements from ingestion if available
         elements_raw = job.result.metadata.pop("_text_elements", [])

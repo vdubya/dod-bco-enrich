@@ -407,6 +407,14 @@ class PipelineOrchestrator:
 
     async def run(self, job: Job) -> Job:
         self._stamp_ontology(job)
+        if job.ontology == "dod-bco":
+            job.result.metadata["bco_execution"] = {
+                "llm_configured": bool(self._llm or (self._task_llms and any(
+                    value is not None for value in vars(self._task_llms).values()))),
+                "judicial_proposition_taxonomy": "excluded",
+                "area_of_law_assessment": "excluded",
+                "review_status": "candidate_only",
+            }
         if self._config is not None:
             return await self._run_parallel(job)
         return await self._run_flat(job)
@@ -581,13 +589,15 @@ class PipelineOrchestrator:
                 await self.job_store.save(job)
 
             _log_activity(job, "orchestrator", f"Pipeline complete \u2014 {len(job.result.annotations)} annotations, {len(job.result.properties)} properties")
+            from app.bco.evidence import annotate_evidence
+            annotate_evidence(job)
             job.status = JobStatus.COMPLETED
             job.updated_at = datetime.now(timezone.utc)
             await self.job_store.save(job)
 
             # Post-completion: Area of Law assessment (runs after pipeline results are available)
             aol_llm = (self._task_llms.area_of_law if self._task_llms else None) or self._llm
-            if aol_llm is not None:
+            if aol_llm is not None and job.ontology != "dod-bco":
                 try:
                     from app.services.concept.area_of_law_assessor import AreaOfLawAssessor
                     assessor = AreaOfLawAssessor(aol_llm)
@@ -601,7 +611,7 @@ class PipelineOrchestrator:
 
             # Post-completion: Document type quality cross-check
             dt_llm = (self._task_llms.document_type if self._task_llms else None) or self._llm
-            if dt_llm is not None and job.result.metadata.get("self_identified_type"):
+            if dt_llm is not None and job.ontology != "dod-bco" and job.result.metadata.get("self_identified_type"):
                 try:
                     from app.services.quality.document_type_checker import DocumentTypeChecker
                     checker = DocumentTypeChecker(dt_llm)
@@ -640,13 +650,15 @@ class PipelineOrchestrator:
                 job.updated_at = datetime.now(timezone.utc)
                 await self.job_store.save(job)
 
+            from app.bco.evidence import annotate_evidence
+            annotate_evidence(job)
             job.status = JobStatus.COMPLETED
             job.updated_at = datetime.now(timezone.utc)
             await self.job_store.save(job)
 
             # Post-completion: Area of Law assessment (runs after pipeline results are available)
             aol_llm = (self._task_llms.area_of_law if self._task_llms else None) or self._llm
-            if aol_llm is not None:
+            if aol_llm is not None and job.ontology != "dod-bco":
                 try:
                     from app.services.concept.area_of_law_assessor import AreaOfLawAssessor
                     assessor = AreaOfLawAssessor(aol_llm)
@@ -660,7 +672,7 @@ class PipelineOrchestrator:
 
             # Post-completion: Document type quality cross-check
             dt_llm = (self._task_llms.document_type if self._task_llms else None) or self._llm
-            if dt_llm is not None and job.result.metadata.get("self_identified_type"):
+            if dt_llm is not None and job.ontology != "dod-bco" and job.result.metadata.get("self_identified_type"):
                 try:
                     from app.services.quality.document_type_checker import DocumentTypeChecker
                     checker = DocumentTypeChecker(dt_llm)

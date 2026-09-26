@@ -23,9 +23,14 @@ For each concept, respond with JSON:
 
 
 def build_contextual_rerank_prompt(
-    document_text: str, concepts: list[dict], *, document_type: str = ""
+    document_text: str, concepts: list[dict], *, document_type: str = "", ontology_id: str = "folio"
 ) -> str:
     import json
+    if ontology_id == "dod-bco":
+        from app.bco.prompts import structured_prompt
+        return structured_prompt("Rank the contextual fit of supplied BCO concept candidates. Down-rank meanings unsupported by this discipline or source scope.", document_text[:3000],
+            {"concepts": concepts, "document_type": document_type},
+            {"scores": [{"concept_text": "", "folio_iri": "", "contextual_score": 0.0, "reasoning": ""}]})
 
     concepts_for_prompt = []
     for c in concepts:

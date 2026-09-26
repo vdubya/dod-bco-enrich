@@ -78,7 +78,7 @@ class TestOntologiesRoutes:
         assert body["default"] == "folio"
         assert "embeddings_available" in body
         ids = [o["id"] for o in body["ontologies"]]
-        assert ids == ["folio", "canon"]  # canon enabled as of PR #14
+        assert ids == ["folio", "canon", "dod-bco"]
         folio = body["ontologies"][0]
         assert folio["display_name"] == "FOLIO"
         assert folio["default"] is True

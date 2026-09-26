@@ -1,7 +1,7 @@
 [project]
 name = "folio-enrich"
 version = "0.4.17"
-description = "Legal document annotation pipeline using the FOLIO ontology"
+description = "Multi-ontology annotation pipeline with a DoD Building Code Ontology profile"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115.0",
@@ -17,6 +17,7 @@ dependencies = [
     "sse-starlette>=2.0.0",
     "pyarrow>=15.0.0; platform_system != 'Windows' or platform_machine != 'ARM64'",
     "rdflib>=7.0.0",
+    "lxml>=5.0.0",
     "nupunkt>=0.1.0",
     "striprtf>=0.0.26",
     "olefile>=0.47",

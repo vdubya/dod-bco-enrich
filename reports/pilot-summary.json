@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-26",
+  "mode": "symbolic_only_embeddings_disabled",
+  "upstream_commit": "bb576ac0830308091623018aa1546559ac4fa1a9",
+  "pilot_sources": [
+    {
+      "source": {
+        "source_family": "UFC",
+        "designation": "UFC 1-200-01",
+        "title": "DoD Building Code",
+        "version_id": "a093a449-9220-45e0-866a-67d3139af067",
+        "version_label": "07/27/2026",
+        "source_sha256": "e2c907c28b87107abd437c362281ee8b3a2ab5633bea842739f92d5faa3b2adb",
+        "source_uri": "https://digital.wbdg.org/versions/a093a449-9220-45e0-866a-67d3139af067",
+        "profile_ids": [
+          "dod-base"
+        ],
+        "coverage": {
+          "mined": [
+            "headings",
+            "sentence_fields"
+          ],
+          "exclusions": {
+            "commentary_records_not_mined": 16,
+            "media_nodes_not_mined": 2,
+            "content_fields_not_mined": 199
+          },
+          "semantic_completeness": "not_measured"
+        }
+      },
+      "status": "completed",
+      "job_id": "63588794-4f7c-4ace-acbe-37ba669d0897",
+      "source_units": 706,
+      "counts": {
+        "annotations": 908,
+        "individuals": 207,
+        "properties": 45,
+        "triples": 368,
+        "propositions": 0
+      },
+      "valid_evidence_records": 2247,
+      "findings_by_kind": {
+        "triple_component_without_span": 17
+      },
+      "accepted_concepts": 0,
+      "llm_configured": false,
+      "semantic_precision_or_recall_measured": false,
+      "local_job_path": ".bco-state/pilot/ufc_json-job.json",
+      "local_job_sha256": "c7a43cf0214d6a694bbeb6f75f2bb0377e2788df39cdd889cba3425addb9bd20",
+      "review_url": "http://127.0.0.1:8765/?ontology=dod-bco&job=63588794-4f7c-4ace-acbe-37ba669d0897"
+    },
+    {
+      "source": {
+        "source_family": "UFGS",
+        "designation": "UFGS 01 45 00",
+        "title": "QUALITY CONTROL",
+        "version_id": "sha256:1bb58163f4121e24f4297a39a555f6e03a47f323c4a58b900a3ca810d19b2c9b",
+        "version_label": "08/23, CHG 3: 08/25",
+        "source_sha256": "1bb58163f4121e24f4297a39a555f6e03a47f323c4a58b900a3ca810d19b2c9b",
+        "source_uri": null,
+        "profile_ids": [
+          "usace"
+        ],
+        "coverage": {
+          "mined": [
+            "decoded_XML_text_blocks"
+          ],
+          "project_tailoring": "not_evaluated",
+          "guide_specification_is_not_an_adopted_project_requirement": true
+        }
+      },
+      "status": "completed",
+      "job_id": "1a9c0411-c517-4d68-a51c-c0c8a4177ffd",
+      "source_units": 571,
+      "counts": {
+        "annotations": 598,
+        "individuals": 234,
+        "properties": 30,
+        "triples": 642,
+        "propositions": 0
+      },
+      "valid_evidence_records": 2745,
+      "findings_by_kind": {
+        "triple_component_without_span": 43
+      },
+      "accepted_concepts": 0,
+      "llm_configured": false,
+      "semantic_precision_or_recall_measured": false,
+      "local_job_path": ".bco-state/pilot/ufgs_quality-job.json",
+      "local_job_sha256": "5419f3c9b3cea717bbf73e96c8c8b3305573caac0db24fb4a70a694c34417e94",
+      "review_url": "http://127.0.0.1:8765/?ontology=dod-bco&job=1a9c0411-c517-4d68-a51c-c0c8a4177ffd"
+    }
+  ]
+}

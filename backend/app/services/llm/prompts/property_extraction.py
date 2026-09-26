@@ -76,8 +76,15 @@ def build_property_extraction_prompt(
     property_labels: list[str],
     *,
     document_type: str = "",
+    ontology_id: str = "folio",
 ) -> str:
     """Build the LLM prompt for property extraction."""
+    if ontology_id == "dod-bco":
+        from app.bco.prompts import structured_prompt
+        return structured_prompt("Identify explicit relationships, including references, modifies, requires, approves, accepts, and supersedes. A label match alone does not establish precedence. Preserve modal and qualifying text in the source evidence.", text,
+            {"class_annotations": class_annotations, "existing_properties": existing_properties, "property_labels": property_labels, "document_type": document_type},
+            {"properties": [{"property_text": "exact source text", "folio_label": "matching supplied property label or empty",
+                             "domain_annotation_ids": [], "range_annotation_ids": [], "confidence": 0.0, "is_new": True}]})
     # Format class annotations
     if class_annotations:
         ann_lines = []

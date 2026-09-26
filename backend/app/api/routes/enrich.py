@@ -5,7 +5,8 @@ import logging
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, model_validator
+from app.bco.source import SourceBundle
 from sse_starlette.sse import EventSourceResponse
 
 from app.models.document import DocumentInput
@@ -34,6 +35,15 @@ class EnrichRequest(BaseModel):
     llm_provider: str | None = None
     llm_model: str | None = None
     api_key: str | None = None
+    use_llm: bool = True
+    bco_source: SourceBundle | None = None
+
+    @model_validator(mode="after")
+    def _validate_bco_source(self):
+        if self.bco_source is not None:
+            if self.ontology != "dod-bco" or self.content != self.bco_source.text or self.format != "plain_text":
+                raise ValueError("BCO source coordinates require exact BCO plain-text content")
+        return self
 
     @field_validator("ontology")
     @classmethod
@@ -96,13 +106,13 @@ async def create_enrichment(req: EnrichRequest) -> dict:
         )
 
     fmt = req.format or detect_format(req.filename, req.content).value
-    doc = DocumentInput(content=req.content, format=fmt, filename=req.filename, ontology=req.ontology)
+    doc = DocumentInput(content=req.content, format=fmt, filename=req.filename, ontology=req.ontology, bco_source=req.bco_source)
     job = Job(input=doc)
     await _job_store.save(job)
 
     # Build pipeline with per-task LLMs (task-specific overrides > request > global)
-    fallback_llm = _get_llm_for_request(req)
-    task_llms = TaskLLMs.from_settings(fallback=fallback_llm)
+    fallback_llm = _get_llm_for_request(req) if req.use_llm else None
+    task_llms = TaskLLMs.from_settings(fallback=fallback_llm) if req.use_llm else TaskLLMs()
     orchestrator = PipelineOrchestrator(_job_store, llm=fallback_llm, task_llms=task_llms)
 
     # Run pipeline in background

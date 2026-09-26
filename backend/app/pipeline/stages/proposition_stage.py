@@ -26,6 +26,11 @@ class EarlyPropositionStage(PipelineStage):
 
     async def execute(self, job: Job) -> Job:
         from app.config import settings
+        if job.ontology == "dod-bco":
+            # Upstream propositions use a judicial-claim taxonomy. BCO retains
+            # normative source evidence until its assertion taxonomy is reviewed.
+            job.result.metadata["bco_proposition_status"] = "judicial_taxonomy_excluded; normative_cues_in_bco_evidence"
+            return job
         if not settings.proposition_extraction_enabled:
             return job
 

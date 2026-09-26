@@ -37,6 +37,18 @@ class EarlyTripleStage(PipelineStage):
 
         triples, pos_data, ner_entities = self.parser.extract_triples_and_pos(text)
 
+        if job.ontology == "dod-bco":
+            # The upstream parser joins token text with spaces for display, which
+            # changes punctuation (e.g. UFC 1 - 200 - 01). Its character bounds
+            # still identify the covering source quote. Keep normalized S/P/O
+            # labels separate from that verbatim evidence, and never invent a
+            # span for implicit subjects or objects.
+            for triple in triples:
+                for field in ("subject_span", "predicate_span", "object_span"):
+                    span = getattr(triple, field)
+                    if span is not None and 0 <= span.start < span.end <= len(text):
+                        span.text = text[span.start:span.end]
+
         job.result.triples = triples
 
         if settings.pos_tagging_enabled:

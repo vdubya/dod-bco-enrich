@@ -1,0 +1,17 @@
+{
+  "name": "DoD BCO Enrich",
+  "bco_version": "0.1.0",
+  "pronunciation": "beeco",
+  "expansion": "DoD Building Code Ontology",
+  "descriptor": "Ontology and Knowledge Graph for the DoD built environment",
+  "created_on": "2026-09-26",
+  "upstream": "https://github.com/alea-institute/folio-enrich",
+  "upstream_commit": "bb576ac0830308091623018aa1546559ac4fa1a9",
+  "upstream_package_version": "0.4.17",
+  "local_branch": "dod-bco",
+  "remote_fork": "https://github.com/vdubya/dod-bco-enrich",
+  "remote_fork_status": "created",
+  "code_license": "MIT; upstream notices retained",
+  "ontology_release_status": "editorial_prototype_not_approved",
+  "accepted_definition_count": 0
+}

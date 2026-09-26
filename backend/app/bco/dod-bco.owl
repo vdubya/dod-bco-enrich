@@ -1,0 +1,409 @@
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+  <owl:Ontology rdf:about="https://example.org/dod-bco/">
+    <rdfs:label>DoD Building Code Ontology</rdfs:label>
+    <rdfs:comment>Prototype matching scaffold for an ontology and knowledge graph. No approved definitions. The example.org namespace is provisional.</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:about="https://example.org/dod-bco/BuiltAsset">
+    <rdfs:label>Built Asset</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Facility">
+    <rdfs:label>Facility</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+    <skos:altLabel>facilities</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Building">
+    <rdfs:label>Building</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+    <skos:altLabel>buildings</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Infrastructure">
+    <rdfs:label>Infrastructure</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Space">
+    <rdfs:label>Space</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+    <skos:altLabel>spaces</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/GovernmentOwnedFacility">
+    <rdfs:label>Government-owned facility</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+    <skos:altLabel>Government-owned facilities</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/LeasedFacility">
+    <rdfs:label>Leased facility</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/BuiltAsset" />
+    <skos:altLabel>leased facilities</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ResponsibilityRole">
+    <rdfs:label>Responsibility Role</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Owner">
+    <rdfs:label>Owner</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/OwnersRepresentative">
+    <rdfs:label>Owner’s Representative</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>Owner's Representative</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/OwnersAuthorizedAgent">
+    <rdfs:label>Owner’s Authorized Agent</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>Owner's Authorized Agent</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/RealPropertyOwner">
+    <rdfs:label>Real Property Owner</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ContractingOfficer">
+    <rdfs:label>Contracting Officer</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Lessor">
+    <rdfs:label>Lessor</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/DesignerOfRecord">
+    <rdfs:label>Designer of Record</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>DoR</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/EngineerOfRecord">
+    <rdfs:label>Engineer of Record</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>EoR</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/StructuralEngineerOfRecord">
+    <rdfs:label>Structural Engineer of Record</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>SER</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/RegisteredDesignProfessional">
+    <rdfs:label>Registered Design Professional</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/BuildingOfficial">
+    <rdfs:label>Building Official</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/CodeOfficial">
+    <rdfs:label>Code Official</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/AuthorityHavingJurisdiction">
+    <rdfs:label>Authority Having Jurisdiction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>AHJ</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ComponentTechnicalRepresentative">
+    <rdfs:label>Component Technical Representative</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>CTR</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/EngineeringSeniorExecutivePanel">
+    <rdfs:label>Engineering Senior Executive Panel</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+    <skos:altLabel>ESEP</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/PermitHolder">
+    <rdfs:label>Permit Holder</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ResponsibilityRole" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ComplianceConcept">
+    <rdfs:label>Compliance Concept</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Requirement">
+    <rdfs:label>Requirement</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+    <skos:altLabel>requirements</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Waiver">
+    <rdfs:label>Waiver</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+    <skos:altLabel>waivers</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Exemption">
+    <rdfs:label>Exemption</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+    <skos:altLabel>exemptions</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Exception">
+    <rdfs:label>Exception</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+    <skos:altLabel>exceptions</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ApplicabilityCondition">
+    <rdfs:label>Applicability condition</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Approval">
+    <rdfs:label>Approval</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ComplianceConcept" />
+    <skos:altLabel>approvals</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ConstructionLevel">
+    <rdfs:label>Construction Level</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/PermanentConstruction">
+    <rdfs:label>Permanent construction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ConstructionLevel" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/TemporaryConstruction">
+    <rdfs:label>Temporary construction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ConstructionLevel" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/NonPermanentConstruction">
+    <rdfs:label>Non-permanent construction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ConstructionLevel" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/SemiPermanentConstruction">
+    <rdfs:label>Semi-permanent construction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/ConstructionLevel" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Document">
+    <rdfs:label>Document</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/CriterionDocument">
+    <rdfs:label>Unified Facilities Criteria</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+    <skos:altLabel>UFC</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/GuideSpecification">
+    <rdfs:label>Unified Facilities Guide Specifications</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+    <skos:altLabel>UFGS</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/BuildingCode">
+    <rdfs:label>Building code</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/EngineerRegulation">
+    <rdfs:label>Engineer Regulation</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/EngineerManual">
+    <rdfs:label>Engineer Manual</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/AcceptanceForm">
+    <rdfs:label>DD Form 1354</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Document" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Organization">
+    <rdfs:label>Organization</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/DepartmentOfDefense">
+    <rdfs:label>Department of Defense</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Organization" />
+    <skos:altLabel>DoD</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/USACE">
+    <rdfs:label>US Army Corps of Engineers</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Organization" />
+    <skos:altLabel>USACE</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/NAVFAC">
+    <rdfs:label>Naval Facilities Engineering Systems Command</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Organization" />
+    <skos:altLabel>NAVFAC</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/USAF">
+    <rdfs:label>United States Air Force</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Organization" />
+    <skos:altLabel>USAF</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/WHS">
+    <rdfs:label>Washington Headquarters Services</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/Organization" />
+    <skos:altLabel>WHS</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/LifecycleActivity">
+    <rdfs:label>Lifecycle Activity</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Design">
+    <rdfs:label>Design</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Construction">
+    <rdfs:label>Construction</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Operation">
+    <rdfs:label>Operation</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+    <skos:altLabel>operations</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Maintenance">
+    <rdfs:label>Maintenance</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Repair">
+    <rdfs:label>Repair</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+    <skos:altLabel>repairs</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Alteration">
+    <rdfs:label>Alteration</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+    <skos:altLabel>alterations</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Disposal">
+    <rdfs:label>Disposal</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/LifecycleActivity" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/PropertyInterest">
+    <rdfs:label>Property Interest</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/RealEstate">
+    <rdfs:label>Real estate</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/PropertyInterest" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/RealProperty">
+    <rdfs:label>Real property</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/PropertyInterest" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Lease">
+    <rdfs:label>Lease</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/PropertyInterest" />
+    <skos:altLabel>leases</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/Easement">
+    <rdfs:label>Easement</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/PropertyInterest" />
+    <skos:altLabel>easements</skos:altLabel>
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/TechnicalSystem">
+    <rdfs:label>Technical System</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/StructuralSystem">
+    <rdfs:label>Structural system</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/TechnicalSystem" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/FireProtection">
+    <rdfs:label>Fire protection</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/TechnicalSystem" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/MechanicalSystem">
+    <rdfs:label>Mechanical system</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/TechnicalSystem" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/PlumbingSystem">
+    <rdfs:label>Plumbing system</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/TechnicalSystem" />
+  </owl:Class>
+  <owl:Class rdf:about="https://example.org/dod-bco/ElectricalSystem">
+    <rdfs:label>Electrical system</rdfs:label>
+    <skos:definition>Editorial matching category only. Source-specific definitions and applicability remain pending review.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://example.org/dod-bco/TechnicalSystem" />
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/requires">
+    <rdfs:label>requires</rdfs:label>
+    <skos:altLabel>require</skos:altLabel>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/appliesTo">
+    <rdfs:label>applies to</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/modifies">
+    <rdfs:label>modifies</rdfs:label>
+    <skos:altLabel>modify</skos:altLabel>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/supersedes">
+    <rdfs:label>supersedes</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/reissues">
+    <rdfs:label>reissues</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/cancels">
+    <rdfs:label>cancels</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/references">
+    <rdfs:label>references</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/approves">
+    <rdfs:label>approves</rdfs:label>
+    <skos:altLabel>approve</skos:altLabel>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/accepts">
+    <rdfs:label>accepts</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://example.org/dod-bco/takesPrecedenceOver">
+    <rdfs:label>takes precedence over</rdfs:label>
+  </owl:ObjectProperty>
+</rdf:RDF>

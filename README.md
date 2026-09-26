@@ -1,3 +1,5 @@
+> **DoD BCO Enrich fork:** See [BCO_README.md](BCO_README.md) for the Building Code Ontology profile, source-preserving adapters, setup, and validation. The original upstream documentation follows.
+
 # FOLIO Enrich
 
 **Tag every legal document with precise, machine-readable legal concepts, individuals, and relationships — automatically.**

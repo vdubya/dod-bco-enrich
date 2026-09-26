@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import enum
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_serializer
+from app.bco.source import SourceBundle
 
 # Historical/default ontology for the models layer. Intentionally a literal (pydantic
 # field defaults must be class-def-time constants) and intentionally NOT
@@ -30,6 +31,14 @@ class DocumentInput(BaseModel):
     # (EnrichRequest.ontology); defaults so existing persisted jobs deserialize
     # unchanged. Not re-validated here (persisted model — must always deserialize).
     ontology: str = DEFAULT_ONTOLOGY
+    bco_source: SourceBundle | None = None
+
+    @model_serializer(mode="wrap")
+    def _serialize_source_if_present(self, handler):
+        data = handler(self)
+        if self.bco_source is None:
+            data.pop("bco_source", None)
+        return data
 
 
 class TextElement(BaseModel):

@@ -74,8 +74,15 @@ def build_individual_extraction_prompt(
     existing_individuals: list[dict],
     *,
     document_type: str = "",
+    ontology_id: str = "folio",
 ) -> str:
     """Build the LLM prompt for individual extraction."""
+    if ontology_id == "dod-bco":
+        from app.bco.prompts import structured_prompt
+        return structured_prompt("Identify named organizations, publications, assets, places, and people. Link only to supported supplied classes. Keep generic roles separate from their named incumbents.", text,
+            {"class_annotations": class_annotations, "existing_individuals": existing_individuals, "document_type": document_type},
+            {"individuals": [{"name": "", "mention_text": "exact source text", "individual_type": "named_entity",
+                              "class_annotation_ids": [], "class_labels": [], "confidence": 0.0, "is_new": True}]})
     # Format class annotations
     if class_annotations:
         ann_lines = []

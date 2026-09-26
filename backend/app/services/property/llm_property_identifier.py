@@ -75,6 +75,7 @@ class LLMPropertyIdentifier:
         prompt = build_property_extraction_prompt(
             chunk.text, class_annotations, existing_prop_context, property_labels,
             document_type=document_type,
+            ontology_id=self._ontology_id,
         )
 
         try:

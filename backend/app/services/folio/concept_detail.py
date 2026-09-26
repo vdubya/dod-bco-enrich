@@ -174,7 +174,7 @@ def _implicit_root_discovery_enabled(spec) -> bool:
     """
     try:
         from app.services.ontology.registry import get_registry
-        return spec.id != get_registry().default_id
+        return spec.id != "folio"
     except Exception:  # pragma: no cover - registry unavailable; be conservative
         return spec.id != "folio"
 

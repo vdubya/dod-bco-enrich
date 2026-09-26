@@ -148,6 +148,9 @@ class FolioService:
         from folio import FOLIO
 
         coords = self._spec.coords
+        if coords.source_type == "bundled":
+            from app.bco.ontology import load_bundled_ontology
+            return load_bundled_ontology(self._spec)
         if coords.source_type == "http":
             return self._load_http_via_hardened_ingestion(coords)
         return FOLIO(github_repo_branch=coords.repo_branch)
@@ -307,7 +310,7 @@ class FolioService:
         """
         try:
             from app.services.ontology.registry import get_registry
-            return self._spec.id != get_registry().default_id
+            return self._spec.id != "folio"
         except Exception:  # pragma: no cover - registry unavailable; be conservative
             return self._spec.id != "folio"
 
@@ -342,6 +345,12 @@ class FolioService:
     def get_all_branches(self) -> list[dict]:
         """Get all non-excluded branches with concept counts and colors."""
         folio = self._get_folio()
+        if self._implicit_root_discovery_enabled():
+            from collections import Counter
+            counts = Counter((self._branch_map or {}).values())
+            return [{"name": name, "color": get_branch_color(name), "concept_count": count}
+                    for name, count in sorted(counts.items())
+                    if name not in self._spec.behavior.excluded_branches]
         branches_dict = folio.get_folio_branches(max_depth=16)
 
         result: list[dict] = []
