@@ -40,8 +40,20 @@ test('stale evidence, unknown candidates and duplicate identities are not accept
  }
  assert.equal(resolved([event(1),event(1)]).states.get(c.candidate_id).status,'unverified');
 });
-test('acceptance requires nonblank scope, rationale and reviewer',()=>{
- for(const field of ['scope_note','rationale','reviewer'])assert.throws(()=>validateEvent(event(1,{[field]:'  '}),candidates,manifest.dataset_sha256));
+test('every decision permits blank scope and rationale while requiring a reviewer',()=>{
+ for(const status of ['accepted','rejected','needs_revision','deferred','pending']){
+  for(const notes of ['', '  ']){
+   const review=event(1,{status,scope_note:notes,rationale:notes});
+   const prepared=JSON.parse(new URL(githubSaveURL(review)).searchParams.get('value'));
+   const result=resolved([prepared]);
+   assert.deepEqual(result.issues,[]);
+   assert.equal(result.states.get(c.candidate_id).status,status);
+   assert.equal(result.states.get(c.candidate_id).latest.scope_note,notes);
+   assert.equal(result.states.get(c.candidate_id).latest.rationale,notes);
+  }
+ }
+ assert.throws(()=>validateEvent(event(1,{reviewer:'  '}),candidates,manifest.dataset_sha256));
+ for(const extra of [{scope_note:'x'.repeat(501)},{rationale:'x'.repeat(601)},{scope_note:42},{rationale:[]}])assert.throws(()=>validateEvent(event(1,extra),candidates,manifest.dataset_sha256));
 });
 test('technical save checks cannot adjudicate vocabulary',()=>{
  const check={schema_version:1,event_id:id(1),created_at:'2026-09-26T20:00:00Z',record_type:'persistence_check',dataset_sha256:manifest.dataset_sha256,purpose:'Technical save verification; no vocabulary decision'};

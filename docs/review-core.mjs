@@ -17,7 +17,7 @@ export function validateEvent(e, candidates, datasetHash) {
   if (!c || e.source_sha256 !== c.source.source_sha256 || e.source_version_id !== c.source.version_id) throw Error('Review does not match the source evidence.');
   if (!Object.hasOwn(STATUSES, e.status)) throw Error('Unknown decision.');
   if (!Array.isArray(e.supersedes) || e.supersedes.length > 100 || new Set(e.supersedes).size !== e.supersedes.length || e.supersedes.some(id => !uuid.test(id) || id === e.event_id)) throw Error('Invalid review history.');
-  if (!textOK(e.reviewer,80,true) || !textOK(e.rationale,600,true) || !textOK(e.scope_note,500,e.status==='accepted') || !textOK(e.proposed_label,150) || !textOK(e.proposed_definition,1000)) throw Error('Complete the required review fields within their limits.');
+  if (!textOK(e.reviewer,80,true) || !textOK(e.rationale,600) || !textOK(e.scope_note,500) || !textOK(e.proposed_label,150) || !textOK(e.proposed_definition,1000)) throw Error('Complete the required review fields within their limits.');
   return e;
 }
 

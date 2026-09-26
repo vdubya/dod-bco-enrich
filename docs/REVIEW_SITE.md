@@ -7,7 +7,7 @@ The report is published from `dod-bco:/docs` using GitHub Pages branch publishin
 ## Review and save
 
 1. Search the 50 selected source assertions and expand their evidence and document applicability context.
-2. Choose **Review assertion** and record a decision, reviewer name, scope, and rationale. Optional editorial wording stays separate from verbatim source text.
+2. Choose **Review assertion** and record a decision and reviewer name. Scope and conditions and decision rationale are optional for every decision. Optional editorial wording stays separate from verbatim source text.
 3. Choose **Save to GitHub**. The site opens GitHub's native new-file editor with a prepared JSON event.
 4. In GitHub, choose **Commit changes**, commit directly to `dod-bco`, and finish the commit. This requires repository write access and your normal GitHub sign-in. A file saved to a different branch or fork is not part of this site's shared review record. No upstream pull request is involved.
 5. Return to the report and choose **Refresh saved reviews**. The page confirms the committed record only after reading it from the repository.
@@ -44,6 +44,6 @@ node --check docs/review.js
 python3 -m http.server 54803 --bind 127.0.0.1 --directory docs
 ```
 
-Nine focused tests cover source round-trips, empty state, revision/reopen history, concurrent decisions, explicit conflict resolution, stale source identity, invalid histories, required acceptance scope, technical receipt separation, and safe GitHub handoff encoding.
+Nine focused tests cover source round-trips, empty state, revision/reopen history, concurrent decisions, explicit conflict resolution, stale source identity, invalid histories, optional review notes and required reviewer identity, technical receipt separation, and safe GitHub handoff encoding.
 
 Hosting uses [GitHub Pages branch publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Saving uses [GitHub's native file creation and commit flow](https://docs.github.com/en/repositories/working-with-files/managing-files/creating-new-files).
