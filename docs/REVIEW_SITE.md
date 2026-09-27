@@ -21,6 +21,8 @@ Drafts use browser local storage and do not count as saved decisions. A pending 
 
 A pending batch also survives reload and uses the same event IDs on retry. Before submitting it, the report refreshes saved reviews and checks that each selected assertion's review history is unchanged. The service adds all files in one commit and advances the branch without force. A concurrent branch change stops the update; retrying rechecks the batch. **Clear pending batch** discards only the local pending selection and never deletes a saved GitHub record.
 
+After a confirmed save, the report refreshes directly from that immutable commit. A briefly stale public branch response cannot replace the displayed snapshot with one missing the just-confirmed records.
+
 Each revision references the events it supersedes. Concurrent heads remain a conflict, without choosing a winner from timestamps. Invalid source versions, changed evidence snapshots, duplicate IDs, cycles, and incomplete histories fail validation. Repository editors should add a correcting event instead of rewriting a past event. Git history retains modifications made outside that convention. No upstream pull request is involved.
 
 The client pins each refresh to one Git commit and reads the public GitHub API plus immutable raw file URLs. A failed refresh is visible and does not turn missing data into zero accepted decisions. GitHub's unauthenticated API read limit may require waiting before another refresh. The current directory listing is intentionally capped below 1,000 entries; reaching that boundary fails closed and requires an indexed/archive implementation.

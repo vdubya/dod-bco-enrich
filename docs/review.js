@@ -96,12 +96,13 @@ async function jsonFetch(url){
   if(!response.ok) throw Error(response.status===403||response.status===429?'GitHub’s public read limit was reached. Try refreshing later.':`Could not load the repository snapshot (HTTP ${response.status}).`);
   return response.json();
 }
-async function sync(){
+async function sync(savedCommit=null){
   if(!candidates.length)return;
   remoteReady=false; $('refresh').disabled=true; $('sync-title').textContent='Checking GitHub…'; $('sync-dot').className='sync-dot';
   try{
-    const ref=await jsonFetch(`https://api.github.com/repos/${REPO}/git/ref/heads/${BRANCH}`);
-    const nextCommit=ref.object?.sha;
+    // Refresh a confirmed save at its immutable commit, without waiting for the
+    // public branch endpoint's cache to catch up.
+    const nextCommit=savedCommit || (await jsonFetch(`https://api.github.com/repos/${REPO}/git/ref/heads/${BRANCH}`)).object?.sha;
     if(!/^[a-f0-9]{40}$/.test(nextCommit||''))throw Error('GitHub did not return a valid branch version.');
     const listing=await jsonFetch(`https://api.github.com/repos/${REPO}/contents/${EVENT_DIR}?ref=${nextCommit}`);
     if(!Array.isArray(listing)||listing.length>=1000)throw Error('The review listing is incomplete; no current decisions have been inferred.');
@@ -119,6 +120,7 @@ async function sync(){
       }));loaded.push(...batch);
     }
     const next=resolveReviews(loaded,candidates,manifest.dataset_sha256);
+    if((lastBatch && !batchIsSaved(lastBatch,loaded)) || (lastSave && !loaded.some(e=>sameReviewContent(e,lastSave.event))))throw Error('The public branch snapshot has not caught up with your confirmed save. Refresh again shortly.');
     events=loaded; commit=nextCommit; resolution=next;
     if(next.issues.length)throw Error(`Review validation needs attention: ${[...new Set(next.issues)].join(' ')}`);
     remoteReady=true;
@@ -215,7 +217,7 @@ async function savePrepared(){
     lastSave=result;
     if(result.event.candidate_id)delete drafts[result.event.candidate_id];
     clearPrepared();storeDrafts();
-    await sync();showSaved();
+    await sync(result.commit);showSaved();
   }catch(error){
     $('save-status').textContent=error.name==='TimeoutError'?'Confirmation timed out. Your draft is retained. Retry to check the same review without creating a duplicate.':error.message;
   }finally{saving=false;updateConnection();render();}
@@ -226,6 +228,7 @@ function showSaved(){
     $('save-status').textContent=lastBatch.events[0].record_type==='persistence_check'?'Both technical receipts are confirmed in GitHub. No vocabulary decisions changed.':`All ${lastBatch.events.length} approvals are confirmed in GitHub. Each assertion has its own review record.`;
     $('save-receipt').href=lastBatch.url;$('save-receipt').textContent=`View batch commit ${lastBatch.commit.slice(0,7)} ↗`;$('save-receipt').hidden=false;$('save-now').hidden=true;$('discard-batch').hidden=true;
     $('sync-title').textContent='Batch saved to GitHub';$('sync-dot').className='sync-dot ready';
+    if(!remoteReady)$('sync-detail').textContent=`Commit ${lastBatch.commit.slice(0,7)} was confirmed. The review list could not refresh; try refreshing later.`;
     return;
   }
   if(!lastSave)return;
@@ -257,7 +260,7 @@ async function savePreparedBatch(){
     $('save-status').textContent=`Saving ${preparedBatch.events.length} records together and confirming the committed files…`;
     lastBatch=await connection.saveBatch(preparedBatch);lastSave=null;
     clearBatch();selected.clear();
-    await sync();showSaved();
+    await sync(lastBatch.commit);showSaved();
   }catch(error){$('save-status').textContent=error.name==='TimeoutError'?'Confirmation timed out. Retry to check this same batch without duplicate approvals.':error.message;}
   finally{saving=false;updateConnection();render();}
 }
@@ -308,7 +311,7 @@ $('discard-draft').addEventListener('click',()=>{if(preparedSave?.candidate_id==
 $('cards').addEventListener('click',event=>{const button=event.target.closest('[data-review]');if(button)openReview(button.dataset.review);const detail=event.target.closest('[data-context]');if(detail){const id=detail.dataset.context;expanded.has(id)?expanded.delete(id):expanded.add(id);render();$('cards').querySelector(`[data-context="${id}"]`)?.focus();}});
 $('cards').addEventListener('change',event=>{const box=event.target.closest('[data-select]');if(box){box.checked?selected.add(box.dataset.select):selected.delete(box.dataset.select);updateSelection();}});
 for(const id of ['search','source','kind','status'])$(id).addEventListener(id==='search'?'input':'change',()=>{selected.clear();expanded.clear();page=0;render();});
-$('refresh').addEventListener('click',sync);
+$('refresh').addEventListener('click',()=>sync());
 $('resume-save').addEventListener('click',()=>showSavePanel());
 $('close-save').addEventListener('click',()=>$('save-dialog').close());
 $('save-now').addEventListener('click',()=>preparedBatch?savePreparedBatch():savePrepared());
