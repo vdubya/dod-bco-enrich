@@ -29,7 +29,7 @@ function safeHeaders(response,origin){
 
 // All application content and review receipts remain in GitHub. This store holds
 // only encrypted authentication material and short-lived sign-in exchanges.
-export function createService({candidates,datasetHash,fetcher=fetch}){
+export function createService({candidates,datasetHash,fetcher=(...args)=>globalThis.fetch(...args)}){
   async function tokenExchange(app,parameters){
     const r=await fetcher('https://github.com/login/oauth/access_token',{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify({client_id:app.client_id,client_secret:app.client_secret,...parameters}),signal:AbortSignal.timeout(20000),redirect:'error'});
     let data;try{data=await r.json();}catch{data=null;}
@@ -52,7 +52,7 @@ export function createService({candidates,datasetHash,fetcher=fetch}){
     }
     return {id,...value,expires:stored.expires};
   }
-  async function route(request,env){
+  async function route(request,env,diagnostic){
     const url=new URL(request.url),origin=request.headers.get('origin');
     requireValue(env.SERVICE_URL && new URL(env.SERVICE_URL).protocol==='https:',503,'The direct-save service is not configured.');
     const base=new URL(env.SERVICE_URL).origin;
@@ -69,23 +69,27 @@ export function createService({candidates,datasetHash,fetcher=fetch}){
       const ticket=url.searchParams.get('ticket');
       requireValue(validChallenge(ticket) && validChallenge(env.SETUP_KEY) && await digest(ticket)===await digest(env.SETUP_KEY),403,'This setup link is not valid.');
       const state=random(),binding=random();
-      await store.put('bco_flows',await digest(state),{type:'setup',binding:await digest(binding)},now()+600);
+      await store.put('bco_flows',await digest(state),{type:'setup',binding:await digest(binding)},now()+3600);
       const manifest={name:'DoD BCO Reviews vdubya',url:REPORT,description:'Save source-linked DoD BCO review decisions to vdubya/dod-bco-enrich.',public:false,redirect_url:`${base}/setup/callback`,callback_urls:[`${base}/auth/callback`],setup_url:`${base}/setup/installed`,hook_attributes:{url:`${base}/webhook`,active:false},default_permissions:{contents:'write',metadata:'read'},default_events:[],request_oauth_on_install:false};
-      const response=page('Connect GitHub saving','Create a private GitHub App, then install it only on vdubya/dod-bco-enrich. The app requests repository contents read and write access. The service permits only new review-event files.',`<form method="post" action="https://github.com/settings/apps/new?state=${state}"><input type="hidden" name="manifest" value="${escape(JSON.stringify(manifest))}"><button type="submit">Review GitHub App permissions</button></form>`);
-      response.headers.set('Set-Cookie',flowCookie(binding));return response;
+      const response=page('Connect GitHub saving','Create a private GitHub App, then install it only on vdubya/dod-bco-enrich. The app requests repository contents read and write access. The service permits only new review-event files.',`<form method="post" action="https://github.com/settings/apps/new?state=${state}"><input type="hidden" name="manifest" value="${escape(JSON.stringify(manifest))}"><button type="submit">Review GitHub App permissions</button></form><details><summary>Resume an app already created</summary><p>If the final connection step failed, use the code from its callback within one hour. This does not create another app.</p><form method="get" action="/setup/callback"><input type="hidden" name="state" value="${state}"><label>GitHub setup code <input name="code" required minlength="8" maxlength="200" autocomplete="off"></label><button type="submit">Finish existing app connection</button></form></details>`);
+      response.headers.set('Content-Security-Policy',response.headers.get('Content-Security-Policy').replace('form-action https://github.com',"form-action 'self' https://github.com"));
+      response.headers.set('Set-Cookie',flowCookie(binding,3600));return response;
     }
     if(url.pathname==='/setup/callback' && request.method==='GET'){
       requireValue(!app,409,'The GitHub connection is already configured.');
       const state=url.searchParams.get('state'),code=url.searchParams.get('code');
       requireValue(validChallenge(state) && /^[a-zA-Z0-9_\-]{8,200}$/.test(code||''),400,'The setup callback is invalid.');
+      diagnostic.step='setup-flow';
       const flow=await store.get('bco_flows',await digest(state),true);
       requireValue(flow?.value.type==='setup' && flow.value.binding===await digest(cookie(request,'__Host-bco-flow')||''),400,'The setup session expired. Start again from the setup link.');
+      diagnostic.step='manifest-conversion';
       const r=await fetcher(`${API}/app-manifests/${code}/conversions`,{method:'POST',headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'DoD-BCO-Review-Save'},signal:AbortSignal.timeout(20000),redirect:'error'});
-      const data=await r.json();
+      let data;try{data=await r.json();}catch{throw new Problem(502,'GitHub did not return a valid app response. Resume the existing app connection.');}
       requireValue(r.ok && data.owner?.id===OWNER_ID && data.client_id && data.client_secret && /^https:\/\/github\.com\/apps\/[a-z0-9-]+$/.test(data.html_url||''),403,'The app must be created by the vdubya repository owner.');
       requireValue(data.permissions?.contents==='write' && Object.keys(data.permissions).every(k=>['contents','metadata'].includes(k)),403,'The app permissions do not match this service.');
       // The manifest also returns a PEM key and webhook secret. Neither is used
       // or retained: writes use the signed-in user's repository-limited grant.
+      diagnostic.step='app-storage';
       await store.configure({id:data.id,slug:data.slug,client_id:data.client_id,client_secret:data.client_secret,html_url:data.html_url});
       return redirect(`${data.html_url}/installations/new`,{'Set-Cookie':flowCookie('',0)});
     }
@@ -145,8 +149,10 @@ export function createService({candidates,datasetHash,fetcher=fetch}){
   }
   return {async fetch(request,env){
     const origin=request.headers.get('origin');let response;
-    try{response=await route(request,env);}
+    const diagnostic={step:'request'};
+    try{response=await route(request,env,diagnostic);}
     catch(error){
+      if(!(error instanceof Problem))console.error('bco-runtime-failure',{step:diagnostic.step,name:error.name,detail:String(error.message).replace(/https?:\/\/\S+/g,'[url]').replace(/[A-Za-z0-9_\-+/=]{16,}/g,'[redacted]').slice(0,240)});
       const status=error instanceof Problem?error.status:503;
       const message=error instanceof Problem?error.message:'The save service is temporarily unavailable. Your draft is retained; retry safely.';
       const html=request.headers.get('accept')?.includes('text/html');

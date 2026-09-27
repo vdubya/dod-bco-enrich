@@ -9,7 +9,7 @@ const review=[...common,'candidate_id','source_sha256','source_version_id','supe
 const check=[...common,'purpose'];
 
 export class GitHub {
-  constructor(token,fetcher=fetch){this.token=token;this.fetcher=fetcher;}
+  constructor(token,fetcher=(...args)=>globalThis.fetch(...args)){this.token=token;this.fetcher=fetcher;}
   async request(path,method='GET',body) {
     const response=await this.fetcher(API+path,{method,headers:{
       'Authorization':`Bearer ${this.token}`,'Accept':'application/vnd.github+json',

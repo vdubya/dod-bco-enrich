@@ -64,6 +64,9 @@ async function serviceFixture({configured=true}={}){
   if(configured)await store.configure({id:1,client_id:'fake-client',client_secret:'fake-secret',html_url:'https://github.com/apps/test-bco'});
   const github=githubMock();let oauthCalls=[];
   const service=createService({candidates,datasetHash:hash,fetcher:async(url,options)=>{
+    if(url==='https://api.github.com/app-manifests/fake-manifest-code/conversions'){
+      return Response.json({id:9,slug:'test-bco',owner:{id:OWNER_ID},client_id:'fake-client',client_secret:'fake-secret',html_url:'https://github.com/apps/test-bco',permissions:{contents:'write',metadata:'read'}});
+    }
     if(url==='https://github.com/login/oauth/access_token'){
       oauthCalls.push(JSON.parse(options.body));
       return Response.json({access_token:'fake-access',expires_in:28800,refresh_token:'fake-refresh',refresh_token_expires_in:15552000});
@@ -86,7 +89,7 @@ async function serviceFixture({configured=true}={}){
     assert.equal(exchange.status,200);const session=await exchange.json();
     return {...session,code,verifier,state,binding,authorization};
   }
-  return {env,store,github,oauthCalls,request,login,db};
+  return {env,store,github,oauthCalls,request,login,db,service};
 }
 
 test('direct saving writes only the fixed review path and confirms the immutable commit',async()=>{
@@ -198,4 +201,36 @@ test('setup is protected, shows exact permissions, and is disabled after configu
   const html=await allowed.text();assert.ok(html.includes('contents'));assert.ok(html.includes('vdubya/dod-bco-enrich'));assert.equal(html.includes(fresh.env.SETUP_KEY),false);
   assert.equal((await fresh.request('/reviews',{method:'POST',body:receipt()})).status,503);
   const configured=await serviceFixture();assert.equal((await configured.request(`/setup?ticket=${configured.env.SETUP_KEY}`)).status,409);
+});
+
+test('manifest setup stores credentials encrypted and sends only installation URL to the browser',async()=>{
+  const f=await serviceFixture({configured:false});
+  const start=await f.request(`/setup?ticket=${f.env.SETUP_KEY}`);
+  const binding=start.headers.get('set-cookie').split(';')[0];
+  const html=await start.text(),state=html.match(/name="state" value="([A-Za-z0-9_-]+)"/)[1];
+  const callback=await f.request(`/setup/callback?state=${state}&code=fake-manifest-code`,{cookie:binding});
+  assert.equal(callback.status,303);assert.equal(callback.headers.get('location'),'https://github.com/apps/test-bco/installations/new');
+  assert.equal((await f.store.config()).id,9);
+  assert.equal(JSON.stringify(f.db.db.prepare('SELECT * FROM bco_config').all()).includes('fake-secret'),false);
+  assert.equal((await callback.text()).includes('fake-secret'),false);
+});
+
+test('existing-app recovery uses the protected setup callback and rejects an unbound browser',async()=>{
+  const f=await serviceFixture({configured:false});
+  const start=await f.request(`/setup?ticket=${f.env.SETUP_KEY}`);
+  const binding=start.headers.get('set-cookie').split(';')[0];
+  const html=await start.text(),state=html.match(/name="state" value="([A-Za-z0-9_-]+)"/)[1];
+  assert.ok(html.includes('<form method="get" action="/setup/callback">'));
+  const path=`/setup/callback?state=${state}&code=fake-manifest-code`;
+  assert.equal((await f.request(path)).status,400);
+  assert.equal((await f.request(path,{cookie:binding})).status,400);
+  assert.equal(await f.store.config(),null);
+});
+
+test('default GitHub transport preserves the native global fetch receiver',async()=>{
+  const original=globalThis.fetch;
+  try{
+    globalThis.fetch=function(){assert.equal(this,globalThis);return Promise.resolve(Response.json({ok:true}));};
+    assert.equal((await new GitHub('test').request('/user')).ok,true);
+  }finally{globalThis.fetch=original;}
 });
