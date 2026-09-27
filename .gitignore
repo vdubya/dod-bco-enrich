@@ -22,3 +22,6 @@ __pycache__/
 backend/app/bco/data/umrl/.import.lock
 backend/app/bco/data/umrl/.staging-*
 backend/app/bco/data/umrl/changes/.staging-*
+backend/app/bco/data/ufc-glossary/.import.lock
+backend/app/bco/data/ufc-glossary/.staging-*
+backend/app/bco/data/ufc-glossary/changes/.staging-*

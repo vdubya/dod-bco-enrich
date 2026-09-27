@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plan or run bounded LLM entity discovery over UFC JSON or UFGS SEC/XML."""
+"""Plan or run bounded entity discovery over UFC JSON, UFGS XML, or the UFC master glossary PDF."""
 from __future__ import annotations
 
 import argparse
@@ -18,7 +18,9 @@ from app.bco.source import parse_source
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
-    parser.add_argument("--format", choices=["ufc_json", "ufgs_sec"])
+    parser.add_argument("--format", choices=["ufc_json", "ufgs_sec", "ufc_glossary_pdf"])
+    parser.add_argument("--source-designation", help="For the master glossary PDF, select one UFC context")
+    parser.add_argument("--source-section-kind", choices=["glossary", "references", "supplemental_resources"])
     parser.add_argument("--profile", action="append", help="Repeat for multiple review profiles; default dod-base")
     parser.add_argument("--run", action="store_true", help="Make model calls; otherwise print a no-cost plan")
     parser.add_argument("--provider", help="Existing Enrich provider, e.g. openai, anthropic, ollama")
@@ -33,8 +35,9 @@ def main(argv=None):
     parser.add_argument("--timeout", type=int, default=90)
     args = parser.parse_args(argv)
     try:
-        fmt = args.format or ("ufc_json" if args.source.suffix.lower() == ".json" else "ufgs_sec")
-        bundle = parse_source(args.source.read_bytes(), fmt, args.profile or ["dod-base"])
+        fmt = args.format or ({".json": "ufc_json", ".pdf": "ufc_glossary_pdf"}.get(args.source.suffix.lower(), "ufgs_sec"))
+        bundle = parse_source(args.source.read_bytes(), fmt, args.profile or ["dod-base"],
+                              source_designation=args.source_designation, source_section_kind=args.source_section_kind)
         options = EntityOptions(max_batches=args.max_batches, max_units=args.max_units,
                                 max_characters=args.max_characters, concurrency=args.concurrency,
                                 attempts=args.attempts, timeout_seconds=args.timeout)

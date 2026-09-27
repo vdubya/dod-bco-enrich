@@ -93,22 +93,31 @@ def response_schema() -> dict:
 def plan_batches(bundle: SourceBundle, options: EntityOptions) -> list[dict]:
     """Whole source units only; never silently truncate a sentence or paragraph."""
     batches, current, size = [], [], 0
+    previous_container = None
     for unit in bundle.units:
         if len(unit.text) > options.max_characters:
             raise ValueError(f"Source unit {unit.unit_id} exceeds max_characters; increase the limit before running.")
-        if current and (len(current) >= options.max_units or size + len(unit.text) > options.max_characters):
+        changed_scope = (bundle.source_family == "UFC_GLOSSARY_REFERENCES" and current
+                         and unit.container_id != previous_container)
+        if current and (changed_scope or len(current) >= options.max_units or size + len(unit.text) > options.max_characters):
             batches.append({"target_ids": current})
             current, size = [], 0
         current.append(unit.unit_id)
         size += len(unit.text)
+        previous_container = unit.container_id
     if current:
         batches.append({"target_ids": current})
     by_id = {u.unit_id: u for u in bundle.units}
+    positions = {u.unit_id: i for i, u in enumerate(bundle.units)}
     for index, batch in enumerate(batches):
         containers = {by_id[k].container_id for k in batch["target_ids"]}
         target = set(batch["target_ids"])
         # Neighboring units in the same source paragraph help preserve qualifiers.
         neighbors = [u for u in bundle.units if u.container_id in containers and u.unit_id not in target]
+        if bundle.source_family == "UFC_GLOSSARY_REFERENCES":
+            # Prefer adjacent pages for definitions or citations crossing a page
+            # boundary, while preserving the same UFC/appendix context.
+            neighbors.sort(key=lambda u: min(abs(positions[u.unit_id] - positions[k]) for k in target))
         context, context_size = [], 0
         for unit in neighbors:
             if len(context) < 12 and context_size + len(unit.text) <= options.max_characters:

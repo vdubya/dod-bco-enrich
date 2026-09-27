@@ -1,7 +1,8 @@
-"""Lossless text envelopes for UFC JSON and strict SpecsIntact SEC XML.
+"""Source text envelopes for UFC JSON, strict SEC XML, and the UFC master PDF.
 
 Text coordinates refer to decoded source fields, not serialized byte offsets.
 The SHA-256 identifies the original bytes; synthetic separators have no evidence.
+PDF text coordinates refer to parser output, with the original PDF retained.
 """
 from __future__ import annotations
 
@@ -33,7 +34,7 @@ class SourceUnit(BaseModel):
 
 
 class SourceBundle(BaseModel):
-    source_family: Literal["UFC", "UFGS"]
+    source_family: Literal["UFC", "UFGS", "UFC_GLOSSARY_REFERENCES"]
     designation: str
     title: str = ""
     version_id: str
@@ -168,7 +169,14 @@ def parse_ufgs(payload: bytes, profile_ids: list[str] | None = None) -> SourceBu
                                "guide_specification_is_not_an_adopted_project_requirement": True})
 
 
-def parse_source(payload: bytes, source_format: str, profile_ids: list[str] | None = None) -> SourceBundle:
+def parse_source(payload: bytes, source_format: str, profile_ids: list[str] | None = None,
+                 *, source_designation: str | None = None, source_section_kind: str | None = None) -> SourceBundle:
+    if source_format == "ufc_glossary_pdf":
+        from app.bco.glossary import index_pdf, source_bundle
+        return source_bundle(index_pdf(payload), payload, profile_ids,
+                             designation=source_designation, section_kind=source_section_kind)
+    if source_designation is not None or source_section_kind is not None:
+        raise ValueError("Source selection fields apply only to the UFC master glossary PDF")
     if source_format == "ufc_json":
         return parse_ufc(payload, profile_ids)
     if source_format == "ufgs_sec":

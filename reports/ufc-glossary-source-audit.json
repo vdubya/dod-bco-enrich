@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "source": {
+    "schema_version": 1,
+    "source_id": "ufc-master-glossary-references",
+    "source_family": "UFC_GLOSSARY_REFERENCES",
+    "source_url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+    "source_sha256": "db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+    "title": "CORE and NON_CORE UFC Glossary and Master Reference List",
+    "acquisition": {
+      "method": "download_official_url",
+      "requested_url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+      "final_url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+      "retrieved_at": "2026-09-27T14:55:20.046649+00:00",
+      "http_metadata": {
+        "content-type": "application/pdf",
+        "etag": "\"d76fc01d63791972fdf9f4eca05e1c40\"",
+        "last-modified": "Tue, 04 Aug 2026 13:26:51 GMT"
+      },
+      "publication_edition_inferred_from_http_metadata": false
+    },
+    "source_edition": "not_inferred_from_pdf_creation_or_modification_metadata",
+    "pdf_metadata": {
+      "/Author": "Department of Defense",
+      "/CreationDate": "D:20260602091823-04'00'",
+      "/Creator": "PScript5.dll Version 5.2.2",
+      "/ModDate": "D:20260804091753-04'00'",
+      "/Producer": "Acrobat Distiller 25.0 (Windows)",
+      "/Title": "CORE and NON_CORE UFC Glossary and Master Reference List"
+    },
+    "summary": {
+      "pdf_pages": 481,
+      "ufc_contexts": 52,
+      "sections_by_kind": {
+        "glossary": 52,
+        "references": 52,
+        "supplemental_resources": 2
+      },
+      "pages_without_extracted_text": [],
+      "structure_findings": 5
+    },
+    "extraction": {
+      "method": "pypdf_text_and_publisher_bookmarks_corroborated_by_printed_headings",
+      "parser_version": 1,
+      "pypdf_version": "6.19.0",
+      "ocr_performed": false,
+      "text_coordinates": "decoded_pdf_page_text_not_byte_offsets",
+      "semantic_entity_extraction": "not_performed",
+      "accepted_ontology_concepts": 0
+    },
+    "artifacts": {
+      "source.pdf": {
+        "sha256": "db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+        "bytes": 2482532,
+        "copy_method": "byte_for_byte"
+      },
+      "page-index.json": {
+        "sha256": "c9a6c1f09447a8029d8ff41bef60613a6d77c35fbbcf6efa5599eae94751f988",
+        "bytes": 967163
+      }
+    },
+    "source_role": "UFC_scoped_glossary_and_reference_assertions",
+    "umrl_is_separate_publication_catalog": true,
+    "project_adoption_inferred": false
+  },
+  "scope": "official_UFC_master_glossary_and_reference_lists",
+  "structure_findings": [
+    {
+      "code": "bookmark_appendix_differs_from_printed_heading",
+      "pdf_page": 55,
+      "bookmark_title_exact": "APPENDIX A UFC 3-120-01 GLOSSARY",
+      "heading_text_exact": "APPENDIX B UFC 3-120-01 GLOSSARY",
+      "review_status": "source_structure_discrepancy"
+    },
+    {
+      "code": "bookmark_appendix_differs_from_printed_heading",
+      "pdf_page": 123,
+      "bookmark_title_exact": "APPENDIX A UFC 3-201-01 REFERENCES",
+      "heading_text_exact": "APPENDIX B UFC 3-201-01 REFERENCES",
+      "review_status": "source_structure_discrepancy"
+    },
+    {
+      "code": "bookmark_appendix_differs_from_printed_heading",
+      "pdf_page": 158,
+      "bookmark_title_exact": "APPENDIX A UFC 3-240-01 REFERENCES",
+      "heading_text_exact": "APPENDIX B UFC 3-240-01 REFERENCES",
+      "review_status": "source_structure_discrepancy"
+    },
+    {
+      "code": "bookmark_appendix_differs_from_printed_heading",
+      "pdf_page": 161,
+      "bookmark_title_exact": "APPENDIX A UFC 3-250-01 GLOSSARY",
+      "heading_text_exact": "APPENDIX B UFC 3-250-01 GLOSSARY",
+      "review_status": "source_structure_discrepancy"
+    },
+    {
+      "code": "bookmark_role_differs_from_printed_heading",
+      "pdf_page": 399,
+      "bookmark_title_exact": "APPENDIX A UFC 3-600-01 references",
+      "heading_text_exact": "APPENDIX A UFC 3-600-01 GLOSSARY",
+      "classification_basis": "printed_heading",
+      "review_status": "source_structure_discrepancy"
+    }
+  ],
+  "indexing_validation": {
+    "all_physical_pdf_pages_indexed": true,
+    "source_units": 481,
+    "all_source_unit_text_round_trips": true,
+    "maximum_decoded_page_characters": 3523,
+    "visually_inspected_pdf_pages": [
+      5,
+      6,
+      64,
+      399,
+      466
+    ],
+    "all_pages_visually_reviewed": false,
+    "semantic_accuracy_or_recall_measured": false
+  },
+  "no_call_plan": {
+    "options": {
+      "max_units": 24,
+      "max_characters": 12000,
+      "max_batches": 10000,
+      "concurrency": 2,
+      "attempts": 2,
+      "timeout_seconds": 90
+    },
+    "batches": 126,
+    "target_units": 481,
+    "every_target_unit_planned_exactly_once": true,
+    "one_ufc_and_section_role_per_batch": true,
+    "model_calls": 0,
+    "generated_entity_candidates": 0,
+    "accepted_ontology_concepts": 0
+  },
+  "repeat_import_check": "unchanged",
+  "relationship_to_umrl": "Separate source assertions; UMRL supplies publication identities, with no automatic edition substitution.",
+  "review_history_modified": false,
+  "tests": {
+    "passed": 101,
+    "failed": 0,
+    "command": "cd backend && ../.venv/bin/python -m pytest tests/test_bco_glossary.py tests/test_bco_umrl_import.py tests/test_bco_umrl.py tests/test_bco_entities.py tests/test_bco.py -q",
+    "scope": "implementation_tests_not_semantic_precision_or_recall"
+  }
+}

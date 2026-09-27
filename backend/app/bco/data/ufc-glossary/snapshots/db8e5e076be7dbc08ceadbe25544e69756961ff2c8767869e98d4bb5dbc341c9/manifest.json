@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "source_id": "ufc-master-glossary-references",
+  "source_family": "UFC_GLOSSARY_REFERENCES",
+  "source_url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+  "source_sha256": "db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+  "title": "CORE and NON_CORE UFC Glossary and Master Reference List",
+  "acquisition": {
+    "method": "download_official_url",
+    "requested_url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+    "final_url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+    "retrieved_at": "2026-09-27T14:55:20.046649+00:00",
+    "http_metadata": {
+      "content-type": "application/pdf",
+      "etag": "\"d76fc01d63791972fdf9f4eca05e1c40\"",
+      "last-modified": "Tue, 04 Aug 2026 13:26:51 GMT"
+    },
+    "publication_edition_inferred_from_http_metadata": false
+  },
+  "source_edition": "not_inferred_from_pdf_creation_or_modification_metadata",
+  "pdf_metadata": {
+    "/Author": "Department of Defense",
+    "/CreationDate": "D:20260602091823-04'00'",
+    "/Creator": "PScript5.dll Version 5.2.2",
+    "/ModDate": "D:20260804091753-04'00'",
+    "/Producer": "Acrobat Distiller 25.0 (Windows)",
+    "/Title": "CORE and NON_CORE UFC Glossary and Master Reference List"
+  },
+  "summary": {
+    "pdf_pages": 481,
+    "ufc_contexts": 52,
+    "sections_by_kind": {
+      "glossary": 52,
+      "references": 52,
+      "supplemental_resources": 2
+    },
+    "pages_without_extracted_text": [],
+    "structure_findings": 5
+  },
+  "extraction": {
+    "method": "pypdf_text_and_publisher_bookmarks_corroborated_by_printed_headings",
+    "parser_version": 1,
+    "pypdf_version": "6.19.0",
+    "ocr_performed": false,
+    "text_coordinates": "decoded_pdf_page_text_not_byte_offsets",
+    "semantic_entity_extraction": "not_performed",
+    "accepted_ontology_concepts": 0
+  },
+  "artifacts": {
+    "source.pdf": {
+      "sha256": "db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+      "bytes": 2482532,
+      "copy_method": "byte_for_byte"
+    },
+    "page-index.json": {
+      "sha256": "c9a6c1f09447a8029d8ff41bef60613a6d77c35fbbcf6efa5599eae94751f988",
+      "bytes": 967163
+    }
+  },
+  "source_role": "UFC_scoped_glossary_and_reference_assertions",
+  "umrl_is_separate_publication_catalog": true,
+  "project_adoption_inferred": false
+}

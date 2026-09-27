@@ -38,6 +38,8 @@ For **LLM entity discovery beyond the seed vocabulary**, use the new [entity ext
 
 [UMRL entities](docs/UMRL_ENTITIES.md) reuse the already processed Criteria Atlas catalog and viewer data. The initial snapshot contains 4,972 reference records, 304 issuing organizations, and 31 saved reference matches across two UFCs. BCO preserves the original reference IDs and evidence, exposes searchable catalog endpoints, and links validated LLM publication mentions to the inventory. [Updated catalogs can be reimported](docs/UMRL_ENTITIES.md#reimport-updated-releases) with version history, change reports, and automatic API refresh. The existing Criteria Atlas viewer remains in place.
 
+[The official UFC master glossary and reference lists](docs/UFC_GLOSSARY.md) are a primary source alongside the UFC JSON and UFGS SEC corpus. The archived PDF contains 481 pages across 52 UFC contexts. Its glossary, reference, and supplemental-resource sections retain their own scopes. A repeatable importer, searchable page API, and scoped entity-extraction adapter preserve original bytes and prior snapshots. UMRL remains the separate reference-publication catalog.
+
 With the server running:
 
 ```sh
@@ -53,7 +55,8 @@ This CLI explicitly disables LLM calls unless `--with-llm` is supplied. Optional
 
 API entry points:
 
-- `POST /bco/parse`: original bytes encoded as `content_base64`, `source_format` (`ufc_json` or `ufgs_sec`), and optional `profile_ids`.
+- `POST /bco/parse`: original bytes encoded as `content_base64`, `source_format` (`ufc_json`, `ufgs_sec`, or `ufc_glossary_pdf`), and optional `profile_ids`. The master PDF also supports `source_designation` and `source_section_kind` filters.
+- `GET /bco/glossary`: search archived PDF pages by `q`, `designation`, and `kind`; optionally pin a PDF hash with `revision`.
 - `POST /bco/enrich`: the same envelope, plus optional LLM configuration or `use_llm: false`.
 - `GET /enrich/{job_id}`: the upstream job with `result.metadata.bco_evidence`.
 - `GET /bco/evidence/{job_id}`: a downloadable JSON evidence ledger.
@@ -73,9 +76,9 @@ The existing Enrich label matching, resolution, named-entity extraction, syntact
 
 ## Scoped meanings and future sources
 
-[profiles.json](backend/app/bco/profiles.json) carries the existing 11-module / eight-profile design for DoD, USACE, USACE Engineering and Construction, USACE Real Estate, USAF, NAVFAC, WHS, and WHS Pentagon. A candidate sense ID includes source bytes, profile selection, source span, and proposed match. Choosing a profile records review context, not legal applicability or precedence.
+[profiles.json](backend/app/bco/profiles.json) carries a 12-module / eight-profile design for DoD, USACE, USACE Engineering and Construction, USACE Real Estate, USAF, NAVFAC, WHS, and WHS Pentagon, including a separate official UFC glossary/reference module in the DoD base profile. A candidate sense ID includes source bytes, profile selection, source span, and proposed match. Choosing a profile records review context, not legal applicability or precedence.
 
-MIL-STD-3007G governance, UFC/UFGS, USACE ER/EM, WHS Building Code, and PFGS have distinct source roles in the registry. Only UFC JSON and UFGS SEC adapters are implemented here. ER/EM, WHS/PFGS acquisition and adapters, edition-specific authority edges, automatic inheritance/conflict resolution, and community views remain future work. No blanket rule makes ER/EM subordinate to UFGS or makes a community explanation override a source definition.
+MIL-STD-3007G governance, UFC/UFGS, the UFC master glossary/references, USACE ER/EM, WHS Building Code, and PFGS have distinct source roles in the registry. UFC JSON, UFGS SEC, and the official master glossary PDF adapters are implemented here. The master PDF adapter is available through the CLI and API; the existing upload screen still selects JSON and SEC inputs. ER/EM, WHS/PFGS acquisition and adapters, edition-specific authority edges, automatic inheritance/conflict resolution, and community views remain future work. No blanket rule makes ER/EM subordinate to UFGS or makes a community explanation override a source definition.
 
 The earlier 50-entry UFC vocabulary ledger remains a separate candidate-review artifact in the parent workspace. This fork does not turn those entries into approved OWL definitions. The next research gate is adjudicating those source definitions and benchmarking LLM-assisted discovery on held-out passages.
 

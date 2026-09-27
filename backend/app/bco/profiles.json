@@ -1,6 +1,6 @@
 {
   "registry_id": "built-environment-scoped-vocabulary-profiles",
-  "registry_version": "0.1.0",
+  "registry_version": "0.2.0",
   "established_on": "2026-09-26",
   "status": "design_draft",
   "branding": {
@@ -58,6 +58,18 @@
       ],
       "acquisition_status": "baseline_inventory_available",
       "scope_rule": "Use individual source editions, implementation conditions, and agency variants.",
+      "vocabulary_release_id": null,
+      "accepted_definition_count": 0
+    },
+    {
+      "module_id": "dod-ufc-glossary-references",
+      "label": "Official UFC master glossary and reference lists",
+      "source_families": [
+        "UFC_GLOSSARY_REFERENCES"
+      ],
+      "acquisition_status": "official_pdf_archived_and_page_indexed",
+      "scope_rule": "Primary glossary and reference assertions retain each UFC and appendix context. Shared labels do not establish equivalence; reference editions and selection instructions remain scoped to their originating UFC.",
+      "source_catalog_id": "ufc-master-glossary-references",
       "vocabulary_release_id": null,
       "accepted_definition_count": 0
     },
@@ -166,6 +178,7 @@
       "module_ids": [
         "dod-governance",
         "dod-ufc",
+        "dod-ufc-glossary-references",
         "dod-ufgs"
       ],
       "imports": [],
@@ -333,6 +346,17 @@
       "digital_version_id": "a093a449-9220-45e0-866a-67d3139af067",
       "evidence_path": "research/reports/ufc-ufgs-corpus-baseline-2026-09-26/authority-evidence.json",
       "role": "different_local_edition_not_an_automatic_whs_import"
+    },
+    {
+      "source_edition_id": "ufc-master-glossary-references:sha256:db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+      "designation": "CORE and NON_CORE UFC Glossary and Master Reference List",
+      "source_url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+      "source_sha256": "db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9",
+      "edition": null,
+      "edition_status": "not_inferred_from_pdf_metadata_or_retrieval_date",
+      "evidence_access": "original_pdf_and_decoded_page_index",
+      "evidence_path": "backend/app/bco/data/ufc-glossary/snapshots/db8e5e076be7dbc08ceadbe25544e69756961ff2c8767869e98d4bb5dbc341c9/manifest.json",
+      "role": "initial_archived_snapshot_each_UFC_context_retained"
     }
   ],
   "source_observations": [
@@ -418,6 +442,15 @@
       "family": "PFGS",
       "url": "https://www.wbdg.org/whs/pentagon-guide-specifications",
       "status": "location_cited_by_whsbc_inventory_pending"
+    },
+    {
+      "source_catalog_id": "ufc-master-glossary-references",
+      "family": "UFC_GLOSSARY_REFERENCES",
+      "url": "https://www.wbdg.org/FFC/DOD/UFC/CORE_NON_CORE_UFC_Glossary_References.pdf",
+      "status": "archived_page_index_available_repeatable_import",
+      "current_snapshot_pointer": "backend/app/bco/data/ufc-glossary/current.json",
+      "refresh_command": ".venv/bin/python scripts/import_bco_glossary.py --refresh",
+      "distinct_from": "UFGS_UMRL_reference_publication_catalog"
     }
   ]
 }

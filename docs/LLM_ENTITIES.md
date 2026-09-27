@@ -1,6 +1,6 @@
 # LLM entity discovery
 
-This method discovers built-environment entities from UFC JSON or UFGS SEC/XML without restricting discovery to the 68 seed classes. It uses the source adapters and provider interface from the Enrich fork. It does not require an existing ontology match.
+This method discovers built-environment entities from UFC JSON, UFGS SEC/XML, or the official UFC master glossary/reference PDF without restricting discovery to the 68 seed classes. It uses the source adapters and provider interface from the Enrich fork. It does not require an existing ontology match.
 
 The model proposes assets, spaces, systems, materials, activities, organizations, responsibility roles, property interests, documents, requirements, locations, and quantities. General concepts and named individuals are separate categories. Every proposal remains `candidate_pending_subject_matter_review` with no accepted concept ID.
 
@@ -43,6 +43,15 @@ For SEC input, specify a file and optionally a review profile:
 
 Profile selection records review context. It does not determine legal applicability or precedence.
 
+For the [official master glossary PDF](UFC_GLOSSARY.md), select a UFC and optionally a section kind:
+
+```sh
+.venv/bin/python scripts/extract_bco_entities.py '/path/to/CORE_NON_CORE_UFC_Glossary_References.pdf' \
+  --source-designation 'UFC 1-200-01' --source-section-kind glossary --max-batches 100
+```
+
+PDF files select `ufc_glossary_pdf` automatically. This adapter requires the master document's UFC/appendix structure, not an arbitrary PDF. Each source unit is one decoded PDF page. PDF batches stay within one UFC and appendix role; nearby pages from that same scope can supply context for a definition or reference spanning pages. Evidence offsets refer to the preserved decoded page text, with the original PDF and page number available for visual review. Glossary definitions are source assertions, not automatic approvals or universal definitions. Indexing the PDF makes no model calls.
+
 The default is a plan only. `--run` permits calls. A run defaults to five batches, 24 target units per batch, two concurrent calls, two application attempts, and a 90-second timeout per attempt. Target text is limited to 12,000 characters per batch; same-paragraph context has a separate 12,000-character cap. Schema and metadata add prompt overhead. These are character limits, not token or price estimates. Increase `--max-batches` explicitly for wider coverage. A source unit larger than the configured character cap stops planning rather than being truncated.
 
 Successful responses are cached in `.bco-state/entity-cache` under the source, prompt, schema, provider, endpoint, model, and invocation-parameter fingerprint. Run again into a new output directory to resume unchanged batches. Changed inputs or model settings get a different cache key. Invalid or incomplete cached proposals are retried. A model version behind an alias can change; use a versioned model identifier when the provider offers one.
@@ -76,7 +85,7 @@ The local BCO server exposes the same engine:
 | `GET /enrich/{job_id}` | Read job progress, coverage, and error state |
 | `GET /bco/entities/{job_id}` | Download the completed or partial entity report |
 
-Requests use the existing source envelope: `content_base64`, `source_format`, `profile_ids`, optional `llm_provider`, `llm_model`, and `api_key`, plus an `options` object with the batch controls above. `use_llm: false` is rejected by the execution route; use the planning route instead. Credentials are not persisted with the job. A partial job is marked failed at the job level while retaining validated candidates and the detailed partial report.
+Requests use the existing source envelope: `content_base64`, `source_format`, `profile_ids`, optional `llm_provider`, `llm_model`, and `api_key`, plus an `options` object with the batch controls above. For `source_format: "ufc_glossary_pdf"`, optional `source_designation` and `source_section_kind` select a UFC and `glossary`, `references`, or `supplemental_resources`. `use_llm: false` is rejected by the execution route; use the planning route instead. Credentials are not persisted with the job. A partial job is marked failed at the job level while retaining validated candidates and the detailed partial report.
 
 OpenAI calls use the Responses API with strict JSON Schema, `store: false`, a 12,000-token output cap, and SDK retries disabled. Refusal and incomplete output produce explicit failures. [OpenAI Structured Outputs documentation](https://developers.openai.com/api/docs/guides/structured-outputs) distinguishes schema conformance from JSON-only output. Other provider adapters retain their existing structured/JSON behavior; the same Python validation applies to all of them. Their SDKs may perform internal retries in addition to the application attempt count.
 
@@ -97,4 +106,4 @@ Reproduce the corpus plan with:
   --output reports/entity-extraction-plan.json
 ```
 
-The current plan examines 48 UFC JSON files and 685 SEC members. At the default character limit, 722 documents are ready, seven SEC members have an oversized text unit requiring a larger limit or a future fragment adapter, and the four previously identified malformed XML files remain blocked. The planner does not repair sources or quietly omit oversized text.
+The saved JSON/SEC corpus plan examines 48 UFC JSON files and 685 SEC members. At the default character limit, 722 documents are ready, seven SEC members have an oversized text unit requiring a larger limit or a future fragment adapter, and the four previously identified malformed XML files remain blocked. The planner does not repair sources or quietly omit oversized text. The later UFC master PDF addition has a separate [source audit and no-call planning summary](../reports/ufc-glossary-source-audit.json); it does not retroactively change the saved JSON/SEC plan.

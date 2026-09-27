@@ -15,9 +15,28 @@ from app.config import settings
 from app.bco.entities import EntityOptions, extract_entities, plan_summary
 from app.bco.umrl import default_umrl
 from app.bco import umrl as umrl_module
+from app.bco.glossary import load_glossary
 
 router = APIRouter(prefix="/bco", tags=["DoD BCO"])
 _entity_tasks: set[asyncio.Task] = set()
+
+
+@router.get("/glossary")
+def search_glossary(q: str = Query(default="", max_length=300), designation: str | None = None,
+                     kind: Literal["glossary", "references", "supplemental_resources"] | None = None,
+                     offset: int = Query(default=0, ge=0), limit: int = Query(default=10, ge=1, le=50),
+                     revision: str | None = Query(default=None, pattern="^[0-9a-f]{64}$")):
+    try:
+        manifest, index = load_glossary(revision)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, "Glossary snapshot is not available") from exc
+    words = q.casefold().split()
+    pages = [p for p in index["pages"] if (not designation or p["designation"] == designation)
+             and (not kind or p["kind"] == kind) and all(word in p["text_exact"].casefold() for word in words)]
+    return {"source": manifest, "summary": index["summary"], "total_pages_matched": len(pages),
+            "offset": offset, "limit": limit, "pages": pages[offset:offset + limit],
+            "sections": [s for s in index["sections"] if (not designation or s["designation"] == designation)
+                         and (not kind or s["kind"] == kind)], "findings": index["findings"]}
 
 
 @router.get("/umrl")
@@ -62,7 +81,9 @@ async def download_evidence(job_id: UUID):
 
 class BCOSourceRequest(BaseModel):
     content_base64: str
-    source_format: Literal["ufc_json", "ufgs_sec"]
+    source_format: Literal["ufc_json", "ufgs_sec", "ufc_glossary_pdf"]
+    source_designation: str | None = None
+    source_section_kind: Literal["glossary", "references", "supplemental_resources"] | None = None
     filename: str | None = None
     profile_ids: list[str] = Field(default_factory=lambda: ["dod-base"])
     llm_provider: str | None = None
@@ -76,7 +97,8 @@ def decode_source(req: BCOSourceRequest):
         raise HTTPException(413, "Source is larger than the configured upload limit")
     try:
         payload = base64.b64decode(req.content_base64, validate=True)
-        bundle = parse_source(payload, req.source_format, req.profile_ids)
+        bundle = parse_source(payload, req.source_format, req.profile_ids,
+                              source_designation=req.source_designation, source_section_kind=req.source_section_kind)
     except Exception as exc:
         # Syntax/structure errors are explicit. Never silently repair a master.
         raise HTTPException(422, f"Source could not be parsed: {type(exc).__name__}") from exc
