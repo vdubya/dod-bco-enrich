@@ -1,4 +1,4 @@
-import {REPO,eventPath,sameReviewContent} from './review-core.mjs';
+import {REPO,eventPath,sameReviewContent} from './review-core.mjs?v=direct-save-1';
 const SESSION='dod-bco-save-connection-v1';
 const FLOW='dod-bco-sign-in-v1';
 const opaque=value=>typeof value==='string' && /^[A-Za-z0-9_-]{43}$/.test(value);

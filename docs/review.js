@@ -1,5 +1,5 @@
-import {REPO,BRANCH,EVENT_DIR,validateEvent,resolveReviews,reusePendingSave,eventPath,sameReviewContent} from './review-core.mjs';
-import {createConnection} from './review-auth.mjs';
+import {REPO,BRANCH,EVENT_DIR,validateEvent,resolveReviews,reusePendingSave,eventPath,sameReviewContent} from './review-core.mjs?v=direct-save-1';
+import {createConnection} from './review-auth.mjs?v=direct-save-1';
 const $ = id => document.getElementById(id);
 const esc = value => String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const labels={pending:'Awaiting review',accepted:'Accepted assertion',rejected:'Rejected candidate',needs_revision:'Needs revision',deferred:'Deferred',conflict:'Conflicting reviews',unverified:'Unverified reviews'};
