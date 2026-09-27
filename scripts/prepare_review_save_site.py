@@ -26,7 +26,7 @@ for item in source.iterdir():
         shutil.copy2(item,destination/item.name)
     elif item.name in {'db','drizzle'}:
         shutil.copytree(item,destination/item.name,dirs_exist_ok=True)
-for name in ['docs/review-core.mjs','docs/data/pilot-ledger.json','docs/data/site-manifest.json']:
+for name in ['docs/review-core.mjs','docs/review-bulk.mjs','docs/data/pilot-ledger.json','docs/data/site-manifest.json']:
     path=target/name
     path.parent.mkdir(parents=True,exist_ok=True)
     shutil.copy2(root/name,path)

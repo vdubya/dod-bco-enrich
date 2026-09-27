@@ -1,5 +1,6 @@
 import {Store} from './store.mjs';
 import {GitHub,API,REPOSITORY_ID,OWNER_ID,saveReview} from './github.mjs';
+import {saveBatch} from './bulk.mjs';
 import {Problem,requireValue,now,random,digest,validChallenge,readJSON,cookie,flowCookie} from './security.mjs';
 
 export const REPORT='https://vdubya.github.io/dod-bco-enrich/';
@@ -139,6 +140,11 @@ export function createService({candidates,datasetHash,fetcher=(...args)=>globalT
       const token=request.headers.get('authorization')?.match(/^Bearer ([A-Za-z0-9_-]{43})$/)?.[1];
       if(token)await store.remove('bco_sessions',await digest(token));
       return json({signed_out:true});
+    }
+    if(url.pathname==='/reviews/batch' && request.method==='POST'){
+      const session=await sessionFor(request,store,app);
+      const input=await readJSON(request,1000000);
+      return json(await saveBatch(new GitHub(session.access_token,fetcher),input,candidates,datasetHash));
     }
     if(url.pathname==='/reviews' && request.method==='POST'){
       const session=await sessionFor(request,store,app);

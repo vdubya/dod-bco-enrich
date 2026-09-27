@@ -16,6 +16,10 @@ This service lets the GitHub Pages report save a review as a commit without open
 
 ## Runtime and configuration
 
+`POST /reviews` saves an individual review. `POST /reviews/batch` accepts 1 to 50 distinct approvals, a UUID batch ID, and the pinned base commit. Both routes require the same owner session and repository permission. Batches create one immutable event file per assertion through a Git tree based on the existing tree, one commit with the current head as its parent, and a non-forced branch update. Only generated review-event paths are changed. The service validates the entire batch before any write and verifies every file's Git blob identity at the resulting immutable commit. A duplicate retry succeeds only if every expected file already matches; partial or mismatched records fail without overwriting anything. A branch race fails without replacing another commit.
+
+The report checks current review heads before submission. The service also requires the exact supplied base commit and validates superseded records against the frozen ledger. A successful response includes all normalized events, their authenticated reviewer, and one commit link; the browser rejects partial or mismatched receipts. The technical save check uses two `persistence_check` records through this same route and cannot approve vocabulary.
+
 The entry point exports a standard Worker `fetch(request, env)` handler. It needs Web Crypto and a D1-compatible database binding. Tests use Node's real SQLite engine through the same binding interface. All dependencies are bundled; runtime code has no npm dependencies.
 
 | Binding | Purpose |

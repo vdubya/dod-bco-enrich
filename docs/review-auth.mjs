@@ -1,4 +1,4 @@
-import {REPO,eventPath,sameReviewContent} from './review-core.mjs?v=direct-save-1';
+import {REPO,eventPath,sameReviewContent} from './review-core.mjs?v=bulk-1';
 const SESSION='dod-bco-save-connection-v1';
 const FLOW='dod-bco-sign-in-v1';
 const opaque=value=>typeof value==='string' && /^[A-Za-z0-9_-]{43}$/.test(value);
@@ -52,6 +52,12 @@ export function createConnection(serviceURL,{fetcher=fetch,storage=localStorage,
       if(!session){const error=Error('Sign in to GitHub to save your review.');error.status=401;throw error;}
       const result=await request('/reviews',{method:'POST',body:event});
       if(result.saved!==true || !/^[a-f0-9]{40}$/.test(result.commit||'') || !sameReviewContent(result.event,event) || result.event.authenticated_reviewer?.id!==session.user.id || result.url!==`https://github.com/${REPO}/blob/${result.commit}/${eventPath(event.event_id)}`)throw Error('The commit confirmation did not match your review. Retry to check the same record.');
+      return result;
+    },
+    async saveBatch(batch){
+      if(!session){const error=Error('Sign in to GitHub to save these approvals.');error.status=401;throw error;}
+      const result=await request('/reviews/batch',{method:'POST',body:batch});
+      if(result.saved!==true || result.batch_id!==batch.batch_id || !/^[a-f0-9]{40}$/.test(result.commit||'') || result.url!==`https://github.com/${REPO}/commit/${result.commit}` || !Array.isArray(result.events) || result.events.length!==batch.events.length || new Set(result.events.map(e=>e.event_id)).size!==batch.events.length || !batch.events.every(expected=>result.events.some(saved=>sameReviewContent(saved,expected) && saved.authenticated_reviewer?.id===session.user.id)))throw Error('The batch confirmation did not match every selected assertion. Retry to check the same batch.');
       return result;
     },
     async signOut(){await request('/logout',{method:'POST'});forget();}
