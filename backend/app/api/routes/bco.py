@@ -1,5 +1,7 @@
 """Source-preserving entry point for the DoD BCO fork."""
 import base64
+import asyncio
+from datetime import datetime, timezone
 from typing import Literal
 from uuid import UUID
 
@@ -10,8 +12,10 @@ from pydantic import BaseModel, Field
 from app.api.routes.enrich import EnrichRequest, create_enrichment, get_enrichment
 from app.bco.source import parse_source
 from app.config import settings
+from app.bco.entities import EntityOptions, extract_entities, plan_summary
 
 router = APIRouter(prefix="/bco", tags=["DoD BCO"])
+_entity_tasks: set[asyncio.Task] = set()
 
 
 @router.get("/evidence/{job_id}")
@@ -58,3 +62,71 @@ async def enrich_source(req: BCOSourceRequest):
     return await create_enrichment(EnrichRequest(
         content=bundle.text, format="plain_text", ontology="dod-bco", filename=req.filename,
         bco_source=bundle, llm_provider=req.llm_provider, llm_model=req.llm_model, api_key=req.api_key, use_llm=req.use_llm))
+
+
+class BCOEntityRequest(BCOSourceRequest):
+    options: EntityOptions = Field(default_factory=EntityOptions)
+
+
+@router.post("/entities/plan")
+async def entity_plan(req: BCOEntityRequest):
+    try:
+        return plan_summary(decode_source(req), req.options)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@router.post("/entities", status_code=202)
+async def create_entity_extraction(req: BCOEntityRequest):
+    from app.api.routes.enrich import _job_store
+    from app.bco.entity_provider import entity_provider, close_entity_provider
+    from app.models.document import DocumentInput
+    from app.models.job import Job, JobStatus
+    if not req.use_llm:
+        raise HTTPException(422, "Entity discovery requires use_llm=true; use /bco/entities/plan for a no-call plan.")
+    if await _job_store.count_active() >= settings.max_concurrent_jobs:
+        raise HTTPException(429, "Too many active extraction jobs. Try again when one completes.")
+    bundle = decode_source(req)
+    try:
+        plan_summary(bundle, req.options)
+        provider, llm = entity_provider(req.llm_provider, req.llm_model, req.api_key)
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    job = Job(input=DocumentInput(content=bundle.text, format="plain_text", ontology="dod-bco", bco_source=bundle),
+              status=JobStatus.IDENTIFYING)
+    job.result.ontology_id, job.result.ontology_name = "dod-bco", "DoD BCO"
+    job.result.base_iri = "https://example.org/dod-bco/"
+    job.result.metadata["bco_entity_progress"] = []
+    await _job_store.save(job)
+    async def run():
+        async def progress(batch):
+            job.result.metadata["bco_entity_progress"].append(batch)
+            job.updated_at = datetime.now(timezone.utc)
+            await _job_store.save(job)
+        try:
+            report = await extract_entities(bundle, llm, provider=provider, options=req.options,
+                cache_dir=_job_store.base_dir.parent / "entity-cache", progress=progress)
+            job.result.metadata["bco_entities"] = report
+            job.status = JobStatus.COMPLETED if report["status"] == "completed" else JobStatus.FAILED
+            if report["status"] != "completed":
+                job.error = "Entity run is incomplete. Inspect coverage and batch findings; validated candidates are retained."
+        except Exception as exc:
+            job.status, job.error = JobStatus.FAILED, f"Entity extraction failed ({type(exc).__name__})."
+        finally:
+            await close_entity_provider(llm)
+        job.updated_at = datetime.now(timezone.utc)
+        await _job_store.save(job)
+    task = asyncio.create_task(run())
+    _entity_tasks.add(task)
+    task.add_done_callback(_entity_tasks.discard)
+    return {"job_id": str(job.id), "status": job.status.value,
+            "status_url": f"/enrich/{job.id}", "entities_url": f"/bco/entities/{job.id}"}
+
+
+@router.get("/entities/{job_id}")
+async def download_entities(job_id: UUID):
+    job = await get_enrichment(job_id)
+    report = job.result.metadata.get("bco_entities")
+    if job.ontology != "dod-bco" or report is None:
+        raise HTTPException(404, "No entity extraction report is available for this job yet")
+    return JSONResponse(report, headers={"Content-Disposition": f'attachment; filename="dod-bco-entities-{job_id}.json"'})

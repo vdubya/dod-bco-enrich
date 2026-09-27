@@ -34,6 +34,8 @@ The pinned snapshot includes the spaCy English model and the development tools. 
 
 ## Extract a source reproducibly
 
+For **LLM entity discovery beyond the seed vocabulary**, use the new [entity extraction method](docs/LLM_ENTITIES.md). It provides a no-call plan, bounded and resumable provider calls, exact source-span validation, explicit failures, an asynchronous API, and a new review-bundle export. The existing general enrichment command below remains available for seed matching and broader pipeline enrichment.
+
 With the server running:
 
 ```sh

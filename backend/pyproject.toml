@@ -45,6 +45,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+llm = ["openai==3.19.2", "anthropic==1.8.0"]
 # Local semantic embeddings (the default embedding_provider="local"). Pulls torch, so
 # it's an opt-in extra: `pip install -e ".[embeddings]"` (or uv equivalent). Without it,
 # local embeddings are unavailable and semantic FOLIO matching degrades gracefully.
