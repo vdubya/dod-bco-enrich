@@ -1,0 +1,39 @@
+{
+  "verification_date": "2026-09-27",
+  "method": "repeat_import_of_existing_processed_umrl_inventory",
+  "status": "unchanged",
+  "revision_id": "8eb7ed1bf598c1199d5010ae1adac07a17c093f4f7359b6e4ad664c167cf82a7",
+  "counts": {
+    "added": 0,
+    "changed": 0,
+    "absent_from_new_catalog": 0,
+    "unchanged": 4972
+  },
+  "preserved_prior_matches": 31,
+  "catalog_only_update_tested_with": "synthetic updated release fixture",
+  "baseline_sha256": {
+    "manifest.json": "8eb7ed1bf598c1199d5010ae1adac07a17c093f4f7359b6e4ad664c167cf82a7",
+    "umrl-viewer.json": "54f467b90b9b3e5c898133deb813631c719b9f329049d916d577867c34388547",
+    "prior-analyses.json": "97bddcf3423e8f8e5f0659da27569007c4b92345473d676aa21fad40ba255dee"
+  },
+  "new_release_downloaded": false,
+  "model_calls": 0,
+  "tests": {
+    "passed": 84,
+    "command": "cd backend && ../.venv/bin/python -m pytest tests/test_bco_umrl_import.py tests/test_bco_umrl.py tests/test_bco_entities.py tests/test_bco.py -q",
+    "covers": [
+      "repeat import",
+      "dry run",
+      "edition changes",
+      "added and absent records",
+      "historical source evidence",
+      "flat snapshot migration",
+      "invalid catalog",
+      "interrupted activation",
+      "concurrent imports",
+      "runtime cache refresh",
+      "historical API access",
+      "one catalog revision per extraction run"
+    ]
+  }
+}

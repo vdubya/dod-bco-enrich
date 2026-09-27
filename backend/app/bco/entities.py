@@ -20,7 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from app.bco.prompts import CONTEXT
 from app.bco.source import SourceBundle, SourceUnit
-from app.bco.umrl import default_umrl
+from app.bco.umrl import UMRLCatalog, default_umrl
 
 PROMPT_VERSION = "bco-entities-1"
 EntityType = Literal["asset", "space", "system", "material", "activity",
@@ -210,7 +210,8 @@ def validate_response(raw: dict, bundle: SourceBundle, batch: dict) -> tuple[lis
     return records, findings
 
 
-def plan_summary(bundle: SourceBundle, options: EntityOptions) -> dict:
+def plan_summary(bundle: SourceBundle, options: EntityOptions, *, umrl_catalog: UMRLCatalog | None = None) -> dict:
+    umrl_catalog = umrl_catalog or default_umrl()
     batches = plan_batches(bundle, options)
     selected = batches[:options.max_batches]
     return {"method": "llm_entity_discovery", "prompt_version": PROMPT_VERSION,
@@ -219,7 +220,8 @@ def plan_summary(bundle: SourceBundle, options: EntityOptions) -> dict:
             "units_selected": sum(len(b["target_ids"]) for b in selected),
             "maximum_application_attempts": len(selected) * options.attempts,
             "batches": selected, "network_calls_made": 0,
-            "umrl": {"source": default_umrl().provenance, "summary": default_umrl().summary,
+            "umrl": {"source": umrl_catalog.provenance, "summary": umrl_catalog.summary,
+                     "revision_id": umrl_catalog.revision_id,
                      "method": "reuse_existing_catalog_after_source_validation"},
             "note": "A plan only. Character budgets are not token or price estimates."}
 
@@ -231,7 +233,8 @@ async def extract_entities(bundle: SourceBundle, llm, *, provider: str,
     model = getattr(llm, "model", None)
     if llm is None or not provider or not model:
         raise ValueError("Entity extraction requires an explicitly configured provider and model.")
-    plan = plan_summary(bundle, options)
+    umrl_catalog = default_umrl()
+    plan = plan_summary(bundle, options, umrl_catalog=umrl_catalog)
     run_id, started = str(uuid4()), datetime.now(timezone.utc).isoformat()
     semaphore = asyncio.Semaphore(options.concurrency)
     schema = response_schema()
@@ -311,7 +314,7 @@ async def extract_entities(bundle: SourceBundle, llm, *, provider: str,
     status = "completed" if len(completed) == plan["batches_total"] else "partial"
     if all(b["status"] == "failed" for b in results):
         status = "failed"
-    umrl = default_umrl().link_candidates(unique)
+    umrl = umrl_catalog.link_candidates(unique)
     return {"schema_version": 1, "method": "llm_entity_discovery", "run_id": run_id,
             "started_at": started, "finished_at": datetime.now(timezone.utc).isoformat(),
             "status": status, "provider": provider, "model": model, "prompt_version": PROMPT_VERSION,

@@ -15,6 +15,11 @@ import re
 import unicodedata
 
 DATA = Path(__file__).with_name("data") / "umrl"
+ARTIFACTS = ("manifest.json", "umrl-viewer.json", "prior-analyses.json")
+
+
+def json_bytes(value) -> bytes:
+    return (json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode()
 
 
 def legacy_graph_id(reference_id: str) -> str:
@@ -33,6 +38,7 @@ def normalize_reference(value: str) -> str:
 class UMRLCatalog:
     def __init__(self, viewer: dict, analyses: list[dict], provenance: dict):
         self.provenance = deepcopy(provenance)
+        self.revision_id = hashlib.sha256(json_bytes(provenance)).hexdigest()
         self.records, self.organizations = {}, {}
         self.normalized = defaultdict(list)
         self.graph_ids = defaultdict(list)
@@ -122,7 +128,7 @@ class UMRLCatalog:
             for word in words)]
         page = records[offset:offset + limit]
         organizations = {r["organization_id"] for r in page}
-        return deepcopy({"source": self.provenance, "summary": self.summary,
+        return deepcopy({"source": self.provenance, "revision_id": self.revision_id, "summary": self.summary,
             "total_matches": len(records), "offset": offset, "limit": limit,
             "entities": page, "organizations": [self.organizations[k] for k in sorted(organizations)],
             "catalog_membership_establishes_project_adoption": False})
@@ -153,24 +159,108 @@ class UMRLCatalog:
             entity["umrl_reference"] = link
             used.update(link["candidate_entity_ids"])
         organizations = {self.records[rid]["organization_id"] for rid in used}
-        return deepcopy({"source": self.provenance, "catalog_summary": self.summary,
+        return deepcopy({"source": self.provenance, "revision_id": self.revision_id, "catalog_summary": self.summary,
             "entities": [self.records[rid] for rid in sorted(used)],
             "organizations": [self.organizations[k] for k in sorted(organizations)],
             "coverage": "Complete extracted publication mentions matched to existing RIDs only; the Criteria Atlas resolver remains separate.",
             "catalog_membership_establishes_project_adoption": False})
 
 
-def load_umrl(directory: Path = DATA) -> UMRLCatalog:
-    manifest = json.loads((directory / "manifest.json").read_text())
+def catalog_from_artifacts(payloads: dict[str, bytes]) -> UMRLCatalog:
+    if set(payloads) != set(ARTIFACTS):
+        raise ValueError("UMRL snapshot must contain exactly the declared artifacts")
+    manifest = json.loads(payloads["manifest.json"])
     values = {}
-    for name in ("umrl-viewer.json", "prior-analyses.json"):
-        payload = (directory / name).read_bytes()
+    for name in ARTIFACTS[1:]:
+        payload = payloads[name]
         if hashlib.sha256(payload).hexdigest() != manifest["artifacts"][name]["sha256"]:
             raise ValueError("Bundled UMRL artifact does not match its pinned manifest")
         values[name] = json.loads(payload)
-    return UMRLCatalog(values["umrl-viewer.json"], values["prior-analyses.json"], manifest)
+    catalog = UMRLCatalog(values["umrl-viewer.json"], values["prior-analyses.json"], manifest)
+    catalog.revision_id = hashlib.sha256(payloads["manifest.json"]).hexdigest()
+    return catalog
 
 
-@lru_cache(maxsize=1)
-def default_umrl() -> UMRLCatalog:
-    return load_umrl()
+def read_artifacts(directory: Path) -> dict[str, bytes]:
+    return {name: (directory / name).read_bytes() for name in ARTIFACTS}
+
+
+def checked_revision(value: str) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r"[0-9a-f]{64}", value):
+        raise ValueError("Invalid UMRL revision identifier")
+    return value
+
+
+def snapshot_location(directory: Path, revision: str | None = None) -> tuple[Path, str]:
+    """Read the active pointer once; old flat-layout snapshots remain readable."""
+    pointer = directory / "current.json"
+    if revision is None and pointer.exists():
+        revision = json.loads(pointer.read_text())["revision_id"]
+    if revision is not None:
+        checked_revision(revision)
+        candidate = directory / "snapshots" / revision
+        if candidate.is_dir():
+            return candidate, revision
+        # The initial checked-in snapshot may not have needed migration yet.
+        baseline = directory / "manifest.json"
+        if baseline.exists() and hashlib.sha256(baseline.read_bytes()).hexdigest() == revision:
+            return directory, revision
+        raise FileNotFoundError("UMRL revision is not available")
+    return directory, hashlib.sha256((directory / "manifest.json").read_bytes()).hexdigest()
+
+
+def _load_snapshot(location: Path, revision: str) -> UMRLCatalog:
+    catalog = catalog_from_artifacts(read_artifacts(location))
+    if catalog.revision_id != revision:
+        raise ValueError("UMRL snapshot manifest does not match the selected revision")
+    return catalog
+
+
+def load_umrl(directory: Path = DATA, revision: str | None = None) -> UMRLCatalog:
+    return _load_snapshot(*snapshot_location(directory, revision))
+
+
+@lru_cache(maxsize=4)
+def _cached_snapshot(location: Path, revision: str) -> UMRLCatalog:
+    return _load_snapshot(location, revision)
+
+
+def default_umrl(revision: str | None = None) -> UMRLCatalog:
+    # A new atomic pointer selects a new cache entry. An in-flight job can keep
+    # using its original object while the next request sees the imported release.
+    return _cached_snapshot(*snapshot_location(DATA, revision))
+
+
+def umrl_history(directory: Path = DATA) -> dict:
+    # Keep one pointer for this response even if another import finishes now.
+    pointer_path = directory / "current.json"
+    pointer = json.loads(pointer_path.read_bytes()) if pointer_path.exists() else None
+    if pointer:
+        current = checked_revision(pointer["revision_id"])
+        snapshot_location(directory, current)
+    else:
+        current = hashlib.sha256((directory / "manifest.json").read_bytes()).hexdigest()
+    locations = list((directory / "snapshots").glob("*/manifest.json"))
+    if (directory / "manifest.json").exists():
+        locations.append(directory / "manifest.json")
+    revisions = {}
+    for path in locations:
+        payload = path.read_bytes()
+        revision = hashlib.sha256(payload).hexdigest()
+        if path.parent != directory and path.parent.name != revision:
+            raise ValueError("Historical UMRL manifest has changed")
+        manifest = json.loads(payload)
+        revisions[revision] = {"revision_id": revision, "active": revision == current,
+            "snapshot_id": manifest["snapshot_id"],
+            "release_date": manifest["upstream_source_provenance"].get("release_date"),
+            "import_mode": manifest.get("import_mode", "catalog_and_existing_evidence")}
+    report = None
+    if pointer:
+        report_id = checked_revision(pointer["change_report_id"])
+        payload = (directory / "changes" / (report_id + ".json")).read_bytes()
+        if hashlib.sha256(payload).hexdigest() != report_id:
+            raise ValueError("UMRL change report has changed")
+        report = json.loads(payload)
+    return {"current_revision_id": current,
+            "revisions": sorted(revisions.values(), key=lambda r: (r["release_date"] or "", r["revision_id"]), reverse=True),
+            "last_change_report": report}

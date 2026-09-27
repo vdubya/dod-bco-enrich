@@ -1,5 +1,6 @@
 """Reuse contracts: existing identities, evidence, ambiguity, and LLM links."""
 import json
+import hashlib
 from pathlib import Path
 import shutil
 import subprocess
@@ -9,7 +10,18 @@ import pytest
 
 from app.bco.entities import extract_entities, export_review_bundle, plan_summary, EntityOptions
 from app.bco.source import parse_ufc
-from app.bco.umrl import DATA, UMRLCatalog, default_umrl, load_umrl
+from app.bco import umrl
+from app.bco.umrl import ARTIFACTS, DATA, UMRLCatalog, default_umrl, load_umrl
+
+
+@pytest.fixture(autouse=True)
+def pinned_original_snapshot(tmp_path, monkeypatch):
+    # These are May 2026 regression fixtures, independent of later active imports.
+    directory = tmp_path / "original-umrl"
+    directory.mkdir()
+    for name in ARTIFACTS:
+        shutil.copyfile(DATA / name, directory / name)
+    monkeypatch.setattr(umrl, "DATA", directory)
 
 
 def inputs():
@@ -76,8 +88,8 @@ def test_bad_pagination_is_rejected(offset, limit):
 
 
 def test_mismatched_artifact_hash_is_rejected(tmp_path):
-    for path in DATA.iterdir():
-        shutil.copyfile(path, tmp_path / path.name)
+    for name in ARTIFACTS:
+        shutil.copyfile(DATA / name, tmp_path / name)
     with (tmp_path / "umrl-viewer.json").open("ab") as stream:
         stream.write(b" ")
     with pytest.raises(ValueError, match="pinned manifest"):
@@ -158,7 +170,8 @@ async def test_catalog_api_handles_slashes_and_requires_no_model(client):
 
 def test_export_is_standalone_and_does_not_overwrite(tmp_path):
     script = Path(__file__).resolve().parents[2] / "scripts/export_bco_umrl.py"
-    command = [sys.executable, str(script), "--output", str(tmp_path / "entities.json")]
+    revision = hashlib.sha256((DATA / "manifest.json").read_bytes()).hexdigest()
+    command = [sys.executable, str(script), "--revision", revision, "--output", str(tmp_path / "entities.json")]
     result = subprocess.run(command, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     data = json.loads((tmp_path / "entities.json").read_text())

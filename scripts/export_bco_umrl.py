@@ -15,12 +15,13 @@ from app.bco.umrl import default_umrl
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True, help="New JSON export file")
+    parser.add_argument("--revision", help="Optional historical UMRL revision from /bco/umrl/history")
     args = parser.parse_args()
     if args.output.exists():
         parser.error("Use a new output file; an existing export will not be replaced.")
-    catalog = default_umrl()
+    catalog = default_umrl(args.revision)
     value = {"schema_version": 1, "method": "reuse_existing_criteria_atlas_artifacts",
-        "source": catalog.provenance, "summary": catalog.summary,
+        "source": catalog.provenance, "revision_id": catalog.revision_id, "summary": catalog.summary,
         "entities": list(catalog.records.values()), "organizations": list(catalog.organizations.values()),
         "legacy_graph_id_collisions": catalog.collisions,
         "catalog_membership_establishes_project_adoption": False}

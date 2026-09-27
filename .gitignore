@@ -17,3 +17,8 @@ legal-citation-tools-memo.md
 __pycache__/
 .pytest_cache/
 *.pyc
+
+# UMRL import coordination and incomplete staging; completed snapshots are tracked.
+backend/app/bco/data/umrl/.import.lock
+backend/app/bco/data/umrl/.staging-*
+backend/app/bco/data/umrl/changes/.staging-*

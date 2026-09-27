@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Pin the existing Criteria Atlas UMRL catalog, usages, and analyses in BCO."""
+"""Reimport processed UMRL data, preserving prior snapshots and source evidence."""
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import sys
@@ -11,79 +10,37 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 
-from app.bco.entities import atomic_json
-from app.bco.umrl import DATA, UMRLCatalog
-
-
-def prepare_import(workspace: Path):
-    paths = {"catalog": "data/output/umrl/umrl_catalog.json",
-             "viewer": "webapp/public/corpus/umrl-viewer.json",
-             "corpus": "webapp/public/corpus/manifest.json",
-             "source_manifest": "data/source/umrl/source_manifest.json"}
-    payloads = {name: (workspace / path).read_bytes() for name, path in paths.items()}
-    values = {name: json.loads(payload) for name, payload in payloads.items()}
-    catalog, viewer = values["catalog"], values["viewer"]
-    if catalog["record_count"] != len(catalog["records"]) or len(catalog["records"]) != len(viewer["records"]):
-        raise ValueError("Existing UMRL catalog and viewer have different record counts")
-    by_id = {record["reference_id"]: record for record in catalog["records"]}
-    if len(by_id) != len(catalog["records"]):
-        raise ValueError("Existing catalog has duplicate reference IDs")
-    for record in viewer["records"]:
-        prior = by_id.get(record["reference_id"])
-        if prior is None or any(record.get(key) != value for key, value in prior.items()):
-            raise ValueError("Existing UMRL catalog and viewer metadata disagree")
-    for field in ("source_archive", "source_member"):
-        if catalog[field] != viewer[field]:
-            raise ValueError("Existing UMRL catalog and viewer source provenance disagree")
-    analyses, origins = [], []
-    for document in values["corpus"]["documents"]:
-        stem = Path(document.get("source_file") or document["designation"].replace(" ", "_")).stem
-        relative = f"data/output/ufc/{stem}/umrl_analysis.json"
-        # Match build-corpus.mjs: older document summaries have no umrl_status.
-        if not (workspace / relative).exists():
-            continue
-        payload = (workspace / relative).read_bytes()
-        analysis = json.loads(payload)
-        if analysis["catalog_record_count"] != catalog["record_count"] or any(
-                analysis[field] != catalog[field] for field in ("source_archive", "source_member")):
-            raise ValueError("Saved UMRL analysis was produced from a different catalog")
-        analyses.append({"designation": document["designation"], "source_file": relative,
-                         "document_version_id": document["document_version_id"], "analysis": analysis})
-        origins.append({"source_path": relative, "sha256": hashlib.sha256(payload).hexdigest()})
-    analysis_payload = (json.dumps(analyses, ensure_ascii=False, indent=2) + "\n").encode()
-    catalog_sha = hashlib.sha256(payloads["catalog"]).hexdigest()
-    manifest = {
-        "schema_version": 1, "snapshot_id": "umrl-catalog:" + catalog_sha,
-        "method": "reuse_existing_criteria_atlas_artifacts",
-        "upstream_source_provenance": values["source_manifest"],
-        "original_inputs": {name: {"source_path": paths[name], "sha256": hashlib.sha256(payload).hexdigest()}
-                            for name, payload in payloads.items()},
-        "artifacts": {
-            "umrl-viewer.json": {"source_path": paths["viewer"], "sha256": hashlib.sha256(payloads["viewer"]).hexdigest(), "copy_method": "byte_for_byte"},
-            "prior-analyses.json": {"sha256": hashlib.sha256(analysis_payload).hexdigest(), "original_files": origins},
-        },
-        "viewer_implementation": "webapp/src/criteria-atlas-app.ts",
-        "resolver_implementation": "src/criteria_graph/umrl_pass.py",
-        "identity_policy": "Preserve viewer reference_id and saved match IDs; legacy graph slugs are secondary and may collide.",
-        "new_extraction_calls": 0,
-    }
-    imported = UMRLCatalog(viewer, analyses, manifest)
-    return payloads["viewer"], analysis_payload, manifest, imported
+from app.bco.umrl import DATA, json_bytes
+from app.bco.umrl_import import import_snapshot, prepare_import
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("workspace", type=Path, help="Existing Criteria Atlas workspace")
-    parser.add_argument("--output", type=Path, default=DATA)
+    parser.add_argument("workspace", type=Path, help="Criteria Atlas workspace containing the updated processed UMRL catalog")
+    parser.add_argument("--output", type=Path, default=DATA, help="BCO UMRL snapshot store")
+    parser.add_argument("--catalog-only", action="store_true", help="Refresh catalog metadata before document reference analyses have been rerun")
+    parser.add_argument("--dry-run", action="store_true", help="Show differences without writing to the snapshot store")
+    parser.add_argument("--report", type=Path, help="Also save the full change report to a new JSON file")
     args = parser.parse_args()
-    viewer, analyses, manifest, catalog = prepare_import(args.workspace)
-    args.output.mkdir(parents=True, exist_ok=True)
-    (args.output / "umrl-viewer.json").write_bytes(viewer)
-    (args.output / "prior-analyses.json").write_bytes(analyses)
-    atomic_json(args.output / "manifest.json", manifest)
-    print(json.dumps({"summary": catalog.summary, "legacy_graph_id_collisions": catalog.collisions,
-                      "output": str(args.output)}, indent=2))
+    if args.report and args.report.exists():
+        parser.error("Use a new report file; an existing report will not be replaced.")
+    try:
+        payloads = prepare_import(args.workspace, catalog_only=args.catalog_only)
+        report = import_snapshot(payloads, args.output, dry_run=args.dry_run)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        parser.exit(1, f"UMRL import failed: {exc}\n")
+    print(json.dumps({key: report[key] for key in ("status", "from_revision_id", "to_revision_id",
+        "counts", "current_summary", "reference_evidence_status")}, indent=2))
+    if args.report:
+        try:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            # Never replace an import artifact or a concurrently created report.
+            with args.report.open("xb") as stream:
+                stream.write(json_bytes(report))
+        except OSError as exc:
+            parser.exit(1, f"UMRL status is {report['status']}; the separate report could not be written: {exc}\n")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

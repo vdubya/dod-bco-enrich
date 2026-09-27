@@ -14,6 +14,7 @@ from app.bco.source import parse_source
 from app.config import settings
 from app.bco.entities import EntityOptions, extract_entities, plan_summary
 from app.bco.umrl import default_umrl
+from app.bco import umrl as umrl_module
 
 router = APIRouter(prefix="/bco", tags=["DoD BCO"])
 _entity_tasks: set[asyncio.Task] = set()
@@ -21,17 +22,31 @@ _entity_tasks: set[asyncio.Task] = set()
 
 @router.get("/umrl")
 def search_umrl(q: str = Query(default="", max_length=300),
-                offset: int = Query(default=0, ge=0), limit: int = Query(default=50, ge=1, le=200)):
-    return default_umrl().search(q, offset, limit)
+                offset: int = Query(default=0, ge=0), limit: int = Query(default=50, ge=1, le=200),
+                revision: str | None = Query(default=None, pattern="^[0-9a-f]{64}$")):
+    try:
+        return default_umrl(revision).search(q, offset, limit)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, "UMRL revision is not available") from exc
+
+
+@router.get("/umrl/history")
+def get_umrl_history():
+    return umrl_module.umrl_history(umrl_module.DATA)
 
 
 @router.get("/umrl/entity")
-def get_umrl_entity(reference_id: str = Query(min_length=1, max_length=300)):
-    record = default_umrl().get(reference_id)
+def get_umrl_entity(reference_id: str = Query(min_length=1, max_length=300),
+                    revision: str | None = Query(default=None, pattern="^[0-9a-f]{64}$")):
+    try:
+        catalog = default_umrl(revision)
+    except FileNotFoundError as exc:
+        raise HTTPException(404, "UMRL revision is not available") from exc
+    record = catalog.get(reference_id)
     if record is None:
         raise HTTPException(404, "Reference ID is absent from the pinned UMRL inventory")
-    return {"source": default_umrl().provenance, "entity": record,
-            "organization": default_umrl().organizations[record["organization_id"]],
+    return {"source": catalog.provenance, "revision_id": catalog.revision_id, "entity": record,
+            "organization": catalog.organizations[record["organization_id"]],
             "catalog_membership_establishes_project_adoption": False}
 
 
