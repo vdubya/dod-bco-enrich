@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import {cp,mkdir,rm} from 'node:fs/promises';
+import {dirname,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const service=dirname(fileURLToPath(import.meta.url));
+const root=resolve(service,'../..'),output=resolve(root,'dist');
+await rm(output,{recursive:true,force:true});
+await mkdir(resolve(output,'.openai'),{recursive:true});
+await build({entryPoints:[resolve(service,'worker.mjs')],bundle:true,format:'esm',platform:'browser',target:'es2022',outfile:resolve(output,'server/index.js'),minify:true});
+await cp(resolve(root,'.openai/hosting.json'),resolve(output,'.openai/hosting.json'));
+await cp(resolve(service,'drizzle'),resolve(output,'.openai/drizzle'),{recursive:true});

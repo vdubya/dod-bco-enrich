@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {validateEvent,resolveReviews,githubSaveURL,reusePendingSave} from '../../docs/review-core.mjs';
+import {validateEvent,resolveReviews,reusePendingSave,eventPath} from '../../docs/review-core.mjs';
 const candidates=JSON.parse(readFileSync(new URL('../../docs/data/pilot-ledger.json',import.meta.url)));
 const manifest=JSON.parse(readFileSync(new URL('../../docs/data/site-manifest.json',import.meta.url)));
 const units=JSON.parse(readFileSync(new URL('../../docs/data/source-units.json',import.meta.url)));
@@ -44,7 +44,7 @@ test('every decision permits blank scope and rationale while requiring a reviewe
  for(const status of ['accepted','rejected','needs_revision','deferred','pending']){
   for(const notes of ['', '  ']){
    const review=event(1,{status,scope_note:notes,rationale:notes});
-   const prepared=JSON.parse(new URL(githubSaveURL(review)).searchParams.get('value'));
+   const prepared=JSON.parse(JSON.stringify(review));
    const result=resolved([prepared]);
    assert.deepEqual(result.issues,[]);
    assert.equal(result.states.get(c.candidate_id).status,status);
@@ -60,21 +60,16 @@ test('technical save checks cannot adjudicate vocabulary',()=>{
  const r=resolved([check]);assert.equal(r.checks.length,1);assert.equal(r.states.get(c.candidate_id).status,'pending');
  assert.throws(()=>validateEvent({...check,status:'accepted'},candidates,manifest.dataset_sha256));
 });
-test('GitHub handoff preserves Unicode and punctuation without executable content',()=>{
- const e=event(1,{rationale:'Café & “Owner” <script> is plain review text.'});
- const url=new URL(githubSaveURL(e));
- assert.equal(url.origin,'https://github.com');assert.equal(url.pathname,'/vdubya/dod-bco-enrich/new/dod-bco');
- assert.equal(url.searchParams.get('filename'),`docs/review-events/${id(1)}.json`);
- assert.deepEqual(JSON.parse(url.searchParams.get('value')),e);
- assert.throws(()=>githubSaveURL({...e,event_id:'../../other'}));
- assert.throws(()=>githubSaveURL({...e,rationale:'界'.repeat(3000)}));
+test('review event paths permit only valid UUID identities',()=>{
+ assert.equal(eventPath(id(1)),`docs/review-events/${id(1)}.json`);
+ for(const unsafe of ['../../other','.github/workflows/other.yml','bad-id'])assert.throws(()=>eventPath(unsafe));
 });
 test('a retry after reload keeps the same file while a changed review gets a new event',()=>{
  const prepared=event(1,{scope_note:'',rationale:''});
  const restored=JSON.parse(JSON.stringify(prepared));
  const retry=event(2,{created_at:'2026-09-27T12:00:00.000Z',scope_note:'',rationale:''});
  const resumed=reusePendingSave(retry,restored);
- assert.equal(githubSaveURL(resumed),githubSaveURL(prepared));
+ assert.deepEqual(resumed,prepared);
  assert.equal(resolved([resumed]).states.get(c.candidate_id).history.length,1);
  for(const change of [{rationale:'Revised notes'},{status:'rejected'},{supersedes:[id(3)]},{source_sha256:'changed'}]){
   const updated={...retry,...change};

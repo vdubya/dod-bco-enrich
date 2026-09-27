@@ -1,11 +1,18 @@
-import {REPO,BRANCH,EVENT_DIR,STATUSES,validateEvent,resolveReviews,githubSaveURL,reusePendingSave,eventPath} from './review-core.mjs';
+import {REPO,BRANCH,EVENT_DIR,validateEvent,resolveReviews,reusePendingSave,eventPath,sameReviewContent} from './review-core.mjs';
+import {createConnection} from './review-auth.mjs';
 const $ = id => document.getElementById(id);
 const esc = value => String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const labels={pending:'Awaiting review',accepted:'Accepted assertion',rejected:'Rejected candidate',needs_revision:'Needs revision',deferred:'Deferred',conflict:'Conflicting reviews',unverified:'Unverified reviews'};
 const key='dod-bco-review-drafts-v1';
 const saveKey='dod-bco-prepared-save-v1';
 let candidates=[],units={},manifest={},events=[],resolution=null,remoteReady=false,commit='',active=null,baseHeads=[],drafts={},storageOK=true;
-let preparedSave=null;
+let preparedSave=null,connection=null,saving=false,lastSave=null;
+// Remove the one-use exchange code before any external repository requests.
+const signInSearch=location.search,signInQuery=new URLSearchParams(signInSearch);
+if(signInQuery.has('bco_code') || signInQuery.has('bco_auth_error')){
+  signInQuery.delete('bco_code');signInQuery.delete('bco_auth_error');
+  history.replaceState(null,'',location.pathname+(signInQuery.size?'?'+signInQuery:'')+location.hash);
+}
 try { drafts=JSON.parse(localStorage.getItem(key)||'{}'); if(!drafts || Array.isArray(drafts) || typeof drafts!=='object') drafts={}; } catch {storageOK=false;}
 try { preparedSave=JSON.parse(localStorage.getItem(saveKey)||'null'); } catch { /* Existing drafts remain available. */ }
 function storeDrafts(){try{localStorage.setItem(key,JSON.stringify(drafts));return true;}catch{storageOK=false;return false;}}
@@ -13,9 +20,9 @@ function storePrepared(){try{if(preparedSave)localStorage.setItem(saveKey,JSON.s
 function clearPrepared(){preparedSave=null;storePrepared();$('resume-save').hidden=true;}
 function showSyncSummary(confirmed=false){
   $('resume-save').hidden=!preparedSave;
-  $('sync-title').textContent=confirmed?'Saved to GitHub':preparedSave?'A prepared save is waiting for your GitHub commit':'Connected to your GitHub repository';
+  $('sync-title').textContent=confirmed?'Saved to GitHub':preparedSave?'A review is ready to save':'Reviews loaded from GitHub';
   $('sync-dot').className=preparedSave?'sync-dot':'sync-dot ready';
-  $('sync-detail').textContent=`${events.filter(e=>e.record_type==='definition_review').length} review events saved · version ${commit.slice(0,7)} · ${REPO}. ${preparedSave?'Choose Continue GitHub save to finish in your browser.':'Drafts stay on this device until committed.'}`;
+  $('sync-detail').textContent=`${events.filter(e=>e.record_type==='definition_review').length} review events saved · version ${commit.slice(0,7)} · ${REPO}. ${preparedSave?'Choose Save pending review to finish.':'Each saved review becomes a GitHub commit.'}`;
 }
 function statusFor(id){return resolution?.states.get(id)||{status:'pending',history:[],heads:[],latest:null};}
 function blobLink(e){return `https://github.com/${REPO}/blob/${commit}/${eventPath(e.event_id)}`;}
@@ -48,7 +55,7 @@ async function jsonFetch(url){
 }
 async function sync(){
   if(!candidates.length)return;
-  remoteReady=false; $('refresh').disabled=true; $('check-commit').disabled=true; $('sync-title').textContent='Checking GitHub…'; $('sync-dot').className='sync-dot';
+  remoteReady=false; $('refresh').disabled=true; $('sync-title').textContent='Checking GitHub…'; $('sync-dot').className='sync-dot';
   try{
     const ref=await jsonFetch(`https://api.github.com/repos/${REPO}/git/ref/heads/${BRANCH}`);
     const nextCommit=ref.object?.sha;
@@ -72,17 +79,21 @@ async function sync(){
     events=loaded; commit=nextCommit; resolution=next;
     if(next.issues.length)throw Error(`Review validation needs attention: ${[...new Set(next.issues)].join(' ')}`);
     remoteReady=true;
-    for(const c of candidates){const d=drafts[c.candidate_id];if(d?.pending_event_id && loaded.some(e=>e.event_id===d.pending_event_id))delete drafts[c.candidate_id];}
-    storeDrafts();
-    const confirmed=!!preparedSave && loaded.some(e=>e.event_id===preparedSave.event_id);
-    if(confirmed){clearPrepared();if($('save-dialog').open)$('save-dialog').close();}
+    const found=preparedSave && loaded.find(e=>e.event_id===preparedSave.event_id);
+    const confirmed=!!found && sameReviewContent(found,preparedSave);
+    if(confirmed){
+      lastSave={event:found,commit:nextCommit,url:`https://github.com/${REPO}/blob/${nextCommit}/${eventPath(found.event_id)}`};
+      if(found.candidate_id)delete drafts[found.candidate_id];
+      clearPrepared();storeDrafts();
+      if($('save-dialog').open)showSaved();
+    }
     showSyncSummary(confirmed);
     const checks=next.checks.slice().sort((a,b)=>a.created_at.localeCompare(b.created_at));
     if(checks.length){$('check-result').innerHTML=`Save verified: <a href="${blobLink(checks.at(-1))}" target="_blank" rel="noopener noreferrer">view repository receipt ↗</a>`;}
   }catch(error){
     $('sync-title').textContent='Saved reviews could not be refreshed'; $('sync-dot').className='sync-dot error';
     $('sync-detail').textContent=`${error.message} ${commit?'The display retains the last loaded snapshot.':'Saved review status is not yet known.'}`;
-  }finally{ $('refresh').disabled=false; $('check-commit').disabled=false; render(); }
+  }finally{ $('refresh').disabled=false; render(); }
 }
 const form=$('review-form');
 const fields=['status','reviewer','scope_note','rationale','proposed_label','proposed_definition'];
@@ -98,43 +109,84 @@ function updateDraft(){
   const saved=storeDrafts();$('draft-state').textContent=saved?'Draft saved on this device. It is not in GitHub yet.':'Browser draft storage is unavailable. Keep this window open until you save to GitHub.';
 }
 function openReview(id){
+  if(saving){if(!$('save-dialog').open)$('save-dialog').showModal();return;}
   active=candidates.find(c=>c.candidate_id===id); if(!active)return;
   const state=statusFor(id), draft=drafts[id];
   baseHeads=draft?.supersedes || state.heads.map(e=>e.event_id);
   const values=draft||state.latest||{};
-  fields.forEach(name=>{form.elements.namedItem(name).value=values[name]||'';});
+  fields.forEach(name=>{form.elements.namedItem(name).value=values[name]||(name==='reviewer'?connection?.user?.name?.slice(0,80)||'':'');});
   $('dialog-title').textContent=active.label_proposed; $('dialog-source').textContent=`${active.source.designation} · ${active.source.version_label} · ${active.section_path.at(-1)}`;
   $('form-error').textContent='';$('draft-state').textContent=draft?'Draft restored from this device.':'No new decision has been saved.';
   $('review-dialog').showModal();
 }
-function showSavePanel(){
+function updateConnection(){
+  $('sign-in').hidden=!!connection?.user;
+  $('sign-out').hidden=!connection?.user;
+  $('account-state').textContent=connection?.user?`Saving as @${connection.user.login}`:'Sign in once to save directly from this report.';
+  $('save-now').textContent=connection?.user?'Save to GitHub':'Sign in and save';
+  $('sign-out').disabled=saving;
+  $('save-now').disabled=saving;
+  $('check-save').disabled=saving;
+}
+function showSavePanel(message='Your draft is ready. Saving creates a versioned record in your GitHub repository.'){
   if(!preparedSave)return;
-  const url=githubSaveURL(preparedSave);
-  $('browser-save-link').value=url;
-  $('open-editor').href=url;
+  $('save-title').textContent='Save to GitHub';
   $('save-summary').textContent=preparedSave.record_type==='persistence_check'?'Technical save check. No vocabulary decision.':`${candidates.find(c=>c.candidate_id===preparedSave.candidate_id).label_proposed} · ${labels[preparedSave.status]} · ${preparedSave.reviewer}`;
-  $('copy-status').textContent='The file is prepared. It is not saved to GitHub yet.';
-  $('manual-copy').open=false;
+  $('save-status').textContent=message;
+  $('save-receipt').hidden=true;
+  $('save-now').hidden=false;
+  updateConnection();
   if(!$('save-dialog').open)$('save-dialog').showModal();
 }
-function handoff(event){
-  githubSaveURL(event);
+async function prepareAndSave(event){
   preparedSave=event;
   const retained=storePrepared();
   showSyncSummary();
   showSavePanel();
-  if(!retained)$('copy-status').textContent='Keep this page open until you commit. This browser could not retain the prepared link.';
+  if(!retained && !connection?.user){$('save-status').textContent='Allow browser storage before signing in so this draft survives the sign-in step.';return;}
+  await savePrepared();
+}
+async function savePrepared(){
+  if(saving || !preparedSave)return;
+  showSavePanel();saving=true;updateConnection();
+  try{
+    if(!remoteReady){await sync();if(!preparedSave){showSaved();return;}if(!remoteReady)throw Error('Saved reviews could not be checked. Refresh successfully, then retry. Your draft is retained.');}
+    validateEvent(preparedSave,candidates,manifest.dataset_sha256);
+    if(!connection?.user){
+      if(!storePrepared())throw Error('Allow browser storage before signing in so this draft survives the sign-in step.');
+      $('save-status').textContent='Opening GitHub sign-in. Your draft will be saved when you return.';
+      if(!connection)throw Error('The GitHub save connection is not ready yet. Your draft is retained.');
+      await connection.signIn();return;
+    }
+    $('save-status').textContent='Saving your review to GitHub and checking the committed file…';
+    const result=await connection.save(preparedSave);
+    lastSave=result;
+    if(result.event.candidate_id)delete drafts[result.event.candidate_id];
+    clearPrepared();storeDrafts();
+    await sync();showSaved();
+  }catch(error){
+    $('save-status').textContent=error.name==='TimeoutError'?'Confirmation timed out. Your draft is retained. Retry to check the same review without creating a duplicate.':error.message;
+  }finally{saving=false;updateConnection();render();}
+}
+function showSaved(){
+  if(!lastSave)return;
+  $('save-title').textContent='Saved to GitHub';
+  $('save-status').textContent=`Your ${lastSave.event.record_type==='persistence_check'?'technical save check':'review'} is committed to ${REPO}.`;
+  $('save-receipt').href=lastSave.url;$('save-receipt').textContent=`View commit record ${lastSave.commit.slice(0,7)} ↗`;$('save-receipt').hidden=false;
+  $('save-now').hidden=true;
+  $('sync-title').textContent='Saved to GitHub';$('sync-dot').className='sync-dot ready';
+  if(!remoteReady)$('sync-detail').textContent=`Commit ${lastSave.commit.slice(0,7)} was confirmed. The review list could not refresh; try refreshing later.`;
 }
 form.addEventListener('input',updateDraft);
 form.addEventListener('change',updateDraft);
-form.addEventListener('submit',event=>{
+form.addEventListener('submit',async event=>{
   event.preventDefault(); $('form-error').textContent='';
   try{
     if(!remoteReady)throw Error('Refresh saved reviews successfully before saving a decision. Your local draft is retained.');
     const e=reusePendingSave({schema_version:1,record_type:'definition_review',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),candidate_id:active.candidate_id,dataset_sha256:manifest.dataset_sha256,source_sha256:active.source.source_sha256,source_version_id:active.source.version_id,supersedes:baseHeads,...formValues()},preparedSave);
-    validateEvent(e,candidates,manifest.dataset_sha256); githubSaveURL(e);
+    validateEvent(e,candidates,manifest.dataset_sha256);
     drafts[active.candidate_id]={...formValues(),supersedes:baseHeads,pending_event_id:e.event_id};storeDrafts();
-    $('review-dialog').close();handoff(e);render();
+    $('review-dialog').close();await prepareAndSave(e);render();
   }catch(error){$('form-error').textContent=error.message;}
 });
 $('close-dialog').addEventListener('click',()=>{$('review-dialog').close();render();});
@@ -143,28 +195,16 @@ $('discard-draft').addEventListener('click',()=>{if(preparedSave?.candidate_id==
 $('cards').addEventListener('click',event=>{const button=event.target.closest('[data-review]');if(button)openReview(button.dataset.review);});
 for(const id of ['search','source','kind','status'])$(id).addEventListener(id==='search'?'input':'change',render);
 $('refresh').addEventListener('click',sync);
-$('resume-save').addEventListener('click',showSavePanel);
+$('resume-save').addEventListener('click',()=>showSavePanel());
 $('close-save').addEventListener('click',()=>$('save-dialog').close());
-$('copy-browser-link').addEventListener('click',async()=>{
-  try{
-    await navigator.clipboard.writeText($('browser-save-link').value);
-    $('copy-status').textContent='Link copied. Paste it into Safari or Chrome’s address bar, then finish the GitHub commit.';
-  }catch{
-    $('manual-copy').open=true;
-    $('browser-save-link').focus();$('browser-save-link').select();
-    $('copy-status').textContent='Automatic copying is unavailable. Copy the selected link below, then paste it into your browser’s address bar.';
-  }
-});
-$('check-commit').addEventListener('click',async()=>{
-  await sync();
-  if(preparedSave)$('copy-status').textContent=remoteReady?'This file is not in GitHub yet. Finish Commit changes on the dod-bco branch, then check again.':'GitHub could not be checked. Your prepared link is retained; try again later.';
-});
-$('check-save').addEventListener('click',()=>{
+$('save-now').addEventListener('click',savePrepared);
+$('sign-in').addEventListener('click',async()=>{try{if(!connection)throw Error('The GitHub connection is still loading.');await connection.signIn();}catch(error){$('account-state').textContent=error.message;}});
+$('sign-out').addEventListener('click',async()=>{try{await connection.signOut();updateConnection();}catch(error){$('account-state').textContent=error.message;}});
+$('check-save').addEventListener('click',async()=>{
   try{
     if(!remoteReady)throw Error('Refresh the repository successfully before testing saving.');
     if(preparedSave){showSavePanel();return;}
-    handoff({schema_version:1,record_type:'persistence_check',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),dataset_sha256:manifest.dataset_sha256,purpose:'Technical save verification; no vocabulary decision'});
-    $('check-result').textContent='Commit the test receipt on GitHub, then refresh here. No assertion is accepted by this test.';
+    await prepareAndSave({schema_version:1,record_type:'persistence_check',event_id:crypto.randomUUID(),created_at:new Date().toISOString(),dataset_sha256:manifest.dataset_sha256,purpose:'Technical save verification; no vocabulary decision'});
   }catch(error){$('check-result').textContent=error.message;}
 });
 $('export').addEventListener('click',()=>{
@@ -173,6 +213,14 @@ $('export').addEventListener('click',()=>{
   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='dod-bco-saved-reviews.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 async function start(){
+  // Exchange the short-lived sign-in code immediately, while evidence loads.
+  const connect=(async()=>{
+    const config=await jsonFetch('save-config.json');
+    connection=createConnection(config.service_url);
+    const returned=await connection.finishSignIn(signInSearch);
+    if(!returned)await connection.restore();
+    return {returned};
+  })().catch(error=>({error}));
   try{
     const [m,response,u]=await Promise.all([jsonFetch('data/site-manifest.json'),fetch('data/pilot-ledger.json'),jsonFetch('data/source-units.json')]);
     if(!response.ok)throw Error('The evidence ledger could not be loaded.');
@@ -180,13 +228,16 @@ async function start(){
     const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
     if(hash!==m.dataset_sha256)throw Error('The evidence ledger does not match the published snapshot.');
     candidates=JSON.parse(new TextDecoder().decode(bytes));units=u;manifest=m;
-    if(preparedSave){try{validateEvent(preparedSave,candidates,manifest.dataset_sha256);githubSaveURL(preparedSave);}catch{clearPrepared();}}
+    if(preparedSave){try{validateEvent(preparedSave,candidates,manifest.dataset_sha256);}catch{clearPrepared();}}
     $('resume-save').hidden=!preparedSave;
     for(const c of candidates){for(const e of c.evidence){if(Array.from(units[e.unit_id]?.text_exact||'').slice(e.start,e.end).join('')!==e.source_text_exact)throw Error('A source quotation failed its exact-text check.');}}
     for(const [id,values] of [['source',[...new Set(candidates.map(c=>c.source.designation))]],['kind',[...new Set(candidates.map(c=>c.record_type))]]]){
       for(const value of values){const option=document.createElement('option');option.value=value;option.textContent=value.replaceAll('_',' ');$(id).append(option);}
     }
     render();await sync();
+    const connected=await connect;updateConnection();
+    if(connected.error){$('account-state').textContent=connected.error.message;if(preparedSave)showSavePanel(connected.error.message);}
+    else if(connected.returned && preparedSave)await savePrepared();
     const target=document.getElementById(location.hash.slice(1));if(target)target.scrollIntoView();
   }catch(error){$('cards').textContent=error.message;$('sync-title').textContent='The evidence could not be loaded';$('sync-detail').textContent='Reload the report. No review status has been inferred.';$('sync-dot').className='sync-dot error';}
 }

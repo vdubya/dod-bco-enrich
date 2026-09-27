@@ -57,17 +57,6 @@ export function resolveReviews(events, candidates, datasetHash) {
   return {states,checks,issues};
 }
 
-export function githubSaveURL(event) {
-  if(!uuid.test(event.event_id||'')) throw Error('Invalid event ID.');
-  const path = `${EVENT_DIR}/${event.event_id}.json`;
-  const url = new URL(`https://github.com/${REPO}/new/${BRANCH}`);
-  url.searchParams.set('filename',path);
-  url.searchParams.set('value',JSON.stringify(event,null,2)+'\n');
-  url.searchParams.set('message',event.record_type==='persistence_check'?'Verify BCO review persistence':`Review ${event.candidate_id}: ${event.status}`);
-  if(url.href.length>8000) throw Error('This review is too long for GitHub’s editor link. Shorten the notes before saving.');
-  return url.href;
-}
-
 // Retrying a prepared save must use the same file and timestamp. A changed
 // decision gets a new identity, preserving the append-only review history.
 export function reusePendingSave(next, pending) {
@@ -76,6 +65,13 @@ export function reusePendingSave(next, pending) {
     .filter(([key]) => key !== 'event_id' && key !== 'created_at')
     .sort(([a],[b]) => a.localeCompare(b)));
   return JSON.stringify(content(next)) === JSON.stringify(content(pending)) ? pending : next;
+}
+
+export function sameReviewContent(saved, expected) {
+  if(!saved || !expected)return false;
+  const {authenticated_reviewer,...content}=saved;
+  const canonical=value=>Array.isArray(value)?value.map(canonical):value && typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(k=>[k,canonical(value[k])])):value;
+  return JSON.stringify(canonical(content))===JSON.stringify(canonical(expected));
 }
 
 export function eventPath(id) {

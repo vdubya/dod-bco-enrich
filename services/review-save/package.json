@@ -1,0 +1,15 @@
+{
+  "name": "dod-bco-review-save",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild worker.mjs --bundle --format=esm --platform=browser --target=es2022 --outfile=dist/worker.mjs --minify",
+    "test": "node --test ../../tests/review-site/*.test.mjs"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.10",
+    "drizzle-orm": "0.45.2",
+    "esbuild": "0.28.2"
+  }
+}
