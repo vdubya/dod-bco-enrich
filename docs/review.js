@@ -23,7 +23,7 @@ function storeDrafts(){try{localStorage.setItem(key,JSON.stringify(drafts));retu
 function storePrepared(){try{if(preparedSave)localStorage.setItem(saveKey,JSON.stringify(preparedSave));else localStorage.removeItem(saveKey);return true;}catch{return false;}}
 function clearPrepared(){preparedSave=null;storePrepared();$('resume-save').hidden=true;}
 function storeBatch(){try{if(preparedBatch)localStorage.setItem(batchKey,JSON.stringify(preparedBatch));else localStorage.removeItem(batchKey);return true;}catch{return false;}}
-function clearBatch(){preparedBatch=null;storeBatch();}
+function clearBatch(){preparedBatch=null;storeBatch();$('resume-save').hidden=!preparedSave;}
 function showSyncSummary(confirmed=false){
   const pending=preparedBatch||preparedSave;
   $('resume-save').hidden=!pending;
@@ -120,7 +120,8 @@ async function sync(savedCommit=null){
       }));loaded.push(...batch);
     }
     const next=resolveReviews(loaded,candidates,manifest.dataset_sha256);
-    if((lastBatch && !batchIsSaved(lastBatch,loaded)) || (lastSave && !loaded.some(e=>sameReviewContent(e,lastSave.event))))throw Error('The public branch snapshot has not caught up with your confirmed save. Refresh again shortly.');
+    const contentOnly=({authenticated_reviewer,...event})=>event;
+    if((lastBatch && !batchIsSaved({events:lastBatch.events.map(contentOnly)},loaded)) || (lastSave && !loaded.some(e=>sameReviewContent(e,contentOnly(lastSave.event)))))throw Error('The public branch snapshot has not caught up with your confirmed save. Refresh again shortly.');
     events=loaded; commit=nextCommit; resolution=next;
     if(next.issues.length)throw Error(`Review validation needs attention: ${[...new Set(next.issues)].join(' ')}`);
     remoteReady=true;
