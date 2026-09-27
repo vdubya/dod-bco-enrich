@@ -4,7 +4,7 @@ Live report: https://vdubya.github.io/dod-bco-enrich/
 
 The report is published from `dod-bco:/docs` using GitHub Pages branch publishing, with `.nojekyll`. Report code, frozen source evidence, and saved review events live in this repository. The direct-save implementation adds a small authenticated service; its source also lives here in `services/review-save/`.
 
-**Direct-save setup is pending:** this branch contains the replacement for the mobile editor handoff. The service and private GitHub App must be connected before publishing this version. See [service setup and access boundaries](../services/review-save/README.md).
+**Direct saving is connected and verified.** The private GitHub App is installed only on `vdubya/dod-bco-enrich`. The report saves through `https://dod-bco-save.vdub.chatgpt.site`, while report files and review records remain in GitHub. See [service setup and access boundaries](../services/review-save/README.md).
 
 ## Review and save
 
@@ -47,6 +47,8 @@ node --check docs/review.js
 python3 -m http.server 54803 --bind 127.0.0.1 --directory docs
 ```
 
-Focused tests cover source round-trips, review history and conflicts, optional fields, draft identity, direct-save authentication, PKCE and single-use callbacks, encrypted token storage, repository and path restrictions, revoked access, idempotent retries, immutable commit read-back, and failure handling. The service tests use real SQLite with simulated GitHub responses; they do not create real vocabulary decisions. A mobile-width browser check verifies draft restoration and the connection-error state. A real signed-in technical receipt remains required after service deployment.
+Focused tests cover source round-trips, review history and conflicts, optional fields, draft identity, direct-save authentication, PKCE and single-use callbacks, encrypted token storage, repository and path restrictions, revoked access, idempotent retries, immutable commit read-back, setup recovery, hosted HTTP compatibility, and failure handling. The service tests use real SQLite with simulated GitHub responses; they do not create real vocabulary decisions. A mobile-width browser check verifies draft restoration and the connection-error state.
+
+On 27 September 2026 (UTC), the published report completed GitHub sign-in as `vdubya` and saved a [technical receipt at commit `e53a8e3`](https://github.com/vdubya/dod-bco-enrich/blob/e53a8e39ffc8b35bc3bfac84960f11fc0a4250b0/docs/review-events/12d35504-d06e-4196-af9f-a4920032edf8.json). Both the service and an independent repository read confirmed the exact file, frozen ledger hash, and authenticated reviewer ID. The test left substantive review and accepted-assertion counts at zero. A phone browser needs its own one-time GitHub sign-in; the full authenticated flow was verified in desktop Chrome.
 
 Hosting uses [GitHub Pages branch publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Direct saving uses a [GitHub App user access token](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app) and the [repository contents API](https://docs.github.com/en/rest/repos/contents#create-or-update-file-contents).

@@ -2,7 +2,7 @@
 
 This service lets the GitHub Pages report save a review as a commit without opening the GitHub file editor. The report, corpus, review events, and all service source code remain in `vdubya/dod-bco-enrich`. No review database is maintained here. The service stores encrypted sign-in credentials and short-lived authorization state.
 
-**Setup status:** the implementation is prepared, but the hosted service and private GitHub App have not been connected. `docs/save-config.json` intentionally has no service URL. Do not deploy this report version to the Pages branch until the service and GitHub App are configured. Verify a real technical save receipt immediately after publishing.
+**Setup status:** connected at `https://dod-bco-save.vdub.chatgpt.site`. The private `DoD BCO Reviews vdubya` app is installed only on `vdubya/dod-bco-enrich`; `docs/save-config.json` and the report's CSP name this service origin. The published report's authenticated technical save was verified at [commit `e53a8e3`](https://github.com/vdubya/dod-bco-enrich/blob/e53a8e39ffc8b35bc3bfac84960f11fc0a4250b0/docs/review-events/12d35504-d06e-4196-af9f-a4920032edf8.json). The initial `SETUP_KEY` has been removed from the hosted environment. Preserve the existing `SESSION_KEY` and encrypted app configuration.
 
 ## Access boundary
 
@@ -35,6 +35,8 @@ npm test
 ```
 
 Deploy `dist/worker.mjs` with the bindings above. Verify `/health` responds with the expected repository and `ready: false`. Initial setup uses `/setup?ticket=<SETUP_KEY>` on that service. Treat this as a private, short-lived setup link. The resulting GitHub form creates a private app through [GitHub's manifest flow](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest); permission approval happens in GitHub. Its callback stores the app client secret encrypted and discards the unused PEM and webhook secret. Install only the named repository. Setup endpoints become unavailable after registration.
+
+If registration creates the GitHub App but the callback fails before exchanging its code, reopen the protected setup link and use **Resume an app already created** within GitHub's one-hour conversion window. This binds the existing code to a fresh single-use state and secure cookie; it does not create a duplicate app. The recovery form uses the same GET callback as GitHub. Server requests use `redirect: 'manual'` and reject unsuccessful responses, so credentials never follow an unexpected redirect. The deployed host rejects the otherwise-standard `redirect: 'error'` option.
 
 After installation, configure the report from the repository root:
 
