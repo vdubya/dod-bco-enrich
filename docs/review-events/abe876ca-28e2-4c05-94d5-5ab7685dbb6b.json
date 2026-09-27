@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "record_type": "definition_review",
+  "event_id": "abe876ca-28e2-4c05-94d5-5ab7685dbb6b",
+  "created_at": "2026-09-27T01:28:33.282Z",
+  "dataset_sha256": "06913534d3410a02e1045669406b8678c5970bfe7e5434f55b72a14289da6dab",
+  "candidate_id": "ufc-vocab-1d296d21c5df1d275c3caf9c",
+  "source_sha256": "e2c907c28b87107abd437c362281ee8b3a2ab5633bea842739f92d5faa3b2adb",
+  "source_version_id": "a093a449-9220-45e0-866a-67d3139af067",
+  "supersedes": [],
+  "status": "accepted",
+  "reviewer": "Van Woods",
+  "scope_note": "",
+  "rationale": "",
+  "proposed_label": "",
+  "proposed_definition": "",
+  "authenticated_reviewer": {
+    "id": 6257997,
+    "login": "vdubya"
+  }
+}
