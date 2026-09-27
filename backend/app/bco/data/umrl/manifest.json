@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "umrl-catalog:295bf6b43c2a29d65dbbb5a50b3faba1fc93b24438916f934553e40abc8eb734",
+  "method": "reuse_existing_criteria_atlas_artifacts",
+  "upstream_source_provenance": {
+    "source": "WBDG UFGS Master",
+    "release_date": "2026-05-28",
+    "downloaded_on": "2026-07-17",
+    "url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/documents/2026-06/UFGS_M_1780603469384_6g77ow6id0i.zip",
+    "archive": "data/source/umrl/UFGS_M_2026-05-28.zip",
+    "sha256": "ce3cc69130876e6934ddeb63fedf6b4ed9ca2708ecb65580408951707804a96b",
+    "umrl_member": "MASTER.REF"
+  },
+  "original_inputs": {
+    "catalog": {
+      "source_path": "data/output/umrl/umrl_catalog.json",
+      "sha256": "295bf6b43c2a29d65dbbb5a50b3faba1fc93b24438916f934553e40abc8eb734"
+    },
+    "viewer": {
+      "source_path": "webapp/public/corpus/umrl-viewer.json",
+      "sha256": "54f467b90b9b3e5c898133deb813631c719b9f329049d916d577867c34388547"
+    },
+    "corpus": {
+      "source_path": "webapp/public/corpus/manifest.json",
+      "sha256": "82d0dfbd3d56c06f35e9551f6f403508e795317e3553b96c1f4cd4dc81011f20"
+    },
+    "source_manifest": {
+      "source_path": "data/source/umrl/source_manifest.json",
+      "sha256": "b28b459096e24b4918945f650656c163bfc301a98110e7041a9204c98a455db9"
+    }
+  },
+  "artifacts": {
+    "umrl-viewer.json": {
+      "source_path": "webapp/public/corpus/umrl-viewer.json",
+      "sha256": "54f467b90b9b3e5c898133deb813631c719b9f329049d916d577867c34388547",
+      "copy_method": "byte_for_byte"
+    },
+    "prior-analyses.json": {
+      "sha256": "97bddcf3423e8f8e5f0659da27569007c4b92345473d676aa21fad40ba255dee",
+      "original_files": [
+        {
+          "source_path": "data/output/ufc/UFC_3-101-01/umrl_analysis.json",
+          "sha256": "f2034b4dc547a987e31ddbae3dd666a1aecbd1a5eed2d20c7acf42769c040f77"
+        },
+        {
+          "source_path": "data/output/ufc/UFC_3-120-10/umrl_analysis.json",
+          "sha256": "640fddb5b26a2fbb98b3e37f0d4afa2541ee5bffbb51e29968eb5c72db198efe"
+        }
+      ]
+    }
+  },
+  "viewer_implementation": "webapp/src/criteria-atlas-app.ts",
+  "resolver_implementation": "src/criteria_graph/umrl_pass.py",
+  "identity_policy": "Preserve viewer reference_id and saved match IDs; legacy graph slugs are secondary and may collide.",
+  "new_extraction_calls": 0
+}

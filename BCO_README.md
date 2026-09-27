@@ -36,6 +36,8 @@ The pinned snapshot includes the spaCy English model and the development tools. 
 
 For **LLM entity discovery beyond the seed vocabulary**, use the new [entity extraction method](docs/LLM_ENTITIES.md). It provides a no-call plan, bounded and resumable provider calls, exact source-span validation, explicit failures, an asynchronous API, and a new review-bundle export. The existing general enrichment command below remains available for seed matching and broader pipeline enrichment.
 
+[UMRL entities](docs/UMRL_ENTITIES.md) reuse the already processed Criteria Atlas catalog and viewer data: 4,972 reference records, 304 issuing organizations, and 31 saved reference matches across two UFCs. BCO preserves the original reference IDs and evidence, exposes searchable catalog endpoints, and links validated LLM publication mentions to the inventory. The existing Criteria Atlas viewer remains in place.
+
 With the server running:
 
 ```sh

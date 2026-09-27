@@ -1,0 +1,65 @@
+# UMRL entities from the existing Criteria Atlas work
+
+BCO reuses the UMRL catalog, resolver results, and viewer data already produced in the Digital Engineering Criteria workspace. The pinned inventory contains 4,972 reference records, 304 issuing organizations, and 31 saved matches involving 18 reference records across UFC 3-101-01 and UFC 3-120-10. These are existing results, not a new extraction or a corpus-wide coverage claim.
+
+The existing Criteria Atlas application remains the entity and UMRL viewer. Its UMRL view already supports catalog search, organization filters, publication metadata, current-document scope, and navigation from a reference usage to its source paragraph. This change exposes that processed inventory to BCO's entity pipeline and local API. It does not replace or redeploy that viewer.
+
+## Preserved inputs
+
+| Existing workspace artifact | How BCO reuses it |
+| --- | --- |
+| `data/output/umrl/umrl_catalog.json` | Verifies every catalog field against the viewer inventory; retains the input hash |
+| `webapp/public/corpus/umrl-viewer.json` | Bundled byte for byte, including all reference IDs and usage objects |
+| `data/output/ufc/UFC_*/umrl_analysis.json` | Retains all original matches, match IDs, source anchors, confidence, review status, and unresolved candidates for the two indexed documents |
+| `src/criteria_graph/umrl_pass.py` | Remains the existing reference extraction and alias-resolution implementation |
+| `webapp/src/criteria-atlas-app.ts` | Remains the existing entity and UMRL viewer |
+
+The [pinned manifest](../backend/app/bco/data/umrl/manifest.json) records the original artifact hashes and the May 28, 2026 UFGS Master source provenance. BCO checks bundled hashes before using the data. Catalog/viewer disagreements or broken evidence joins fail visibly. The existing analyses also contain eight unresolved candidates, preserved in [prior-analyses.json](../backend/app/bco/data/umrl/prior-analyses.json).
+
+## Entity identity and editions
+
+Each reference is a named `reference_publication` entity. Its `entity_id` is the exact existing viewer `reference_id`, such as `ASCE 7`. Issuing organizations are named entities keyed by the complete organization name, not by an acronym. A separate catalog-entry ID identifies the record in the pinned catalog snapshot.
+
+The existing graph slug is preserved as `legacy_graph_id`. It is not safe as a unique key: `PL-109-58` and `PL 109-58` both produce `PL-109-58`. BCO retains both records and flags this collision without asserting that they are equivalent or different publications.
+
+The listed edition statement is preserved as catalog wording. It does not determine the edition cited by a UFC/UFGS passage or adopted for a project. Source catalog records are separate from proposed ontology concepts and approvals. Reference metadata does not include the standards' full text.
+
+## Connection to entity discovery
+
+After an LLM proposal passes the existing source-span validation, BCO looks up each complete `document` mention in the existing reference inventory. Exact reference IDs receive a publication identity link. Normalized designators yield review candidates, including all colliding records. Unmatched mentions remain unresolved.
+
+Each extraction report now includes an `umrl` section with catalog provenance, linked publication entities, and their organizations. Individual document candidates retain their source spans and pending review status. These links and their provenance also survive export into a review bundle. The planner reports the available UMRL inventory without making model calls.
+
+This step looks up complete, already-extracted designators. It does not rerun the broader Criteria Atlas resolver, perform title or alias extraction, or silently apply historical matches to a new source edition. For example, `ASCE 7` links directly; `ASCE  7` requires normalized-match review; `IBC` remains unresolved by this narrow lookup even though the existing resolver can produce an ICC alias match. The original resolver results remain available as `prior_matches` with their original evidence and review states.
+
+## API and export
+
+The local BCO server provides these read-only endpoints without an LLM provider:
+
+| Route | Result |
+| --- | --- |
+| `GET /bco/umrl?q=concrete&offset=0&limit=50` | Search reference ID, title, and organization; maximum 200 records per page |
+| `GET /bco/umrl/entity?reference_id=ASCE%207` | Exact publication entity, organization, viewer usages, and original resolver matches |
+
+Use a query parameter for exact IDs containing slashes. GitHub Pages does not run these API endpoints.
+
+Export the full named-entity inventory with no extraction or model calls:
+
+```sh
+.venv/bin/python scripts/export_bco_umrl.py \
+  --output .bco-state/exports/umrl-entities.json
+```
+
+The exporter requires a new file and will not replace an existing export. The fork includes the required data and works without the parent Criteria Atlas workspace.
+
+After the existing Criteria Atlas corpus has been intentionally refreshed, update BCO's pinned snapshot from that workspace:
+
+```sh
+.venv/bin/python scripts/import_bco_umrl.py '..'
+```
+
+The importer checks catalog/viewer equality and saved-analysis joins before writing the snapshot. It copies existing artifacts and does not download UMRL or mine `MASTER.REF`. Review the Git diff before publishing an updated snapshot.
+
+## Verification
+
+Tests compare every imported viewer field and original match field, exercise exact and ambiguous identity resolution, check source quotations and pending review states after LLM linking, verify API pagination and slash-bearing IDs, and reject modified artifacts or inconsistent saved evidence. These are integrity and integration checks, not a measurement of extraction precision or recall.

@@ -1,0 +1,59 @@
+{
+  "method": "verify_reuse_of_existing_criteria_atlas_umrl_artifacts",
+  "source_snapshot": "umrl-catalog:295bf6b43c2a29d65dbbb5a50b3faba1fc93b24438916f934553e40abc8eb734",
+  "upstream_source_provenance": {
+    "source": "WBDG UFGS Master",
+    "release_date": "2026-05-28",
+    "downloaded_on": "2026-07-17",
+    "url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/documents/2026-06/UFGS_M_1780603469384_6g77ow6id0i.zip",
+    "archive": "data/source/umrl/UFGS_M_2026-05-28.zip",
+    "sha256": "ce3cc69130876e6934ddeb63fedf6b4ed9ca2708ecb65580408951707804a96b",
+    "umrl_member": "MASTER.REF"
+  },
+  "summary": {
+    "publications": 4972,
+    "organizations": 304,
+    "processed_documents": 2,
+    "prior_matches": 31,
+    "used_publications": 18,
+    "legacy_graph_id_collisions": 1,
+    "accepted_ontology_concepts": 0,
+    "new_extraction_calls": 0
+  },
+  "checks": {
+    "original_viewer_bytes_preserved": true,
+    "all_original_catalog_fields_match_viewer": true,
+    "original_match_fields_and_review_states_preserved": true,
+    "import_reproduces_bundled_artifacts": true,
+    "original_source_adapter_unchanged": true
+  },
+  "existing_documents": [
+    {
+      "designation": "UFC 3-101-01",
+      "document_version_id": "UFC-3-101-01_06-04-2026",
+      "match_count": 30,
+      "unresolved_candidate_count": 8
+    },
+    {
+      "designation": "UFC 3-120-10",
+      "document_version_id": "UFC-3-120-10_06-04-2026",
+      "match_count": 1,
+      "unresolved_candidate_count": 0
+    }
+  ],
+  "legacy_graph_id_collisions": {
+    "PL-109-58": [
+      "PL-109-58",
+      "PL 109-58"
+    ]
+  },
+  "llm_calls": 0,
+  "existing_viewer": "webapp/src/criteria-atlas-app.ts in the parent Criteria Atlas workspace",
+  "new_viewer_created": false,
+  "new_source_extraction_performed": false,
+  "catalog_membership_establishes_project_adoption": false,
+  "validation": {
+    "command": "cd backend && ../.venv/bin/python -m pytest tests/test_bco_umrl.py tests/test_bco_entities.py tests/test_bco.py -q",
+    "passed": 70
+  }
+}

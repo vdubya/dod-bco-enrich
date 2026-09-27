@@ -20,6 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from app.bco.prompts import CONTEXT
 from app.bco.source import SourceBundle, SourceUnit
+from app.bco.umrl import default_umrl
 
 PROMPT_VERSION = "bco-entities-1"
 EntityType = Literal["asset", "space", "system", "material", "activity",
@@ -218,6 +219,8 @@ def plan_summary(bundle: SourceBundle, options: EntityOptions) -> dict:
             "units_selected": sum(len(b["target_ids"]) for b in selected),
             "maximum_application_attempts": len(selected) * options.attempts,
             "batches": selected, "network_calls_made": 0,
+            "umrl": {"source": default_umrl().provenance, "summary": default_umrl().summary,
+                     "method": "reuse_existing_catalog_after_source_validation"},
             "note": "A plan only. Character budgets are not token or price estimates."}
 
 
@@ -308,11 +311,12 @@ async def extract_entities(bundle: SourceBundle, llm, *, provider: str,
     status = "completed" if len(completed) == plan["batches_total"] else "partial"
     if all(b["status"] == "failed" for b in results):
         status = "failed"
+    umrl = default_umrl().link_candidates(unique)
     return {"schema_version": 1, "method": "llm_entity_discovery", "run_id": run_id,
             "started_at": started, "finished_at": datetime.now(timezone.utc).isoformat(),
             "status": status, "provider": provider, "model": model, "prompt_version": PROMPT_VERSION,
             "options": options.model_dump(), "source": plan["source"], "coverage": coverage,
-            "entities": unique, "accepted_concept_count": 0,
+            "entities": unique, "umrl": umrl, "accepted_concept_count": 0,
             "batches": [{k: v for k, v in b.items() if k != "entities"} for b in results],
             "source_units": [u.model_dump() for u in bundle.units]}
 

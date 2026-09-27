@@ -4,6 +4,8 @@ This method discovers built-environment entities from UFC JSON or UFGS SEC/XML w
 
 The model proposes assets, spaces, systems, materials, activities, organizations, responsibility roles, property interests, documents, requirements, locations, and quantities. General concepts and named individuals are separate categories. Every proposal remains `candidate_pending_subject_matter_review` with no accepted concept ID.
 
+Publication mentions now link to the [existing UMRL entity inventory](UMRL_ENTITIES.md) after source validation. This reuses 4,972 processed reference records and their existing viewer data. It makes no additional model calls, preserves prior evidence and review states, and keeps catalog editions separate from cited or adopted editions.
+
 ## Run from the installed workspace
 
 Install the optional SDK snapshot once:
