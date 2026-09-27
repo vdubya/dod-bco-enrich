@@ -15,7 +15,7 @@ export class GitHub {
       'Authorization':`Bearer ${this.token}`,'Accept':'application/vnd.github+json',
       'X-GitHub-Api-Version':'2022-11-28','User-Agent':'DoD-BCO-Review-Save',
       ...(body?{'Content-Type':'application/json'}:{})
-    },...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(20000),redirect:'error'});
+    },...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(20000),redirect:'manual'});
     let data;try{data=await response.json();}catch{data=null;}
     return {status:response.status,ok:response.ok,data};
   }

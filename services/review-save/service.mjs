@@ -31,7 +31,7 @@ function safeHeaders(response,origin){
 // only encrypted authentication material and short-lived sign-in exchanges.
 export function createService({candidates,datasetHash,fetcher=(...args)=>globalThis.fetch(...args)}){
   async function tokenExchange(app,parameters){
-    const r=await fetcher('https://github.com/login/oauth/access_token',{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify({client_id:app.client_id,client_secret:app.client_secret,...parameters}),signal:AbortSignal.timeout(20000),redirect:'error'});
+    const r=await fetcher('https://github.com/login/oauth/access_token',{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json'},body:JSON.stringify({client_id:app.client_id,client_secret:app.client_secret,...parameters}),signal:AbortSignal.timeout(20000),redirect:'manual'});
     let data;try{data=await r.json();}catch{data=null;}
     requireValue(r.ok && data?.access_token && !data.error,401,'GitHub sign-in could not be completed. Please sign in again.');
     return {access_token:data.access_token,refresh_token:data.refresh_token||null,token_expires:now()+(data.expires_in||8*3600),refresh_expires:now()+(data.refresh_token_expires_in||0)};
@@ -83,7 +83,7 @@ export function createService({candidates,datasetHash,fetcher=(...args)=>globalT
       const flow=await store.get('bco_flows',await digest(state),true);
       requireValue(flow?.value.type==='setup' && flow.value.binding===await digest(cookie(request,'__Host-bco-flow')||''),400,'The setup session expired. Start again from the setup link.');
       diagnostic.step='manifest-conversion';
-      const r=await fetcher(`${API}/app-manifests/${code}/conversions`,{method:'POST',headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'DoD-BCO-Review-Save'},signal:AbortSignal.timeout(20000),redirect:'error'});
+      const r=await fetcher(`${API}/app-manifests/${code}/conversions`,{method:'POST',headers:{Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'DoD-BCO-Review-Save'},signal:AbortSignal.timeout(20000),redirect:'manual'});
       let data;try{data=await r.json();}catch{throw new Problem(502,'GitHub did not return a valid app response. Resume the existing app connection.');}
       requireValue(r.ok && data.owner?.id===OWNER_ID && data.client_id && data.client_secret && /^https:\/\/github\.com\/apps\/[a-z0-9-]+$/.test(data.html_url||''),403,'The app must be created by the vdubya repository owner.');
       requireValue(data.permissions?.contents==='write' && Object.keys(data.permissions).every(k=>['contents','metadata'].includes(k)),403,'The app permissions do not match this service.');

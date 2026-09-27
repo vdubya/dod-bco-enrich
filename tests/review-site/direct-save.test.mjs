@@ -19,6 +19,7 @@ function githubMock(){
   snapshots.set(sha,new Map());
   const mock={files,calls,userId:OWNER_ID,canPush:true,putStatus:null,breakReadback:false};
   mock.fetch=async (url,options={})=>{
+    assert.equal(options.redirect,'manual');
     const u=new URL(url),method=options.method||'GET',body=options.body?JSON.parse(options.body):null;
     calls.push({url:u.href,method,body});
     assert.equal(u.origin,'https://api.github.com');
@@ -64,6 +65,7 @@ async function serviceFixture({configured=true}={}){
   if(configured)await store.configure({id:1,client_id:'fake-client',client_secret:'fake-secret',html_url:'https://github.com/apps/test-bco'});
   const github=githubMock();let oauthCalls=[];
   const service=createService({candidates,datasetHash:hash,fetcher:async(url,options)=>{
+    assert.equal(options.redirect,'manual');
     if(url==='https://api.github.com/app-manifests/fake-manifest-code/conversions'){
       return Response.json({id:9,slug:'test-bco',owner:{id:OWNER_ID},client_id:'fake-client',client_secret:'fake-secret',html_url:'https://github.com/apps/test-bco',permissions:{contents:'write',metadata:'read'}});
     }
@@ -227,10 +229,11 @@ test('existing-app recovery uses the protected setup callback and rejects an unb
   assert.equal(await f.store.config(),null);
 });
 
-test('default GitHub transport preserves the native global fetch receiver',async()=>{
+test('default GitHub transport preserves its native receiver and rejects redirects without following them',async()=>{
   const original=globalThis.fetch;
   try{
-    globalThis.fetch=function(){assert.equal(this,globalThis);return Promise.resolve(Response.json({ok:true}));};
-    assert.equal((await new GitHub('test').request('/user')).ok,true);
+    globalThis.fetch=function(url,options){assert.equal(this,globalThis);assert.equal(options.redirect,'manual');return Promise.resolve(new Response(null,{status:302,headers:{Location:'https://other.example/'}}));};
+    const result=await new GitHub('test').request('/user');
+    assert.equal(result.ok,false);assert.equal(result.status,302);
   }finally{globalThis.fetch=original;}
 });
