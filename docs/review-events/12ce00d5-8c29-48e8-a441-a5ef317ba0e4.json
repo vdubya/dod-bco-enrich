@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "record_type": "persistence_check",
+  "event_id": "12ce00d5-8c29-48e8-a441-a5ef317ba0e4",
+  "created_at": "2026-09-27T02:11:34.870Z",
+  "dataset_sha256": "06913534d3410a02e1045669406b8678c5970bfe7e5434f55b72a14289da6dab",
+  "purpose": "Technical save verification; no vocabulary decision",
+  "authenticated_reviewer": {
+    "id": 6257997,
+    "login": "vdubya"
+  }
+}
